@@ -6,57 +6,59 @@
 > Original project by versotile-org / Wu Yu Wei and contributors.
 > We deeply respect the original work and the contributions it made to Servo.
 >
-> Goal of this fork: **Large-scale modernization and upgrade** of Verso on top of the latest Servo, with strong initial focus on **Windows**, better stability, usability, and long-term maintainability.
-
-**Original note from upstream (preserved for history):**
-
-> Verso is currently no longer maintained. The Verso web browser project was an effort to build a functional web browser on top of the Servo web engine...
+> **Goal:** Large-scale modernization of Verso, with strong initial focus on **Windows**, clearer documentation, and eventually easy-to-download binaries.
 
 ---
 
-## Current Status of this Fork (September 2026)
+## Current Status (September 2026)
 
-- Fork created from the last archived state of versotile-org/verso.
-- Primary focus right now: **Windows-first** usability and build reliability.
-- Next major goals (in priority order):
-  1. Update Servo dependency to a much more recent revision (Servo has advanced significantly since the pinned rev `5e2d42e`).
-  2. Fix and modernize the Windows build & packaging path.
-  3. Improve basic browser chrome / navigation stability.
-  4. Multi-window and better process model where feasible.
-  5. Keep the project buildable and documented.
+| Item | Status |
+|------|--------|
+| Fork from archived upstream | Done |
+| Marked as community continuation | Done |
+| ROADMAP for 1-month effort | Done |
+| Clearer Windows build guide | Done |
+| Servo dependency | Still pinned to very old revision `5e2d42e` |
+| Pre-built Windows `.exe` | Not yet available |
 
-This is **not** the official Verso project. It is a community effort to keep the idea alive and push it forward.
+**Important:** Modern Servo is at 0.5+ (as of late 2026). This fork is still far behind. Upgrading the engine is the biggest and hardest task.
 
-## License
+See **[ROADMAP.md](ROADMAP.md)** for the planned phases.
 
-Same as upstream: **Apache-2.0 OR MIT**
+---
 
-## Building (Windows focus)
+## Building on Windows
 
-(Instructions will be updated as the upgrade progresses. For now the original Windows instructions still apply as a starting point.)
+Detailed instructions: **[docs/WINDOWS.md](docs/WINDOWS.md)**
 
-```sh
-# Example starting point (will change)
+Short version:
+
+```powershell
+# Install tools (Scoop example)
 scoop install git python llvm cmake curl
 pip install mako
+
+# Also need Rust (rustup) + Visual Studio C++ Build Tools
+
+git clone https://github.com/xizar280513/verso.git
+cd verso
 cargo run
 ```
 
-## Roadmap (High Level)
+A proper pre-built `.exe` in GitHub Releases is a stated goal, but it does not exist yet. Do not expect a downloadable binary at this stage.
 
-- [ ] Bump Servo crates to a recent stable-ish revision and resolve breakage
-- [ ] Make Windows the primary supported & tested platform first
-- [ ] Clean packaging for Windows (.exe / installer)
-- [ ] Stabilize core browsing (tabs, navigation, basic chrome)
-- [ ] Document architecture and contribution guide for this fork
-- [ ] Longer term: multi-window, better embedding story, performance
+---
+
+## License
+
+Apache-2.0 OR MIT (same as upstream)
+
+---
 
 ## Respect for Upstream
 
-All original copyright notices, authors, and the spirit of the project are preserved.  
-This fork exists because the original authors archived the project due to limited resources — we are attempting to continue the work they started.
-
----
+All original copyright notices and authors are preserved.  
+This fork exists because the original project was archived due to limited resources. We are attempting to continue the work.
 
 **Repository:** https://github.com/xizar280513/verso  
 **Upstream (archived):** https://github.com/versotile-org/verso
