@@ -24,14 +24,15 @@ Binary `.exe` will only be published when it actually runs. No fake releases.
 
 - [x] Fork from versotile-org/verso
 - [x] Mark repository as community continuation
-- [ ] Improve Windows build instructions (reduce friction)
-- [ ] Document current limitations clearly
-- [ ] Analyze gap between pinned Servo revision and current Servo
+- [x] Create clear ROADMAP.md
+- [x] Improve Windows build documentation (`docs/WINDOWS.md`)
+- [x] Document current limitations clearly in README
+- [x] Analyze gap: pinned Servo `5e2d42e` vs current Servo 0.5+/0.6 (very large gap)
 
 ## Week 2 — Servo Upgrade Attempt
 
-- [ ] Choose a realistic newer Servo target
-- [ ] Bump dependencies in Cargo.toml
+- [ ] Choose a realistic newer Servo target (not jumping straight to latest)
+- [ ] Bump dependencies in Cargo.toml carefully
 - [ ] Fix compilation errors systematically
 - [ ] Keep Windows as the primary test platform
 
@@ -59,4 +60,4 @@ Binary `.exe` will only be published when it actually runs. No fake releases.
 
 ---
 
-**Maintainer note:** Work is being driven autonomously with the goal of reducing the need for users to run `scoop` + `cargo run` just to try the browser.
+**Maintainer note:** Work is being driven with the goal of reducing the need for users to run complex setup just to try the browser.
