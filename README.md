@@ -1,112 +1,62 @@
-# Verso
+# Verso Updated
 
-> [!NOTE]  
-> Verso is currently no longer maintained. The Verso web browser project was an effort to build a functional web browser on top of the Servo web engine, with the goal of identifying what is needed for Servo to evolve into a mature browser. Several major contributions from this project have been integrated into Servo, as detailed in [Behind the Scenes of Verso Browser Development](https://wusyong.github.io/posts/verso-ui/).
->  
-> As the project progressed, multiple significant revisions to Servo were released, and the Verso browser was unable to keep pace with these updates due to limited manpower and funding. Therefore, we will be archiving the repository for now and look forward to a future opportunity to revitalize the project and continue contributing to the Servo ecosystem.
+> **Community Continuation / Major Upgrade Fork**
+>
+> This is an independent community fork of the original [Verso](https://github.com/versotile-org/verso) project (archived October 2025).
+> Original project by versotile-org / Wu Yu Wei and contributors.
+> We deeply respect the original work and the contributions it made to Servo.
+>
+> Goal of this fork: **Large-scale modernization and upgrade** of Verso on top of the latest Servo, with strong initial focus on **Windows**, better stability, usability, and long-term maintainability.
 
-[![project chat](https://img.shields.io/badge/zulip-57a7ff?style=for-the-badge&labelColor=555555&logo=zulip)](https://versotile.zulipchat.com/)
+**Original note from upstream (preserved for history):**
 
-A web browser that plays old world blues to build new world hope.
+> Verso is currently no longer maintained. The Verso web browser project was an effort to build a functional web browser on top of the Servo web engine...
 
-<img src="https://github.com/user-attachments/assets/ca124b2b-c54c-4796-b2cb-0819228495b6" width="600" alt="The Verso logo with a sitting cat, written in ASCII art, rendered in orange on black as on an old CRT monitor" />
+---
 
-Verso is a web browser built on top of the [Servo](https://servo.org/) web engine. We aim to explore embedding solutions for Servo while growing it into a mature browser one day.
-This means we want to experiment with multi-view and multi-window first and then build UI elements entirely from Servo itself. At the moment, [Servoshell](https://servo.org/download/) should provide a better user experience.
+## Current Status of this Fork (September 2026)
 
-Verso is still under development. We don't accept feature requests at the moment, and the whole navigation workflow hasn't been polished yet, either. But if you are interested, feel free to open bug-fix PRs.
+- Fork created from the last archived state of versotile-org/verso.
+- Primary focus right now: **Windows-first** usability and build reliability.
+- Next major goals (in priority order):
+  1. Update Servo dependency to a much more recent revision (Servo has advanced significantly since the pinned rev `5e2d42e`).
+  2. Fix and modernize the Windows build & packaging path.
+  3. Improve basic browser chrome / navigation stability.
+  4. Multi-window and better process model where feasible.
+  5. Keep the project buildable and documented.
 
-# Usage
+This is **not** the official Verso project. It is a community effort to keep the idea alive and push it forward.
 
-## Getting Started
+## License
 
-### Windows
+Same as upstream: **Apache-2.0 OR MIT**
 
-- Install [scoop](https://scoop.sh/) and then install other tools:
+## Building (Windows focus)
+
+(Instructions will be updated as the upgrade progresses. For now the original Windows instructions still apply as a starting point.)
 
 ```sh
+# Example starting point (will change)
 scoop install git python llvm cmake curl
 pip install mako
-```
-
-> You can also use chocolatey to install if you prefer it.
-
-- Build & run:
-
-```sh
 cargo run
 ```
 
-### MacOS
+## Roadmap (High Level)
 
-- Install [Xcode](https://developer.apple.com/xcode/)
-- Install [Homebrew](https://brew.sh/) and then install other tools:
+- [ ] Bump Servo crates to a recent stable-ish revision and resolve breakage
+- [ ] Make Windows the primary supported & tested platform first
+- [ ] Clean packaging for Windows (.exe / installer)
+- [ ] Stabilize core browsing (tabs, navigation, basic chrome)
+- [ ] Document architecture and contribution guide for this fork
+- [ ] Longer term: multi-window, better embedding story, performance
 
-```sh
-brew install cmake pkg-config harfbuzz python@3 # Install required dependencies CMake, pkg-config, HarfBuzz, and Python 3.
-pip3 install mako # Install the Mako templating engine
-curl https://sh.rustup.rs -sSf | sh # Install Rust and Cargo
-```
+## Respect for Upstream
 
-- Build & run:
+All original copyright notices, authors, and the spirit of the project are preserved.  
+This fork exists because the original authors archived the project due to limited resources — we are attempting to continue the work they started.
 
-```sh
-cargo run
-```
+---
 
-### Linux
-
-#### Flatpak
-
-For unified environment setup and package experience, we choose Flatpak to build the project from the start.
-Please follow the [Flatpak Setup](https://flatpak.org/setup/) page to install Flatpak based on your distribution.
-
-- Install flatpak runtimes and extensions:
-
-```sh
-flatpak install flathub org.freedesktop.Platform//24.08
-flatpak install flathub org.freedesktop.Sdk//24.08
-flatpak install flathub org.freedesktop.Sdk.Extension.rust-stable//24.08
-flatpak install flathub org.freedesktop.Sdk.Extension.llvm18//24.08
-```
-
-- Generate manifests and build:
-// TODO Exporting to a repository instead
-
-```sh
-python3 ./flatpak-cargo-generator.py ./Cargo.lock -o cargo-sources.json
-flatpak-builder --user --install --force-clean target org.versotile.verso.yml
-flatpak run org.versotile.verso
-```
-
-#### Nix
-
-We also support building Verso in nix shell. But we don't bundle it in nix at the moment.
-
-- For NixOS:
-
-```sh
-nix-shell shell.nix --run 'cargo r'
-```
-
-- For non-NixOS distributions:
-
-```sh
-nix-shell shell.nix --run 'nixGL cargo r'
-```
-
-If you prefer to build the project without any sandbox, please follow the instructions in [Servo book](https://book.servo.org/hacking/setting-up-your-environment.html#tools-for-linux) to bootstrap.
-But please understand we don't triage any build issue without flatpak or nix setup.
-
-## Nightly Release
-
-Nightly releases built with CrabNebula Cloud can be found at [releases](https://web.crabnebula.cloud/verso/verso-nightly/releases).
-
-> Packages are unsigned currently. If you have problem opening the app on macOS, try `xattr -d com.apple.quarantine /Applications/verso.app` after installation.
-
-## Future Work
-
-- Multi-window support.
-- Enable multiprocess mode.
-- Enable sandbox in all platforms.
-- Enable `Gstreamer` feature.
+**Repository:** https://github.com/xizar280513/verso  
+**Upstream (archived):** https://github.com/versotile-org/verso
