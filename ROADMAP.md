@@ -20,7 +20,7 @@ Binary `.exe` will only be published when it actually runs. No fake releases.
 
 ---
 
-## Week 1 — Foundation & Windows Focus
+## Week 1 — Foundation & Windows Focus (in progress / largely done)
 
 - [x] Fork from versotile-org/verso
 - [x] Mark repository as community continuation
@@ -28,6 +28,8 @@ Binary `.exe` will only be published when it actually runs. No fake releases.
 - [x] Improve Windows build documentation (`docs/WINDOWS.md`)
 - [x] Document current limitations clearly in README
 - [x] Analyze gap: pinned Servo `5e2d42e` vs current Servo 0.5+/0.6 (very large gap)
+- [x] Add `docs/UPGRADE_STRATEGY.md`
+- [x] Update Cargo.toml metadata to point to this fork + bump version to 0.0.4
 
 ## Week 2 — Servo Upgrade Attempt
 
@@ -60,4 +62,4 @@ Binary `.exe` will only be published when it actually runs. No fake releases.
 
 ---
 
-**Maintainer note:** Work is being driven with the goal of reducing the need for users to run complex setup just to try the browser.
+**Maintainer note:** Continuous development is ongoing. Focus remains on accurate, incremental progress rather than claiming unfinished work is complete.
