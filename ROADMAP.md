@@ -20,7 +20,7 @@ Binary `.exe` will only be published when it actually runs. No fake releases.
 
 ---
 
-## Week 1 — Foundation & Windows Focus (in progress / largely done)
+## Week 1 — Foundation & Windows Focus (Completed on Day 1)
 
 - [x] Fork from versotile-org/verso
 - [x] Mark repository as community continuation
@@ -30,6 +30,8 @@ Binary `.exe` will only be published when it actually runs. No fake releases.
 - [x] Analyze gap: pinned Servo `5e2d42e` vs current Servo 0.5+/0.6 (very large gap)
 - [x] Add `docs/UPGRADE_STRATEGY.md`
 - [x] Update Cargo.toml metadata to point to this fork + bump version to 0.0.4
+- [x] Add CONTRIBUTING.md
+- [x] Add CHANGELOG.md
 
 ## Week 2 — Servo Upgrade Attempt
 
@@ -62,4 +64,4 @@ Binary `.exe` will only be published when it actually runs. No fake releases.
 
 ---
 
-**Maintainer note:** Continuous development is ongoing. Focus remains on accurate, incremental progress rather than claiming unfinished work is complete.
+**Maintainer note:** Day 1 foundation work is complete. Next focus is controlled Servo upgrade preparation.
