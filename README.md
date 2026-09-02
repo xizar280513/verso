@@ -10,7 +10,7 @@
 
 ---
 
-## Current Status (September 2026)
+## Current Status (September 2026 — Day 1)
 
 | Item | Status |
 |------|--------|
@@ -18,34 +18,39 @@
 | Marked as community continuation | Done |
 | ROADMAP for 1-month effort | Done |
 | Clearer Windows build guide | Done |
+| Upgrade strategy documented | Done |
+| CONTRIBUTING + CHANGELOG | Done |
 | Servo dependency | Still pinned to very old revision `5e2d42e` |
 | Pre-built Windows `.exe` | Not yet available |
 
 **Important:** Modern Servo is at 0.5+ (as of late 2026). This fork is still far behind. Upgrading the engine is the biggest and hardest task.
 
-See **[ROADMAP.md](ROADMAP.md)** for the planned phases.
+### Key Documents
+- [ROADMAP.md](ROADMAP.md) — 1-month plan
+- [docs/WINDOWS.md](docs/WINDOWS.md) — Windows build instructions
+- [docs/UPGRADE_STRATEGY.md](docs/UPGRADE_STRATEGY.md) — How we plan to modernize Servo
+- [CHANGELOG.md](CHANGELOG.md)
+- [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ---
 
 ## Building on Windows
 
-Detailed instructions: **[docs/WINDOWS.md](docs/WINDOWS.md)**
+See **[docs/WINDOWS.md](docs/WINDOWS.md)** for details.
 
 Short version:
 
 ```powershell
-# Install tools (Scoop example)
 scoop install git python llvm cmake curl
 pip install mako
-
-# Also need Rust (rustup) + Visual Studio C++ Build Tools
+# + Rust via rustup + Visual Studio C++ Build Tools
 
 git clone https://github.com/xizar280513/verso.git
 cd verso
 cargo run
 ```
 
-A proper pre-built `.exe` in GitHub Releases is a stated goal, but it does not exist yet. Do not expect a downloadable binary at this stage.
+A proper pre-built `.exe` in GitHub Releases is a stated goal, but it does **not** exist yet.
 
 ---
 
