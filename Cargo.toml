@@ -128,8 +128,8 @@ profile = { package = "profile", git = "https://github.com/servo/servo.git", rev
 profile_traits = { package = "profile_traits", git = "https://github.com/servo/servo.git", rev = "721214fbe44bf11b968e5e076e5b0af5b5663447" }
 script = { package = "script", git = "https://github.com/servo/servo.git", rev = "721214fbe44bf11b968e5e076e5b0af5b5663447" }
 script_traits = { package = "script_traits", git = "https://github.com/servo/servo.git", rev = "721214fbe44bf11b968e5e076e5b0af5b5663447" }
-servo_allocator = { package = "allocator", git = "https://github.com/servo/servo.git", rev = "721214fbe44bf11b968e5e076e5b0af5b5663447" }
-servo_config = { package = "config", git = "https://github.com/servo/servo.git", rev = "721214fbe44bf11b968e5e076e5b0af5b5663447" }
+servo_allocator = { package = "servo_allocator", git = "https://github.com/servo/servo.git", rev = "721214fbe44bf11b968e5e076e5b0af5b5663447" }
+servo_config = { package = "servo_config", git = "https://github.com/servo/servo.git", rev = "721214fbe44bf11b968e5e076e5b0af5b5663447" }
 servo_geometry = { package = "servo_geometry", git = "https://github.com/servo/servo.git", rev = "721214fbe44bf11b968e5e076e5b0af5b5663447" }
 servo_url = { package = "servo_url", git = "https://github.com/servo/servo.git", rev = "721214fbe44bf11b968e5e076e5b0af5b5663447" }
 webdriver_server = { package = "webdriver_server", git = "https://github.com/servo/servo.git", rev = "721214fbe44bf11b968e5e076e5b0af5b5663447" }
