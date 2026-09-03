@@ -33,8 +33,10 @@ Binary `.exe` will only be published when it actually runs. No fake releases.
 - [x] Add CONTRIBUTING.md
 - [x] Add CHANGELOG.md
 
-## Week 2 — Servo Upgrade Attempt
+## Week 2 — Servo Upgrade Attempt (Started Day 2)
 
+- [x] Create dedicated branch `upgrade/servo-prep`
+- [x] Write concrete first bump plan (`docs/SERVO_BUMP_PLAN.md` on the branch)
 - [ ] Choose a realistic newer Servo target (not jumping straight to latest)
 - [ ] Bump dependencies in Cargo.toml carefully
 - [ ] Fix compilation errors systematically
@@ -64,4 +66,4 @@ Binary `.exe` will only be published when it actually runs. No fake releases.
 
 ---
 
-**Maintainer note:** Day 1 foundation work is complete. Next focus is controlled Servo upgrade preparation.
+**Maintainer note:** Day 2 started. Working on controlled Servo upgrade preparation on branch `upgrade/servo-prep`.
