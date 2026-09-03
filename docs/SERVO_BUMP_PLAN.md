@@ -1,86 +1,59 @@
-# Servo Bump Plan — First Attempt
+# Servo Bump Plan — Option B (closer intermediate)
 
 **Branch:** `upgrade/servo-prep`  
-**Updated:** Day 3 (2026-09-03)
+**Updated:** Day 3 (2026-09-03) — after Manus v0.4.0 attempt
 
-## Current Pin
+## Decision
 
-All Servo crates in root `Cargo.toml` are locked to:
+Manus mencoba **Servo v0.4.0** (`e8dbc1d…`). Hasil:
+- Banyak rename package bisa di-alias
+- **Gagal** di resolusi dependency: `compositing_traits` tidak ditemukan
+- Belum sampai error compile source Verso
 
-```toml
-rev = "5e2d42e"
-```
+Kesimpulan: v0.4.0 terlalu jauh dalam satu langkah.
 
-This revision is very old. Current Servo is in the 0.5.x range (nightlies as of early September 2026).
+**Opsi B dipilih:** mundur ke intermediate yang lebih dekat.
 
-## Integration Surface (High-Risk Files)
+| Item | Nilai |
+|------|--------|
+| Pin awal Verso | `5e2d42e` |
+| Percobaan gagal | v0.4.0 / `e8dbc1dfbf6f58621346a5f61ab7a17d01387873` |
+| **Target baru (Option B)** | **v0.2.0 / `6a0f9e4a7851175c442a1f1b7a988e075c67c537`** |
+| Alasan | Lebih baru dari pin awal, lebih tua dari v0.4.0; mengurangi jarak API/package |
 
-Verso is **deeply** embedded into Servo internals. These files will break first on any bump:
+## Integration surface (masih high-risk)
 
 | File | Role | Risk |
 |------|------|------|
-| `src/verso.rs` | Main browser struct, constellation + embedder setup | **Critical** |
-| `src/compositor.rs` | Webrender / compositor integration | **Critical** |
-| `src/window.rs` | Window + tab + embedder message handling | **Critical** |
-| `src/webview/webview.rs` | WebView logic, navigation, scripts | High |
-| `src/rendering.rs` | GL / rendering context | High |
-| `src/config.rs` | Prefs / opts from servo_config | Medium |
+| `src/verso.rs` | constellation + embedder | Critical |
+| `src/compositor.rs` | compositor / paint integration | Critical |
+| `src/window.rs` | window + messages | Critical |
+| `src/webview/webview.rs` | navigation / scripts | High |
+| `src/rendering.rs` | GL context | High |
+| `src/config.rs` | prefs | Medium |
 
-Key Servo crates used directly:
-- `embedder_traits`
-- `constellation` / `constellation_traits`
-- `compositing_traits`
-- `layout_thread_2020`
-- `script`
-- `fonts`, `net`, `profile`, `devtools`, `webgpu`, ...
-- `stylo` + `webrender` (separate pins)
+Catatan sejarah Servo yang relevan:
+- Package naming unification (`servo-` prefix) ~ Maret 2026 (PR #42916) → alias masih mungkin diperlukan di v0.2.0
+- Rename konsep compositor (`IOCompositor` → `Paint`, crate `paint`) ~ akhir 2025
+- Itulah kenapa `compositing_traits` di v0.4.0 tidak resolve
 
-## Strategy for First Bump (concrete)
+## Strategy
 
-We will **not** jump to latest `main`.
+1. Kerja tetap di `upgrade/servo-prep`
+2. Pin **semua** crate Servo root ke `6a0f9e4a7851175c442a1f1b7a988e075c67c537`
+3. Pertahankan alias package yang sudah terbukti perlu (dari percobaan Manus)
+4. Untuk compositor: investigasi nama package aktual di tree v0.2.0 (`compositing_traits` vs `paint` / shared compositing)
+5. `cargo check` di Linux (Manus / lokal / CI)
+6. Baru perbaiki error source bertahap
+7. Jangan merge ke `main` sampai check hijau di minimal satu platform
 
-### Recommended approach
+## Success criteria (tidak berubah)
 
-1. Stay on this branch (`upgrade/servo-prep`).
-2. First target: an **intermediate** revision that is newer than `5e2d42e` but not the absolute tip.
-   - Prefer a known release-ish point or a commit that still has relatively stable embedder APIs.
-   - Practical first experiment: pick a commit from the Servo history that is several months newer, run `cargo check`, and record breakage.
-3. Change **all** Servo `rev = "..."` lines in root `Cargo.toml` to the **same** new revision in one commit.
-4. Also review `stylo` / `webrender` pins — they may need coordinated updates.
-5. Expect large compile breakage. Fix in layers:
-   - Layer 1: make the tree compile
-   - Layer 2: binary starts / window opens
-   - Layer 3: basic navigation works
-6. Primary validation target remains Windows (also keep Linux CI green if possible).
+- Dependency resolution berhasil
+- `cargo check` mencapai / melewati source Verso
+- Window open = target belakangan, setelah compile bersih
 
-### Expected error categories (from experience with deep Servo embeds)
+## Related
 
-- Missing or renamed items in `embedder_traits` / constellation messages
-- Compositor / Webrender API drift (`compositing_traits`, display lists, pipeline IDs)
-- Pref / config key changes in `servo_config`
-- Script / WebView embedding surface changes
-- Feature-flag or Cargo feature mismatches after the bump
-
-Record every category in this file or in a follow-up `docs/SERVO_BUMP_LOG.md` once the first compile is attempted.
-
-## Immediate Next Actions
-
-- [x] Map integration surface
-- [x] Document concrete intermediate strategy + expected error categories
-- [ ] On a real build machine: pick intermediate rev, bump all Servo `rev` lines, `cargo check` / `cargo build`
-- [ ] Capture first wave of compile errors by file/crate
-- [ ] Keep `main` clean until something actually builds
-
-## Success Criteria for First Bump
-
-- Tree compiles on at least one platform (preferably Windows)
-- Basic window opens
-- No immediate crash on startup
-- Documented list of remaining broken features
-
-Only after the above is true do we merge toward `main`.
-
-## Notes
-
-A full jump to current Servo tip is a multi-week effort.  
-This branch exists to contain risk. Do not claim the upgrade is done until the success criteria above are met on a real machine.
+- [SERVO_BUMP_LOG.md](SERVO_BUMP_LOG.md) — log percobaan Manus + Option B
+- [UPGRADE_STRATEGY.md](UPGRADE_STRATEGY.md)
