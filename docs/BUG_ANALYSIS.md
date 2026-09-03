@@ -1,4 +1,4 @@
-# Bug & Risk Analysis — Verso Updated (Day 3)
+# Bug & Risk Analysis — Verso Updated (Day 3+)
 
 Deep review of repository issues affecting correctness, packaging, and multi-platform support.
 
@@ -21,7 +21,7 @@ Platforms intended by upstream Verso:
 - **Where:** `.github/workflows/build.yml` job `release-nightly`
 - **Impact:** `CN_API_KEY` / app slug `verso/verso-nightly` belong to upstream infrastructure
 - **Bug for this fork:** scheduled/manual release publish will fail or target wrong product without secrets
-- **Fix direction:** gate job on secret presence; prefer GitHub Release artifacts for this fork
+- **Fix applied:** job is gated on `secrets.CN_API_KEY != ''`. Platform artifacts still upload via `actions/upload-artifact`.
 
 ### 3. Binary name duality (`verso` vs `versoview`)
 - **Where:**
@@ -29,15 +29,14 @@ Platforms intended by upstream Verso:
   - workspace member `verso` (also produces a binary)
   - Flatpak installs **both** `verso` and `versoview`
   - Desktop `Exec=verso`
-  - `package_libs.py` (macOS) only looks for `./target/release/verso`
-  - Windows staging script checks both (good)
+  - Packaging scripts now accept either name
 - **Impact:** packaging scripts can stage/package the wrong binary if only one was built
-- **Fix direction:** always document both; scripts should accept either; CI should build the same set Flatpak expects
+- **Status:** documented + scripts tolerate both
 
-### 4. `Cargo.lock` is gitignored
-- **Where:** `.gitignore` contains `Cargo.lock`
-- **Impact:** Flatpak flow uses `flatpak-cargo-generator.py ./Cargo.lock` — non-reproducible / CI schedule path fragile if lockfile absent
-- **Fix direction:** stop ignoring `Cargo.lock` for an application workspace (longer-term)
+### 4. `Cargo.lock` tracking — **FIXED**
+- Previously listed in `.gitignore` while also present in the tree (inconsistent).
+- **Fixed:** `.gitignore` no longer ignores `Cargo.lock`.
+- Application workspaces should track the lockfile for reproducible Flatpak/CI builds.
 
 ---
 
@@ -45,21 +44,18 @@ Platforms intended by upstream Verso:
 
 ### 5. Windows packaging script gap
 - `etc/package_libs.py` is macOS-only (otool/GStreamer)
-- Day 3 added `etc/package_windows_portable.ps1` as interim fix
+- Day 3 added `etc/package_windows_portable.ps1` as interim portable staging
 - Full NSIS path still relies on `cargo packager` + CI
 
 ### 6. CI typo: “Install scroop”
-- **Where:** `.github/workflows/build.yml` Windows job step name
-- Cosmetic but signals copy-paste debt; fixed on Day 3
+- Fixed on Day 3 (Scoop)
 
 ### 7. Tests disabled in CI
 - `cargo test` steps commented out on Linux/Windows/macOS
 - **Impact:** regressions only caught by `cargo check` / release build
 
-### 8. Upstream ownership metadata still present
-- `CODEOWNERS` → `@wusyong`
-- `FUNDING.yml` → Open Collective `verso`
-- Not a runtime bug, but misleading for a community fork
+### 8. Upstream ownership metadata
+- CODEOWNERS / FUNDING cleaned for community fork on Day 3
 
 ### 9. Resource packaging vs `.gitignore`
 - `.gitignore` ignores most of `resources/*` with exceptions
@@ -79,25 +75,23 @@ Platforms intended by upstream Verso:
 
 ### 12. Documentation previously Windows-heavy
 - Upstream clearly multi-platform (Linux Flatpak, macOS DMG, Windows NSIS, Nix shell)
-- Day 3 corrects project docs/roadmap toward multi-platform again
+- Day 3+ docs re-aligned to multi-platform
 
 ---
 
-## Fixes applied in Day 3 analysis pass
+## Fixes applied
 
-See CHANGELOG / commits:
 - Document this analysis
 - Multi-platform build doc
-- CI typo fix
-- Gate CrabNebula release job when secret missing
-- Clarify binary names in packaging scripts/docs
-- Soften fork metadata that incorrectly implies upstream ownership
+- CI typo fix + CrabNebula gate
+- Binary-name tolerance in packaging scripts
+- Fork metadata cleanup
+- **Stop ignoring `Cargo.lock`**
 
 ---
 
-## Not fixed yet (requires real builds)
+## Still requires real build machines
 
-- Servo upgrade compile breakage
-- Restoring `Cargo.lock` to version control (large intentional follow-up)
-- Re-enabling CI tests
-- Producing verified Release assets for all platforms
+- Servo upgrade compile breakage (work on `upgrade/servo-prep`)
+- Re-enabling CI tests after baseline is green
+- Producing **verified** Release assets (only after a binary is confirmed to launch)
