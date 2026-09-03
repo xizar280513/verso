@@ -9,12 +9,14 @@ All notable changes to **Verso Updated** (community fork) will be documented her
 - `docs/SERVO_BUMP_PLAN.md` (on upgrade branch) — concrete first bump plan + integration surface map
 - `docs/KNOWN_GAPS.md` — honest list of engine, build, and feature gaps
 - `docs/ARCHITECTURE.md` — high-level component map for upgrade planning
+- `docs/README.md` — documentation index
 
 ### Changed
 - ROADMAP updated for Week 2 / Day 2 progress
 - `src/lib.rs` crate docs now point to this fork
 - `docs/UPGRADE_STRATEGY.md` refreshed with completed prep items
 - Desktop entry renamed/commented as **Verso Updated**
+- Root README links expanded
 
 ### Notes
 - Still on Servo revision `5e2d42e`
