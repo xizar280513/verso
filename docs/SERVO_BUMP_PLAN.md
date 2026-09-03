@@ -5,7 +5,7 @@
 
 ## Current Pin
 
-All Servo crates in `Cargo.toml` are locked to:
+All Servo crates in root `Cargo.toml` are locked to:
 
 ```toml
 rev = "5e2d42e"
@@ -13,47 +13,46 @@ rev = "5e2d42e"
 
 This revision is very old compared to current Servo (0.5.x / 0.6.x as of September 2026).
 
+## Integration Surface (High-Risk Files)
+
+Verso is **deeply** embedded into Servo internals. These files will break first on any bump:
+
+| File | Role | Risk |
+|------|------|------|
+| `src/verso.rs` | Main browser struct, constellation + embedder setup | **Critical** |
+| `src/compositor.rs` | Webrender / compositor integration | **Critical** |
+| `src/window.rs` | Window + tab + embedder message handling | **Critical** |
+| `src/webview/webview.rs` | WebView logic, navigation, scripts | High |
+| `src/rendering.rs` | GL / rendering context | High |
+| `src/config.rs` | Prefs / opts from servo_config | Medium |
+
+Key Servo crates used directly:
+- `embedder_traits`
+- `constellation` / `constellation_traits`
+- `compositing_traits`
+- `layout_thread_2020`
+- `script`
+- `fonts`, `net`, `profile`, `devtools`, `webgpu`, ...
+- `stylo` + `webrender` (separate pins)
+
 ## Strategy for First Bump
 
 We will **not** jump to latest `main`.
 
-### Recommended approach
+1. Keep work on this branch (`upgrade/servo-prep`)
+2. Choose an **intermediate** Servo revision (newer than `5e2d42e`, older than current tip)
+3. Change **all** `rev = "..."` lines together
+4. Expect large compile breakage
+5. Fix in layers: compile → startup → basic navigation
+6. Windows remains the primary target
 
-1. **Identify an intermediate target**
-   - Prefer a known Servo release tag (e.g. around 0.2 ~ 0.3 era) rather than bleeding-edge main.
-   - Goal is to reduce the gap in controlled steps.
+## Immediate Next Actions
 
-2. **Create a dedicated branch** (this branch)
-   - Keep `main` buildable as long as possible.
-
-3. **Change only the `rev` first**
-   - Update every `git = "https://github.com/servo/servo.git", rev = "..."` line together.
-   - Do not mix old and new revisions.
-
-4. **Expect massive breakage**
-   - Crate structure, trait names, embedder API, and feature flags have all changed.
-   - Fix errors in layers:
-     - First make it compile
-     - Then fix runtime crashes
-     - Then restore features
-
-5. **Windows remains primary**
-   - Any change must be validated with Windows target in mind.
-
-## Immediate Next Actions on this Branch
-
-- [ ] Research a concrete intermediate Servo commit/tag that is newer than `5e2d42e` but not latest
-- [ ] Document the chosen target commit and why
-- [ ] Prepare the Cargo.toml diff (all rev lines)
-- [ ] List known high-risk areas (embedder_traits, constellation, script, layout)
-
-## High-Risk Areas in Verso
-
-From current structure:
-- Heavy use of `embedder_traits`
-- Direct dependency on many internal Servo crates
-- Custom windowing / compositing integration
-- Older `stylo` and `webrender` pins that must stay in sync
+- [x] Map integration surface (this document)
+- [ ] Pick a concrete intermediate target commit/tag
+- [ ] Prepare Cargo.toml rev bump (all Servo crates at once)
+- [ ] Attempt first compile and record error categories
+- [ ] Keep `main` clean until something actually builds
 
 ## Success Criteria for First Bump
 
@@ -62,4 +61,9 @@ From current structure:
 - No immediate crash on startup
 - Documented list of remaining broken features
 
-Only after the above is true do we merge back toward `main`.
+Only after the above is true do we merge toward `main`.
+
+## Notes
+
+A full jump to Servo 0.5+ is a multi-week effort by itself.  
+Day 2 work is about preparation and reducing risk, not claiming the upgrade is done.
