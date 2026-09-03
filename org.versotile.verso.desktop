@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=Verso
+Name=Verso Updated
 StartupWMClass=verso
-Comment=A web browser that plays old world blues to build new world hope.
+Comment=Community continuation of Verso — a web browser built on Servo.
 GenericName=Web Browser
 Type=Application
 Categories=Network
