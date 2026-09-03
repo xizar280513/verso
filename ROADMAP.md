@@ -1,51 +1,58 @@
 # Verso Updated — 1-Month Roadmap
 
-**Goal:** Community continuation of the archived Verso browser with a major upgrade focus, prioritizing **Windows** usability and eventually providing downloadable `.exe` binaries in GitHub Releases.
+**Goal:** Community continuation of archived Verso with modernization, **multi-platform** support (Windows, macOS, Linux/NixOS), and eventual real Release artifacts.
 
-We respect the original Verso project and its authors. This is not the official project.
+**Time box:** 1 month.
 
-**Time box:** 1 month total.  
-**Day 3 focus:** Windows / packaging path.
+---
+
+## Platforms (follow upstream Verso)
+
+- Windows — build + NSIS/portable
+- macOS — build + DMG / dylib packaging
+- Linux — build + Flatpak
+- NixOS — Linux via `shell.nix`
 
 ---
 
 ## Honest Scope
 
-A full mature browser is not achievable in 30 days.  
-Binary `.exe` will only be published when it actually runs. No fake releases.
+Full mature browser in 30 days is not realistic.  
+No fake Release binaries.
 
 ---
 
 ## Week 1 — Foundation (Done)
 
-- [x] Fork + community identity + core docs
+- [x] Fork + docs foundation
 
-## Week 2 — Upgrade prep (Day 2 done / ongoing)
+## Week 2 — Upgrade prep (Done / ongoing)
 
-- [x] `upgrade/servo-prep` branch
-- [x] Integration surface mapped
-- [x] Packaging discovery (`package_libs.py` = macOS-oriented)
-- [ ] Actual Servo rev bump still pending
+- [x] `upgrade/servo-prep`
+- [x] Integration mapping
+- [ ] Servo rev bump still pending
 
-## Day 3 — Windows / packaging (in progress)
+## Day 3 — Packaging + bug analysis (in progress)
 
-- [x] `docs/WINDOWS_PACKAGING.md` checklist
-- [x] `etc/package_windows_portable.ps1` staging script skeleton
-- [x] `etc/package_libs.py` now points Windows users to the PowerShell script
-- [ ] Verify binary name on real Windows build (`versoview.exe` vs `verso.exe`)
-- [ ] Verify required DLLs by launching staged folder
-- [ ] Produce portable ZIP only after launch succeeds
-- [ ] GitHub Release only after launch succeeds
+- [x] Windows packaging checklist + portable script
+- [x] Deep bug/risk analysis (`docs/BUG_ANALYSIS.md`)
+- [x] Multi-platform build doc (`docs/BUILD_PLATFORMS.md`)
+- [x] CI: fix Scoop step typo; gate CrabNebula on `CN_API_KEY`
+- [x] macOS `package_libs.py` accepts `verso` **or** `versoview`
+- [x] Fork metadata (CODEOWNERS / FUNDING) cleaned
+- [ ] Verify CI builds on all three OS jobs
+- [ ] Address `Cargo.lock` gitignore risk (follow-up)
+- [ ] Real artifacts only after launch verification
 
-## Week 3 — Core Stability
+## Week 3 — Core stability
 
-- [ ] Navigation / crash reduction / logging
+- [ ] Navigation / crashes / logging
 
-## Week 4 — Real artifact attempt
+## Week 4 — Artifacts
 
-- [ ] Portable ZIP or installer if binary runs
-- [ ] Release notes with limitations
+- [ ] Portable/NSIS/Flatpak/DMG as far as builds allow
+- [ ] GitHub Release with honest limitations
 
 ---
 
-**Maintainer note:** Day 3 started with practical Windows packaging scaffolding. No Release asset until a local launch works.
+**Maintainer note:** Day 3 corrected over-focus on Windows-only and fixed several fork/CI packaging bugs found in analysis.
