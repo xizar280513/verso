@@ -1,7 +1,7 @@
-//! Verso Web Browser
+//! Verso Updated (community continuation of Verso)
 //!
 //! This is the documentation of Verso's types and items.
-//! See [GitHub repository](https://github.com/versotile-org/verso) for more general introduction.
+//! See [GitHub repository](https://github.com/xizar280513/verso) for more general introduction.
 
 #![deny(missing_docs)]
 
