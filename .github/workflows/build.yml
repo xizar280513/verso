@@ -112,12 +112,6 @@ jobs:
         run: |
           cargo check
 
-      # - name: Test
-      #   # Run sway(wayland compositor) in the background, winit will use it
-      #   run: |
-      #     sway > /dev/null 2>&1 &
-      #     cargo test --release
-
       - name: Fetch Verso version
         if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
         run: |
@@ -163,7 +157,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install scroop
+      - name: Install Scoop
         uses: MinoruSekine/setup-scoop@v3
 
       - name: Install dependencies
@@ -185,10 +179,6 @@ jobs:
       - name: Build
         run: |
           cargo build --release
-
-      # - name: Test
-      #   run: |
-      #     cargo test --release
 
       - name: Bundle
         if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
@@ -255,10 +245,6 @@ jobs:
           export DYLD_LIBRARY_PATH="/Library/Frameworks/GStreamer.framework/Versions/1.0/lib${DYLD_LIBRARY_PATH:+:$DYLD_LIBRARY_PATH}"
           cargo build --release
 
-      # - name: Test
-      #   run: |
-      #     cargo test --release
-
       - name: Bundle
         if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
         run: |
@@ -291,8 +277,10 @@ jobs:
         if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')
         run: exit 1
 
+  # Community fork: only run CrabNebula publish when CN_API_KEY is configured.
+  # Without the secret, platform build artifacts still upload via actions/upload-artifact.
   release-nightly:
-    if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
+    if: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && secrets.CN_API_KEY != '' }}
     runs-on: ubuntu-latest
     needs: ["build-macos", "build-windows", "build-linux"]
     steps:
