@@ -10,20 +10,21 @@ Index of project docs for this community fork.
 | [../README.md](../README.md) | Project status and quick start |
 | [../CHANGELOG.md](../CHANGELOG.md) | What changed in this fork |
 
-## Build & use
+## Build & packaging
 
 | Doc | Purpose |
 |-----|---------|
 | [WINDOWS.md](WINDOWS.md) | Windows build instructions |
+| [PACKAGING.md](PACKAGING.md) | Packaging / Releases path (Windows-first from Day 3) |
 
 ## Upgrade work
 
 | Doc | Purpose |
 |-----|---------|
 | [UPGRADE_STRATEGY.md](UPGRADE_STRATEGY.md) | Overall Servo upgrade philosophy |
+| [SERVO_BUMP_PLAN.md](SERVO_BUMP_PLAN.md) | First bump plan + high-risk files |
 | [KNOWN_GAPS.md](KNOWN_GAPS.md) | Engine, build, and feature gaps |
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Component map before touching Servo |
-| [SERVO_BUMP_PLAN.md](SERVO_BUMP_PLAN.md) | Detailed first bump plan (also on `upgrade/servo-prep`) |
 
 ## Contributing
 
