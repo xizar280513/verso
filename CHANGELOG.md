@@ -9,34 +9,33 @@ All notable changes to **Verso Updated** (community fork) will be documented her
 - `etc/package_windows_portable.ps1` — portable folder staging skeleton
 
 ### Changed
-- `etc/package_libs.py` now explains Windows path and points to the PowerShell script
+- `etc/package_libs.py` points Windows users to the PowerShell script
+- README updated to Day 3 status + staging commands
+- `docs/WINDOWS.md` includes portable staging workflow
+- `.gitignore` now ignores `dist/`
 - ROADMAP updated for Day 3 packaging focus
 
 ### Notes
 - Still no GitHub Release `.exe`
-- Staging script prepares `dist/windows-portable/` after a local release build
-- Publish gate remains: binary must launch first
+- Publish gate remains: staged binary must launch first
+- Servo still on `5e2d42e`
 
 ## [Unreleased] - Day 2 (2026-09-03)
 
 ### Added
 - Branch `upgrade/servo-prep`
-- `docs/SERVO_BUMP_PLAN.md`, `KNOWN_GAPS.md`, `ARCHITECTURE.md`, `PACKAGING.md`, docs index
+- Upgrade/architecture/gaps/packaging docs
 
 ### Discoveries
 - `etc/package_libs.py` is macOS-oriented
 
-### Notes
-- Still on Servo revision `5e2d42e`
-
 ## [0.0.4] - 2026-09-02
 
 ### Added
-- Community fork foundation, ROADMAP, WINDOWS guide, UPGRADE_STRATEGY, CONTRIBUTING
+- Community fork foundation and initial docs
 
 ### Changed
-- Repository metadata points to this fork
-- Version 0.0.4
+- Metadata points to this fork; version 0.0.4
 
 ## Upstream History
 
