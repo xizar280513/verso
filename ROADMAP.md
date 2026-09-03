@@ -4,77 +4,48 @@
 
 We respect the original Verso project and its authors. This is not the official project.
 
-**Time box:** 1 month total. Day 3 focus selected by maintainer direction: **Windows/packaging path (option B)**.
+**Time box:** 1 month total.  
+**Day 3 focus:** Windows / packaging path.
 
 ---
 
 ## Honest Scope
 
 A full mature browser is not achievable in 30 days.  
-What **is** achievable:
-
-- Significantly better Windows build experience
-- Modernized Servo dependency (as far as breakage allows)
-- Clearer documentation so users do not need complex setup
-- Foundation for future binary releases
-
 Binary `.exe` will only be published when it actually runs. No fake releases.
 
 ---
 
-## Week 1 — Foundation & Windows Focus (Completed on Day 1)
+## Week 1 — Foundation (Done)
 
-- [x] Fork from versotile-org/verso
-- [x] Mark repository as community continuation
-- [x] Create clear ROADMAP.md
-- [x] Improve Windows build documentation (`docs/WINDOWS.md`)
-- [x] Document current limitations clearly in README
-- [x] Analyze gap: pinned Servo `5e2d42e` vs current Servo 0.5+/0.6 (very large gap)
-- [x] Add `docs/UPGRADE_STRATEGY.md`
-- [x] Update Cargo.toml metadata to point to this fork + bump version to 0.0.4
-- [x] Add CONTRIBUTING.md
-- [x] Add CHANGELOG.md
+- [x] Fork + community identity + core docs
 
-## Week 2 — Servo Upgrade Attempt + packaging prep (Day 2)
+## Week 2 — Upgrade prep (Day 2 done / ongoing)
 
-- [x] Create dedicated branch `upgrade/servo-prep`
-- [x] Write concrete first bump plan (`docs/SERVO_BUMP_PLAN.md`)
-- [x] Map high-risk integration surface
-- [x] Add architecture / known gaps docs
-- [x] Add `docs/PACKAGING.md` (prep for Day 3)
-- [x] Confirm `etc/package_libs.py` is macOS-oriented (Windows path still missing)
-- [ ] Choose a realistic newer Servo target
-- [ ] Bump dependencies in Cargo.toml carefully
-- [ ] Fix compilation errors systematically
+- [x] `upgrade/servo-prep` branch
+- [x] Integration surface mapped
+- [x] Packaging discovery (`package_libs.py` = macOS-oriented)
+- [ ] Actual Servo rev bump still pending
 
-## Day 3 focus (selected): Windows / packaging path
+## Day 3 — Windows / packaging (in progress)
 
-- [ ] Expand Windows packaging steps in practical detail
-- [ ] Define Windows DLL / artifact checklist
-- [ ] Align `cargo-packager` + NSIS metadata with reality
-- [ ] Do **not** publish a fake Release
+- [x] `docs/WINDOWS_PACKAGING.md` checklist
+- [x] `etc/package_windows_portable.ps1` staging script skeleton
+- [x] `etc/package_libs.py` now points Windows users to the PowerShell script
+- [ ] Verify binary name on real Windows build (`versoview.exe` vs `verso.exe`)
+- [ ] Verify required DLLs by launching staged folder
+- [ ] Produce portable ZIP only after launch succeeds
+- [ ] GitHub Release only after launch succeeds
 
 ## Week 3 — Core Stability
 
-- [ ] Improve basic navigation and window handling
-- [ ] Reduce obvious crashes
-- [ ] Better error messages / logging
+- [ ] Navigation / crash reduction / logging
 
-## Week 4 — Packaging Path (target for real artifact attempt)
+## Week 4 — Real artifact attempt
 
-- [ ] Attempt to produce a usable Windows artifact
-- [ ] If successful → publish to GitHub Releases
-- [ ] Update README with simple download instructions
+- [ ] Portable ZIP or installer if binary runs
+- [ ] Release notes with limitations
 
 ---
 
-## Success Criteria for the Month
-
-1. Repository is clearly documented as a living community fork
-2. Windows build path is clearer and less painful than upstream
-3. At least partial progress on Servo modernization
-4. Concrete path (or actual artifact) toward easy Windows binary distribution
-
----
-
-**Maintainer note:** Day 2 packaging discovery done. Day 3 will prioritize Windows/packaging practical path while Servo bump remains on the side branch.
+**Maintainer note:** Day 3 started with practical Windows packaging scaffolding. No Release asset until a local launch works.
