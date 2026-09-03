@@ -15,7 +15,8 @@ Index of project docs for this community fork.
 | Doc | Purpose |
 |-----|---------|
 | [WINDOWS.md](WINDOWS.md) | Windows build instructions |
-| [PACKAGING.md](PACKAGING.md) | Packaging / Releases path (Windows-first from Day 3) |
+| [PACKAGING.md](PACKAGING.md) | Packaging overview |
+| [WINDOWS_PACKAGING.md](WINDOWS_PACKAGING.md) | Day 3 practical Windows packaging checklist |
 
 ## Upgrade work
 
@@ -36,3 +37,10 @@ Index of project docs for this community fork.
 
 This fork is still based on an old Servo revision (`5e2d42e`).  
 Pre-built Windows binaries are not available yet.
+
+Windows staging helper:
+
+```powershell
+cargo build --release
+powershell -ExecutionPolicy Bypass -File etc/package_windows_portable.ps1
+```
