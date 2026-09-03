@@ -1,7 +1,7 @@
 # Servo Bump Plan — First Attempt
 
 **Active work branch:** `upgrade/servo-prep`  
-**Date:** Day 2 (2026-09-03)
+**Updated:** Day 3 (2026-09-03)
 
 ## Current Pin
 
@@ -11,7 +11,7 @@ All Servo crates in root `Cargo.toml` are locked to:
 rev = "5e2d42e"
 ```
 
-Modern Servo is far ahead (0.5.x / 0.6.x territory).
+Modern Servo is far ahead (0.5.x territory as of September 2026).
 
 ## Integration Surface (High-Risk Files)
 
@@ -24,21 +24,29 @@ Modern Servo is far ahead (0.5.x / 0.6.x territory).
 | `src/rendering.rs` | GL / rendering context | High |
 | `src/config.rs` | Prefs / opts from servo_config | Medium |
 
-## Strategy
+## Strategy (concrete)
 
-1. Work on `upgrade/servo-prep` first
-2. Choose an **intermediate** Servo revision (not latest `main`)
-3. Change all Servo `rev` lines together
-4. Fix compile errors in layers
-5. Keep Windows as primary target
+1. Work on `upgrade/servo-prep` first — keep `main` clean
+2. Choose an **intermediate** Servo revision (newer than `5e2d42e`, not the absolute tip)
+3. Change **all** Servo `rev` lines together in one commit
+4. Expect large compile breakage; fix in layers (compile → window opens → navigation)
+5. Primary validation target: Windows
 6. Only merge to `main` when something actually builds
+
+### Expected error categories
+
+- `embedder_traits` / constellation message changes
+- Compositor / Webrender API drift
+- Pref / config key changes
+- Script / WebView embedding surface changes
+- Feature-flag mismatches
 
 ## Status
 
 - [x] Map integration surface
 - [x] Create upgrade branch
-- [ ] Choose concrete intermediate target
-- [ ] Perform first `rev` bump on upgrade branch
+- [x] Document intermediate strategy + expected error categories
+- [ ] On a real build machine: first `rev` bump + `cargo check`
 - [ ] Record compile error categories
 
 ## Related docs
