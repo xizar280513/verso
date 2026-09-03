@@ -107,32 +107,32 @@ rfd = "0.15"
 reqwest = { version = "0.12", features = ["json", "blocking"] }
 tokio = { version = "1", features = ["full"] }
 # Servo repo crates
-background_hang_monitor = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-base = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+background_hang_monitor = { package = "servo-background-hang-monitor",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+base = { package = "servo-base",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
 bluetooth = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873", optional = true }
 bluetooth_traits = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873", optional = true }
-canvas = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-compositing_traits = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-constellation = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-constellation_traits = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-devtools = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-embedder_traits = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-fonts = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-layout_thread_2020 = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-media = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-net = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-net_traits = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-profile = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-profile_traits = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-script = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-script_traits = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-servo_allocator = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-servo_config = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-servo_geometry = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-servo_url = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-webdriver_server = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-webgpu = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-webgpu_traits = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+canvas = { package = "servo-canvas",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+compositing_traits = { package = "servo-compositing-traits",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+constellation = { package = "servo-constellation",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+constellation_traits = { package = "servo-constellation-traits",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+devtools = { package = "servo-devtools",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+embedder_traits = { package = "servo-embedder-traits",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+fonts = { package = "servo-fonts",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+layout_thread_2020 = { package = "servo-layout-thread-2020",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+media = { package = "servo-media-thread",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+net = { package = "servo-net",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+net_traits = { package = "servo-net-traits",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+profile = { package = "servo-profile",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+profile_traits = { package = "servo-profile-traits",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+script = { package = "servo-script",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+script_traits = { package = "servo-script-traits",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+servo_allocator = { package = "servo-allocator",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+servo_config = { package = "servo-config",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+servo_geometry = { package = "servo-geometry",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+servo_url = { package = "servo-url",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+webdriver_server = { package = "servo-webdriver-server",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+webgpu = { package = "servo-webgpu",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+webgpu_traits = { package = "servo-webgpu-traits",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
 # Servo org crates
 servo-media = { git = "https://github.com/servo/media" }
 servo-media-dummy = { git = "https://github.com/servo/media" }
