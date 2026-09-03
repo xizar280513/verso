@@ -10,6 +10,7 @@ Until then, here is the current way to build from source.
 - This fork is still based on a very old Servo revision (`5e2d42e`).
 - Modern Servo (0.5+) has advanced significantly. A full upgrade is a major multi-week task.
 - Building currently requires a full development environment. Pre-built `.exe` is **not yet available**.
+- Packaging notes: see [PACKAGING.md](PACKAGING.md) (Windows path still incomplete; existing `package_libs.py` is macOS-oriented).
 
 ## Prerequisites
 
@@ -51,12 +52,20 @@ cargo build --release
 
 The binary will appear under `target/release/`.
 
+### Optional packager feature
+
+```powershell
+cargo build --release --features packager
+```
+
+This enables packager-related code paths, but **does not yet produce a polished Windows installer by itself**. See [PACKAGING.md](PACKAGING.md).
+
 ## Known Limitations
 
 - Build times are long.
 - The browser is still experimental.
 - Many modern websites will not render correctly because the Servo revision is outdated.
-- Packaging into a clean installer / single `.exe` distribution is planned (see `ROADMAP.md`) but not ready yet.
+- Windows packaging / Releases distribution is planned (Day 3+ focus) but not ready yet.
 
 ## Goal of this Fork
 
