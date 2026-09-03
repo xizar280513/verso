@@ -4,6 +4,8 @@
 
 We respect the original Verso project and its authors. This is not the official project.
 
+**Time box:** 1 month total. Day 3 focus selected by maintainer direction: **Windows/packaging path (option B)**.
+
 ---
 
 ## Honest Scope
@@ -33,19 +35,24 @@ Binary `.exe` will only be published when it actually runs. No fake releases.
 - [x] Add CONTRIBUTING.md
 - [x] Add CHANGELOG.md
 
-## Week 2 — Servo Upgrade Attempt (Day 2 in progress)
+## Week 2 — Servo Upgrade Attempt + packaging prep (Day 2)
 
 - [x] Create dedicated branch `upgrade/servo-prep`
 - [x] Write concrete first bump plan (`docs/SERVO_BUMP_PLAN.md`)
-- [x] Map high-risk integration surface (`verso.rs`, `compositor.rs`, `window.rs`, etc.)
-- [x] Point crate docs (`src/lib.rs`) to this fork
-- [x] Add `docs/KNOWN_GAPS.md`
-- [x] Add `docs/ARCHITECTURE.md`
-- [x] Update desktop entry branding to Verso Updated
-- [ ] Choose a realistic newer Servo target (not jumping straight to latest)
+- [x] Map high-risk integration surface
+- [x] Add architecture / known gaps docs
+- [x] Add `docs/PACKAGING.md` (prep for Day 3)
+- [x] Confirm `etc/package_libs.py` is macOS-oriented (Windows path still missing)
+- [ ] Choose a realistic newer Servo target
 - [ ] Bump dependencies in Cargo.toml carefully
 - [ ] Fix compilation errors systematically
-- [ ] Keep Windows as the primary test platform
+
+## Day 3 focus (selected): Windows / packaging path
+
+- [ ] Expand Windows packaging steps in practical detail
+- [ ] Define Windows DLL / artifact checklist
+- [ ] Align `cargo-packager` + NSIS metadata with reality
+- [ ] Do **not** publish a fake Release
 
 ## Week 3 — Core Stability
 
@@ -53,9 +60,8 @@ Binary `.exe` will only be published when it actually runs. No fake releases.
 - [ ] Reduce obvious crashes
 - [ ] Better error messages / logging
 
-## Week 4 — Packaging Path
+## Week 4 — Packaging Path (target for real artifact attempt)
 
-- [ ] Evaluate cargo-packager and Windows packaging options
 - [ ] Attempt to produce a usable Windows artifact
 - [ ] If successful → publish to GitHub Releases
 - [ ] Update README with simple download instructions
@@ -71,4 +77,4 @@ Binary `.exe` will only be published when it actually runs. No fake releases.
 
 ---
 
-**Maintainer note:** Day 2 continues with architecture documentation and branding cleanup. Actual Servo revision bump still reserved until a concrete intermediate target is chosen.
+**Maintainer note:** Day 2 packaging discovery done. Day 3 will prioritize Windows/packaging practical path while Servo bump remains on the side branch.
