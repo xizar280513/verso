@@ -20,8 +20,10 @@
 | Clearer Windows build guide | Done |
 | Upgrade strategy documented | Done |
 | Integration surface mapped | Done |
+| Architecture documented | Done |
 | Upgrade branch created | Done (`upgrade/servo-prep`) |
 | Known gaps documented | Done |
+| Docs index | Done (`docs/README.md`) |
 | Servo dependency | Still pinned to very old revision `5e2d42e` |
 | Pre-built Windows `.exe` | Not yet available |
 
@@ -29,8 +31,10 @@
 
 ### Key Documents
 - [ROADMAP.md](ROADMAP.md) — 1-month plan
+- [docs/README.md](docs/README.md) — full docs index
 - [docs/WINDOWS.md](docs/WINDOWS.md) — Windows build instructions
 - [docs/UPGRADE_STRATEGY.md](docs/UPGRADE_STRATEGY.md) — How we plan to modernize Servo
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — Component map
 - [docs/KNOWN_GAPS.md](docs/KNOWN_GAPS.md) — Honest list of current gaps
 - [CHANGELOG.md](CHANGELOG.md)
 - [CONTRIBUTING.md](CONTRIBUTING.md)
