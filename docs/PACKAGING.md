@@ -20,11 +20,22 @@ Make it possible for users to download a Windows binary from GitHub Releases **w
 - Resources/icons references
 - Desktop entry: `org.versotile.verso.desktop`
 
+## Important finding (`etc/package_libs.py`)
+
+The current `package_libs.py` is **macOS-oriented**:
+
+- uses `otool` / `install_name_tool`
+- copies GStreamer dylibs from `/Library/Frameworks/GStreamer.framework/...`
+- only runs packaging logic when `sys.platform == "darwin"`
+
+**Windows packaging is not implemented there yet.**  
+Day 3+ work must add a Windows-specific path (DLL collection, NSIS/cargo-packager, etc.), not assume the existing script is enough.
+
 ## Day 3+ planned work (Windows-first)
 
 1. Document exact Windows packaging command path
-2. Verify/repair `etc/package_libs.py` assumptions
-3. Identify required DLLs (EGL/GLES, etc.)
+2. Design Windows equivalent of dependency collection (DLLs)
+3. Use/repair `cargo-packager` + NSIS metadata already in `Cargo.toml`
 4. Try producing an artifact on a real Windows environment
 5. Only if it runs: attach to GitHub Releases
 
