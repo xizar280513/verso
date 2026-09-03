@@ -10,52 +10,49 @@
 
 ---
 
-## Current Status (September 2026 — Day 2)
+## Current Status (September 2026 — Day 3)
 
 | Item | Status |
 |------|--------|
-| Fork from archived upstream | Done |
-| Marked as community continuation | Done |
-| ROADMAP for 1-month effort | Done |
-| Clearer Windows build guide | Done |
-| Upgrade strategy documented | Done |
-| Integration surface mapped | Done |
-| Architecture documented | Done |
-| Upgrade branch created | Done (`upgrade/servo-prep`) |
-| Known gaps documented | Done |
-| Docs index | Done (`docs/README.md`) |
-| Servo dependency | Still pinned to very old revision `5e2d42e` |
-| Pre-built Windows `.exe` | Not yet available |
+| Fork + community identity | Done |
+| Core docs / ROADMAP | Done |
+| Servo upgrade prep branch | Done (`upgrade/servo-prep`) |
+| Windows packaging checklist | Done (`docs/WINDOWS_PACKAGING.md`) |
+| Windows portable staging script | Done (`etc/package_windows_portable.ps1`) |
+| Servo dependency | Still pinned to `5e2d42e` |
+| GitHub Release `.exe` | **Not yet** (only after local launch works) |
 
-**Important:** Modern Servo is at 0.5+ (as of late 2026). This fork is still far behind. Upgrading the engine is the biggest and hardest task. Work is being done carefully on a separate branch.
+**Day 3 focus:** Windows / packaging path.
 
 ### Key Documents
-- [ROADMAP.md](ROADMAP.md) — 1-month plan
-- [docs/README.md](docs/README.md) — full docs index
-- [docs/WINDOWS.md](docs/WINDOWS.md) — Windows build instructions
-- [docs/UPGRADE_STRATEGY.md](docs/UPGRADE_STRATEGY.md) — How we plan to modernize Servo
-- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — Component map
-- [docs/KNOWN_GAPS.md](docs/KNOWN_GAPS.md) — Honest list of current gaps
+- [ROADMAP.md](ROADMAP.md)
+- [docs/README.md](docs/README.md)
+- [docs/WINDOWS.md](docs/WINDOWS.md)
+- [docs/WINDOWS_PACKAGING.md](docs/WINDOWS_PACKAGING.md)
+- [docs/PACKAGING.md](docs/PACKAGING.md)
+- [docs/UPGRADE_STRATEGY.md](docs/UPGRADE_STRATEGY.md)
 - [CHANGELOG.md](CHANGELOG.md)
-- [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ---
 
 ## Building on Windows
 
-See **[docs/WINDOWS.md](docs/WINDOWS.md)** for details.
-
-Short version:
+See **[docs/WINDOWS.md](docs/WINDOWS.md)**.
 
 ```powershell
 scoop install git python llvm cmake curl
 pip install mako
-# + Rust via rustup + Visual Studio C++ Build Tools
+# + Rust (rustup) + Visual Studio C++ Build Tools
 
 git clone https://github.com/xizar280513/verso.git
 cd verso
-cargo run
+cargo build --release
+
+# optional portable staging folder
+powershell -ExecutionPolicy Bypass -File etc/package_windows_portable.ps1
 ```
+
+Staged output (if build exists): `dist/windows-portable/`
 
 A proper pre-built `.exe` in GitHub Releases is a stated goal, but it does **not** exist yet.
 
@@ -69,8 +66,7 @@ Apache-2.0 OR MIT (same as upstream)
 
 ## Respect for Upstream
 
-All original copyright notices and authors are preserved.  
-This fork exists because the original project was archived due to limited resources. We are attempting to continue the work.
+All original copyright notices and authors are preserved.
 
 **Repository:** https://github.com/xizar280513/verso  
 **Upstream (archived):** https://github.com/versotile-org/verso
