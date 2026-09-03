@@ -1,0 +1,27 @@
+# Inventory compositing_traits
+./Cargo.toml:117:compositing_traits = { package = "compositing_traits", git = "https://github.com/servo/servo.git", rev = "6a0f9e4a7851175c442a1f1b7a988e075c67c537" }
+./src/compositor.rs:10:use compositing_traits::display_list::{CompositorDisplayListInfo, HitTestInfo, ScrollTree};
+./src/compositor.rs:11:use compositing_traits::{
+./src/verso.rs:12:use compositing_traits::{
+src/compositor.rs:10:use compositing_traits::display_list::{CompositorDisplayListInfo, HitTestInfo, ScrollTree};
+src/compositor.rs:11:use compositing_traits::{
+src/verso.rs:12:use compositing_traits::{
+
+# Context compositor.rs
+7-use base::cross_process_instant::CrossProcessInstant;
+8-use base::id::{PipelineId, WebViewId};
+9-use base::{Epoch, WebRenderEpochToU16};
+10:use compositing_traits::display_list::{CompositorDisplayListInfo, HitTestInfo, ScrollTree};
+11:use compositing_traits::{
+12-    CompositionPipeline, CompositorMsg, CompositorProxy, ImageUpdate, SendableFrameTree,
+13-};
+14-use constellation_traits::{
+
+# Context verso.rs
+9-use bluetooth::BluetoothThreadFactory;
+10-use bluetooth_traits::BluetoothRequest;
+11-use canvas::canvas_paint_thread::CanvasPaintThread;
+12:use compositing_traits::{
+13-    CompositorMsg, CompositorProxy, CrossProcessCompositorApi, WebrenderExternalImageHandlers,
+14-    WebrenderImageHandlerType,
+15-};

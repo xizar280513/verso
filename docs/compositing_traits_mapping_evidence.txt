@@ -1,0 +1,45 @@
+# Mapping evidence Servo v0.2.0
+## Package manifests
+/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/6a0f9e4/components/paint/Cargo.toml:2:name = "servo-paint"
+/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/6a0f9e4/components/paint/Cargo.toml:13:name = "paint"
+/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/6a0f9e4/components/shared/paint/Cargo.toml:2:name = "servo-paint-api"
+/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/6a0f9e4/components/shared/paint/Cargo.toml:13:name = "paint_api"
+## paint_api exports
+25:pub mod display_list;
+26:pub mod largest_contentful_paint_candidate;
+27:pub mod rendering_context;
+28:pub mod viewport_description;
+41:pub use webrender_api::ExternalImageSource;
+55:pub struct PaintProxy {
+89:pub enum PaintMessage {
+202:pub struct SendableFrameTree {
+209:pub struct CompositionPipeline {
+216:pub struct SerializableDisplayListPayload {
+232:pub struct CrossProcessPaintApi(GenericCallback<PaintMessage>);
+548:pub struct PainterSurfmanDetails {
+554:pub struct PainterSurfmanDetailsMap(Arc<Mutex<HashMap<PainterId, PainterSurfmanDetails>>>);
+581:pub trait WebRenderExternalImageApi {
+588:pub enum WebRenderImageHandlerType {
+606:pub struct WebRenderExternalImageIdManager(Arc<RwLock<WebRenderExternalImageIdManagerInner>>);
+627:pub struct WebRenderExternalImageHandlers {
+734:pub enum ImageUpdate {
+783:pub enum SerializableImageData {
+804:pub trait WebViewTrait {
+813:pub struct PipelineExitSource(u8);
+826:pub struct PinchZoomInfos {
+## Symbol evidence
+### CompositionPipeline
+/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/6a0f9e4/components/shared/paint/lib.rs:209:pub struct CompositionPipeline {
+### CompositorMsg
+### CompositorProxy
+### CrossProcessCompositorApi
+### WebrenderExternalImageHandlers
+### WebrenderImageHandlerType
+### ImageUpdate
+/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/6a0f9e4/components/shared/paint/lib.rs:734:pub enum ImageUpdate {
+### SendableFrameTree
+/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/6a0f9e4/components/shared/paint/lib.rs:202:pub struct SendableFrameTree {
+### CompositorDisplayListInfo
+### HitTestInfo
+### ScrollTree
+/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/6a0f9e4/components/shared/paint/display_list.rs:425:pub struct ScrollTree {

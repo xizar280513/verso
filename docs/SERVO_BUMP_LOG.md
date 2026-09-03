@@ -79,6 +79,52 @@ Untuk validasi produk, gunakan GitHub Actions `windows-latest` dengan toolchain 
 
 Belum ada klaim bahwa binary `.exe` siap pakai, belum ada klaim dukungan Windows selesai, belum ada klaim dukungan macOS penuh, dan belum ada GitHub Release.
 
+## Option A — Inventarisasi dan mapping compositing_traits
+
+### Inventarisasi Verso
+
+| File | Pemakaian |
+|---|---|
+| `Cargo.toml:117` | Dependency alias `compositing_traits` ke repository Servo pada revision v0.2.0 |
+| `src/compositor.rs:10` | `display_list::{CompositorDisplayListInfo, HitTestInfo, ScrollTree}` |
+| `src/compositor.rs:11-13` | `CompositionPipeline`, `CompositorMsg`, `CompositorProxy`, `ImageUpdate`, `SendableFrameTree` |
+| `src/verso.rs:12-15` | `CompositorMsg`, `CompositorProxy`, `CrossProcessCompositorApi`, `WebrenderExternalImageHandlers`, `WebrenderImageHandlerType` |
+
+Tidak ditemukan pemakaian lain di `src` atau `tests` setelah pencarian repository.
+
+### Bukti tree Servo v0.2.0
+
+Workspace Servo v0.2.0 memiliki dua package terkait paint yang relevan:
+
+| Package name | Path | Export yang terverifikasi |
+|---|---|---|
+| `servo-paint` | `components/paint` | Crate implementasi paint; bukan pengganti langsung untuk import `compositing_traits` Verso |
+| `servo-paint-api` | `components/shared/paint` | Crate name Rust `paint_api`; mengekspor `CompositionPipeline`, `SendableFrameTree`, `ImageUpdate`, `WebRenderImageHandlerType`, `WebRenderExternalImageHandlers`, serta `display_list::ScrollTree` |
+
+Mapping langsung yang terbukti hanya sebagian:
+
+| Simbol lama | Kandidat v0.2.0 | Status |
+|---|---|---|
+| `CompositionPipeline` | `paint_api::CompositionPipeline` | Padanan langsung terverifikasi |
+| `SendableFrameTree` | `paint_api::SendableFrameTree` | Padanan langsung terverifikasi |
+| `ImageUpdate` | `paint_api::ImageUpdate` | Padanan langsung terverifikasi |
+| `ScrollTree` | `paint_api::display_list::ScrollTree` | Padanan langsung terverifikasi |
+| `WebrenderExternalImageHandlers` | `paint_api::WebRenderExternalImageHandlers` | Nama/capitalization berubah; padanan tipe terverifikasi, tetapi pemakaian harus disesuaikan |
+| `WebrenderImageHandlerType` | `paint_api::WebRenderImageHandlerType` | Nama/capitalization berubah; padanan tipe terverifikasi, tetapi pemakaian harus disesuaikan |
+| `CompositorMsg` | Tidak ditemukan di tree v0.2.0 | **UNSUPPORTED / NEEDS_DESIGN** |
+| `CompositorProxy` | Tidak ditemukan di tree v0.2.0 | **UNSUPPORTED / NEEDS_DESIGN** |
+| `CrossProcessCompositorApi` | Tidak ditemukan; v0.2.0 menyediakan `CrossProcessPaintApi` | **Tidak padanan langsung; NEEDS_DESIGN** |
+| `CompositorDisplayListInfo` | Tidak ditemukan | **UNSUPPORTED / NEEDS_DESIGN** |
+| `HitTestInfo` | Tidak ditemukan sebagai API publik setara | **UNSUPPORTED / NEEDS_DESIGN** |
+
+### Keputusan perubahan kode
+
+Tidak ada perubahan source atau alias dependency yang diterapkan pada tahap Option A. Mengganti dependency menjadi `paint_api` dan mengubah import sebagian akan membuat `src/compositor.rs` dan `src/verso.rs` berada dalam keadaan campuran: beberapa tipe tersedia, tetapi pesan/proxy compositor utama serta struktur display-list/hit-test tidak memiliki padanan langsung. Itu akan menjadi rewrite desain compositor, bukan rename API kecil, dan bertentangan dengan batasan tugas.
+
+Karena mapping tidak lengkap, tidak ada perubahan kode atau alias dependency yang diterapkan. Verifikasi ulang tetap dilakukan: `cargo check` host dan `cargo check --target x86_64-pc-windows-gnu` keduanya exit `101` dengan `compositing_traits` yang tidak ditemukan. Dependency resolution **belum lolos** dan kedua check berhenti sebelum kompilasi source.
+
+File bukti inventaris tambahan: `docs/compositing_traits_inventory.txt` dan `docs/compositing_traits_mapping_evidence.txt`.
+
 ## Referensi
 
 [1]: https://github.com/xizar280513/verso "Verso Updated fork"
