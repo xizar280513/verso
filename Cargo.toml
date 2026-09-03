@@ -109,8 +109,8 @@ tokio = { version = "1", features = ["full"] }
 # Servo repo crates
 background_hang_monitor = { package = "servo-background-hang-monitor",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
 base = { package = "servo-base",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-bluetooth = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873", optional = true }
-bluetooth_traits = { git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873", optional = true }
+bluetooth = { package = "servo-bluetooth",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873", optional = true }
+bluetooth_traits = { package = "servo-bluetooth-traits",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873", optional = true }
 canvas = { package = "servo-canvas",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
 compositing_traits = { package = "servo-compositing-traits",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
 constellation = { package = "servo-constellation",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
