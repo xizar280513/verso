@@ -112,7 +112,7 @@ base = { package = "servo-base",  git = "https://github.com/servo/servo.git", re
 bluetooth = { package = "servo-bluetooth",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873", optional = true }
 bluetooth_traits = { package = "servo-bluetooth-traits",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873", optional = true }
 canvas = { package = "servo-canvas",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
-compositing_traits = { package = "servo-compositing-traits",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
+compositing_traits = { package = "compositing_traits",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
 constellation = { package = "servo-constellation",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
 constellation_traits = { package = "servo-constellation-traits",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
 devtools = { package = "servo-devtools",  git = "https://github.com/servo/servo.git", rev = "e8dbc1dfbf6f58621346a5f61ab7a17d01387873" }
