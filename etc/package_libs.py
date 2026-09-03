@@ -97,7 +97,20 @@ if __name__ == '__main__':
         subprocess.check_call(['cargo', 'build', '--release', '--features', 'packager'])
     except subprocess.CalledProcessError as e:
         print("cargo build exited with return value %d" % e.returncode)
-    
+        sys.exit(e.returncode)
+
     if sys.platform == "darwin":
         binary = "./target/release/verso"
-        package_gstreamer_dylibs(binary)
+        ok = package_gstreamer_dylibs(binary)
+        sys.exit(0 if ok else 1)
+
+    if sys.platform.startswith("win"):
+        print("NOTE: etc/package_libs.py is macOS-oriented.")
+        print("For Windows portable staging, use:")
+        print("  powershell -ExecutionPolicy Bypass -File etc/package_windows_portable.ps1")
+        print("See docs/WINDOWS_PACKAGING.md")
+        sys.exit(0)
+
+    print(f"NOTE: no packaging implementation for platform: {sys.platform}")
+    print("See docs/PACKAGING.md and docs/WINDOWS_PACKAGING.md")
+    sys.exit(0)
