@@ -10,7 +10,7 @@
 
 ---
 
-## Current Status (September 2026 — Day 1)
+## Current Status (September 2026 — Day 2)
 
 | Item | Status |
 |------|--------|
@@ -19,16 +19,19 @@
 | ROADMAP for 1-month effort | Done |
 | Clearer Windows build guide | Done |
 | Upgrade strategy documented | Done |
-| CONTRIBUTING + CHANGELOG | Done |
+| Integration surface mapped | Done |
+| Upgrade branch created | Done (`upgrade/servo-prep`) |
+| Known gaps documented | Done |
 | Servo dependency | Still pinned to very old revision `5e2d42e` |
 | Pre-built Windows `.exe` | Not yet available |
 
-**Important:** Modern Servo is at 0.5+ (as of late 2026). This fork is still far behind. Upgrading the engine is the biggest and hardest task.
+**Important:** Modern Servo is at 0.5+ (as of late 2026). This fork is still far behind. Upgrading the engine is the biggest and hardest task. Work is being done carefully on a separate branch.
 
 ### Key Documents
 - [ROADMAP.md](ROADMAP.md) — 1-month plan
 - [docs/WINDOWS.md](docs/WINDOWS.md) — Windows build instructions
 - [docs/UPGRADE_STRATEGY.md](docs/UPGRADE_STRATEGY.md) — How we plan to modernize Servo
+- [docs/KNOWN_GAPS.md](docs/KNOWN_GAPS.md) — Honest list of current gaps
 - [CHANGELOG.md](CHANGELOG.md)
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 
