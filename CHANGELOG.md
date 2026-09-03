@@ -2,6 +2,20 @@
 
 All notable changes to **Verso Updated** (community fork) will be documented here.
 
+## [Unreleased] - Day 2 (2026-09-03)
+
+### Added
+- Branch `upgrade/servo-prep` for controlled Servo upgrade work
+- `docs/SERVO_BUMP_PLAN.md` (on upgrade branch) — concrete first bump plan
+
+### Changed
+- ROADMAP updated to mark Week 2 as started
+
+### Notes
+- Still on Servo revision `5e2d42e`
+- No binary release yet
+- Focus: prepare for incremental Servo upgrade without breaking `main`
+
 ## [0.0.4] - 2026-09-02
 
 ### Added
