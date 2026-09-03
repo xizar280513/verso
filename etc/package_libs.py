@@ -54,18 +54,15 @@ def resolve_rpath(lib, rpath_root):
 def copy_dependencies(binary_path, lib_path, gst_lib_dir):
     relative_path = path.relpath(lib_path, path.dirname(binary_path)) + "/"
 
-    # Update binary libraries
     binary_dependencies = set(otool(binary_path))
     change_non_system_libraries_path(binary_dependencies, relative_path, binary_path)
 
-    # Update dependencies libraries
     need_checked = binary_dependencies
     checked = set()
     while need_checked:
         checking = set(need_checked)
         need_checked = set()
         for f in checking:
-            # No need to check these for their dylibs
             if is_system_library(f):
                 continue
             full_path = resolve_rpath(f, gst_lib_dir)
@@ -92,6 +89,18 @@ def package_gstreamer_dylibs(bin):
         return False
     return True
 
+
+def find_macos_binary():
+    # Flatpak/CI historically produce both; prefer verso (desktop Exec) then versoview.
+    candidates = [
+        "./target/release/verso",
+        "./target/release/versoview",
+    ]
+    for candidate in candidates:
+        if path.exists(candidate):
+            return candidate
+    return None
+
 if __name__ == '__main__':
     try:
         subprocess.check_call(['cargo', 'build', '--release', '--features', 'packager'])
@@ -100,17 +109,22 @@ if __name__ == '__main__':
         sys.exit(e.returncode)
 
     if sys.platform == "darwin":
-        binary = "./target/release/verso"
+        binary = find_macos_binary()
+        if not binary:
+            print("ERROR: no macOS release binary found (tried verso and versoview)")
+            sys.exit(1)
+        print(f"Packaging dylibs for {binary}")
         ok = package_gstreamer_dylibs(binary)
         sys.exit(0 if ok else 1)
 
     if sys.platform.startswith("win"):
-        print("NOTE: etc/package_libs.py is macOS-oriented.")
+        print("NOTE: etc/package_libs.py is macOS-oriented for dylib bundling.")
         print("For Windows portable staging, use:")
         print("  powershell -ExecutionPolicy Bypass -File etc/package_windows_portable.ps1")
         print("See docs/WINDOWS_PACKAGING.md")
         sys.exit(0)
 
-    print(f"NOTE: no packaging implementation for platform: {sys.platform}")
-    print("See docs/PACKAGING.md and docs/WINDOWS_PACKAGING.md")
+    print(f"NOTE: no dylib packaging implementation for platform: {sys.platform}")
+    print("Linux users: prefer Flatpak manifest org.versotile.verso.yml or nix-shell via shell.nix")
+    print("See docs/BUILD_PLATFORMS.md")
     sys.exit(0)
