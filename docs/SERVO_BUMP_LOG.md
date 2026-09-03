@@ -2,71 +2,76 @@
 
 ## Scope
 
-Percobaan ini dibatasi pada **Linux Ubuntu 24.04** dan berhenti pada tahap `cargo check`. Tidak ada klaim dukungan Windows/macOS, tidak ada release, binary, atau merge ke `main`.
+Percobaan dibatasi pada **Linux** dan tahap `cargo check` / analisis dependency. Tidak ada klaim Windows/macOS, tidak ada release/binary palsu, tidak merge ke `main`.
 
-## Target revision
+---
+
+## Percobaan 1 — Servo v0.4.0 (Manus)
 
 | Item | Nilai |
 |---|---|
-| Branch kerja | `upgrade/servo-prep` |
+| Branch | `upgrade/servo-prep` |
 | Revision awal | `5e2d42e` |
-| Target intermediate | `e8dbc1dfbf6f58621346a5f61ab7a17d01387873` |
-| Referensi target | Servo tag `v0.4.0` |
-| Tip terbaru Servo | Tidak digunakan |
-| Stylo/WebRender | Dibiarkan pada pin existing (`2025-03-15` dan `0.66`) |
+| Target | `e8dbc1dfbf6f58621346a5f61ab7a17d01387873` (tag v0.4.0) |
+| Hasil | **Gagal** di resolusi dependency |
 
-Revision target dipilih sebagai milestone release-ish yang lebih baru dari pin awal, tetapi bukan tip terbaru. Seluruh **26 dependency Servo di root `Cargo.toml`** diubah ke revision yang sama.
-
-## Environment Linux
-
-Environment yang disiapkan adalah Ubuntu 24.04 dengan Rust `1.85.0` sesuai `rust-toolchain.toml`, komponen `llvm-tools`, `rustc-dev`, `rust-docs`, dan `rustfmt`, serta `build-essential`, CMake, Clang/LLVM, `pkg-config`, Python development tools, Mako `1.4.1`, OpenSSL/DBus/Udev/X11/XCB/GL/EGL/font dependencies, ALSA, dan paket development GStreamer yang tersedia pada Ubuntu 24.04.
-
-## Hasil `cargo check`
-
-**Belum lolos.** `cargo check` belum mencapai kompilasi source Rust karena Cargo berhenti pada resolusi nama package di manifest Git Servo. Percobaan final berhenti dengan:
-
+### Error final
 ```text
 error: no matching package named `compositing_traits` found
-location searched: Git repository https://github.com/servo/servo.git?rev=e8dbc1dfbf6f58621346a5f61ab7a17d01387873
-required by package `versoview v0.0.4 (/home/ubuntu/verso)`
-CARGO_CHECK_EXIT=101
+location searched: Git repository https://github.com/servo/servo.git?rev=e8dbc1d…
 ```
 
-Karena dependency resolution belum selesai, **belum ada error compile Rust dari file source Verso** yang dapat diklasifikasikan. `cargo build --release` tidak dijalankan sesuai batasan tugas.
+### Yang berhasil diperbaiki di v0.4.0
+- Alias package rename (`servo-background-hang-monitor`, `servo-bluetooth`, …)
+- Pin 26 crate Servo ke revision yang sama
 
-## Error yang ditemukan dan klasifikasinya
+### Yang belum
+- Resolusi `compositing_traits`
+- Error compile source Verso (belum tercapai)
 
-| Tahap | File/crate | Error | Kategori | Status |
-|---|---|---|---|---|
-| Resolusi dependency | Root `Cargo.toml`, `background_hang_monitor` | Package tidak ditemukan pada nama lama | package/manifest Servo | Diperbaiki dengan alias `package = "servo-background-hang-monitor"` |
-| Resolusi dependency | Root `Cargo.toml`, `bluetooth` | Package `bluetooth` tidak ditemukan | package/manifest Servo | Diperbaiki dengan alias `package = "servo-bluetooth"` |
-| Resolusi dependency | Root `Cargo.toml`, `bluetooth_traits` | Package trait dengan nama lama tidak ditemukan | package/manifest Servo | Diperbaiki dengan alias `package = "servo-bluetooth-traits"` |
-| Resolusi dependency | Root `Cargo.toml`, `compositing_traits` | Percobaan alias `servo-compositing-traits` tidak ditemukan | compositor/webrender/package drift | Dikoreksi ke nama `compositing_traits`, tetapi package tersebut juga tidak tersedia pada target |
-| Resolusi dependency final | Root `Cargo.toml`, `compositing_traits` | `no matching package named compositing_traits found` | compositor/constellation surface drift | Masih tersisa; memblokir kompilasi |
+Commit terkait: `01fd1f1`, `8be3a81`, `9bce639`, `ff9001f`, …
 
-Error jaringan HTTP/2 sempat muncul sebagai `spurious network error` saat fetch Git, tetapi fetch revision berhasil dilanjutkan menggunakan Git CLI backend. Error tersebut bukan blocker final.
+---
 
-## Patch yang diterapkan
+## Percobaan 2 — Option B: Servo v0.2.0 (lebih dekat)
 
-Patch yang aman dan terbatas pada manifest telah diterapkan. Semua pin Servo root kini menggunakan revision target yang sama. Alias `package` ditambahkan untuk nama package yang berubah pada workspace Servo v0.4.0, termasuk background hang monitor, base, canvas, constellation, devtools, embedder traits, fonts, media, net, profile, script, allocator, config, geometry, URL, WebDriver, WebGPU, dan Bluetooth. Tidak ada refactor source atau perubahan besar pada integrasi embedder.
-
-Commit yang dibuat:
-
-| Commit | Pesan |
+| Item | Nilai |
 |---|---|
-| `01fd1f1` | `chore: bump Servo crates to v0.4.0 intermediate revision` |
-| `8be3a81` | `fix: alias renamed Servo v0.4 packages` |
-| `9bce639` | `fix: alias Servo Bluetooth packages` |
-| `ff9001f` | `fix: use Servo v0.4 compositing package name` |
+| Keputusan | Mundur dari v0.4.0 ke intermediate lebih dekat |
+| Target baru | **v0.2.0 / `6a0f9e4a7851175c442a1f1b7a988e075c67c537`** |
+| Alasan | v0.4.0 terlalu jauh (package + surface compositor/paint); v0.2.0 masih lebih baru dari `5e2d42e` tetapi mengurangi jarak |
+| Alias package | Dipertahankan (era post package-rename ~ Maret 2026) |
+| Stylo / WebRender | Masih pin existing (`2025-03-15` / `0.66`) |
 
-Dokumen `docs/ARCHITECTURE.md` dan `docs/KNOWN_GAPS.md` yang diminta tidak terdapat di checkout branch ini. Ketiadaan keduanya dicatat sebagai kondisi baseline; file tersebut tidak dibuat secara spekulatif.
+### Status saat commit Option B
+- Root `Cargo.toml` sudah di-retarget ke `6a0f9e4…`
+- **Belum** dijalankan `cargo check` ulang di mesin ini
+- Langkah wajib berikutnya: `cargo check` di Linux (Manus / lokal / CI) dan catat apakah `compositing_traits` resolve di v0.2.0
 
-## Saran langkah berikutnya
+### Jika `compositing_traits` masih gagal di v0.2.0
+Investigasi tree Servo v0.2.0:
+- Apakah crate ada di `components/shared/compositing`?
+- Apakah package name menjadi `servo-compositing-traits` / terkait `paint`?
+- Sesuaikan satu baris dependency + import di `src/compositor.rs` / `verso.rs` / `window.rs`
 
-Langkah berikutnya sebaiknya dilakukan pada mesin build yang memiliki waktu dan bandwidth lebih longgar. Pertama, cocokkan dependency `compositing_traits` Verso dengan crate compositor yang menggantikannya pada Servo v0.4.0, termasuk seluruh perubahan import dan tipe di `src/compositor.rs`, `src/verso.rs`, dan `src/window.rs`. Setelah dependency resolution berhasil, ulangi `cargo check` dan klasifikasikan error source berdasarkan `embedder_traits`, constellation, compositor/webrender, config/prefs, script/webview, dan kategori lain. Jangan melanjutkan ke `cargo build --release` atau menyatakan upgrade selesai sebelum `cargo check` benar-benar hijau.
+### Jika dependency resolution lolos
+Baru klasifikasi error source:
+- embedder_traits
+- constellation
+- compositor / paint / webrender
+- config / prefs
+- script / webview
+
+---
+
+## Kebijakan tetap
+
+- Tidak menyatakan upgrade selesai sebelum `cargo check` hijau
+- Tidak merge ke `main` sebelum minimal satu platform compile
+- Tidak mempublikasikan binary sebelum launch diverifikasi
 
 ## Referensi
 
-[1]: https://github.com/xizar280513/verso "Verso Updated fork"
-
-[2]: https://github.com/servo/servo/tree/v0.4.0 "Servo v0.4.0"
+- Fork: https://github.com/xizar280513/verso
+- Servo v0.2.0: https://github.com/servo/servo/releases/tag/v0.2.0
+- Servo v0.4.0: https://github.com/servo/servo/tree/v0.4.0
