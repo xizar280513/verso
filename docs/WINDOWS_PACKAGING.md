@@ -1,4 +1,4 @@
-# Windows Packaging Checklist — Verso Updated (Day 3)
+# Windows Packaging Checklist — Verso Updated
 
 Practical path toward a downloadable Windows artifact.
 
@@ -19,81 +19,81 @@ From `Cargo.toml`:
 - `[package.metadata.packager]` (name, identifier, resources, icons)
 - `[package.metadata.packager.nsis]`
 - feature flag: `packager`
-- `before-each-package-command = "python etc/package_libs.py"`
+- `before-each-package-command = "python etc/package_libs.py"` (macOS-oriented)
 
-## Blocker discovered on Day 2
+Scripts:
 
-`etc/package_libs.py` is **macOS-only**:
+- `etc/package_windows_portable.ps1` — stages a portable folder after `cargo build --release`
 
-- `otool` / `install_name_tool`
-- GStreamer `.dylib` packaging
-- logic gated on `sys.platform == "darwin"`
+## Binary names
 
-Windows needs a different dependency/DLL strategy.
+Either of these may appear depending on what was built:
 
-## Day 3 working checklist
+- `target/release/versoview.exe` (root package)
+- `target/release/verso.exe` (workspace member)
 
-### A. Build path (required first)
+The portable script accepts **both**.
 
-- [ ] Document minimum VS Build Tools components
-- [ ] Confirm `cargo build --release` output path on Windows (`target/release/versoview.exe` or equivalent package name)
-- [ ] Confirm whether binary name is `verso` / `versoview` in practice
+## Recommended first path: portable ZIP
 
-### B. Runtime dependency list (Windows)
-
-Collect and document likely needed files next to the exe:
-
-- [ ] `libEGL.dll` / `libGLESv2.dll` (already referenced in packager resources globs)
-- [ ] MSVC runtime status (static vs shared)
-- [ ] Any Servo/ANGLE related DLLs produced under `target/release/build/**`
-- [ ] `resources/` and `icons/` payload
-
-### C. Packager path
-
-- [ ] Decide: portable folder ZIP first vs NSIS installer first
-- [ ] Portable ZIP is preferred for first experiment (simpler)
-- [ ] NSIS later using existing metadata if stable
-
-### D. Script gap
-
-- [ ] Add Windows branch plan for dependency staging (new script or extend `package_libs.py`)
-- [ ] Do not call macOS tools on Windows
-
-### E. Release gate
-
-Before any GitHub Release asset:
-
-1. Binary launches
-2. Window appears
-3. Known limitations listed in Release notes
-4. Version/tag matches repo state
-
-## Suggested first artifact format
-
-**Portable ZIP** (first target):
-
-```
-VersoUpdated-0.0.4-windows-x64-portable.zip
-  /verso.exe (or actual binary name)
-  /resources/...
-  /icons/...
-  /*.dll (required)
-  /README-WINDOWS.txt
-```
-
-## Commands (starting point)
+### 1. Build
 
 ```powershell
-# after prerequisites from docs/WINDOWS.md
+# Prerequisites: see docs/WINDOWS.md / docs/BUILD_PLATFORMS.md
 cargo build --release
-# optional:
-cargo build --release --features packager
 ```
 
-Packaging commands will be filled in once the binary name and DLL set are verified on a real Windows machine.
+### 2. Stage
+
+```powershell
+powershell -ExecutionPolicy Bypass -File etc/package_windows_portable.ps1
+```
+
+Output folder: `dist/windows-portable/`
+
+### 3. Local verification (required before Release)
+
+1. Run the staged `.exe`
+2. Confirm a window opens
+3. Note any missing-DLL errors and copy extra DLLs next to the exe if needed
+4. Record known limitations (old Servo, limited site compat, etc.)
+
+### 4. Create a GitHub Release (manual, honest)
+
+Only after step 3 succeeds:
+
+```powershell
+# From dist/windows-portable
+Compress-Archive -Path * -DestinationPath ..\VersoUpdated-0.0.4-windows-x64-portable.zip
+```
+
+Then on GitHub:
+
+1. Create a new Release / tag (e.g. `v0.0.4-experimental`)
+2. Upload the ZIP
+3. In the Release notes state clearly:
+   - Experimental / community fork
+   - Servo revision still `5e2d42e`
+   - What was verified (window opens) and what was not
+
+CI already uploads NSIS/Flatpak/DMG **artifacts** on schedule / workflow_dispatch. Those are useful for testing but are not the same as a published GitHub Release with honest notes.
+
+## NSIS / cargo-packager path (later)
+
+Once portable is verified:
+
+```powershell
+cargo install cargo-packager
+cargo build --release --features packager
+cargo packager --release
+```
+
+Expect to still need Windows-specific dependency handling (the current `package_libs.py` is macOS-focused).
 
 ## Related docs
 
 - [WINDOWS.md](WINDOWS.md)
 - [PACKAGING.md](PACKAGING.md)
+- [BUILD_PLATFORMS.md](BUILD_PLATFORMS.md)
 - [ROADMAP.md](../ROADMAP.md)
+- [BUG_ANALYSIS.md](BUG_ANALYSIS.md)
