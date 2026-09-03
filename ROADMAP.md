@@ -33,12 +33,13 @@ Binary `.exe` will only be published when it actually runs. No fake releases.
 - [x] Add CONTRIBUTING.md
 - [x] Add CHANGELOG.md
 
-## Week 2 — Servo Upgrade Attempt (In progress — Day 2)
+## Week 2 — Servo Upgrade Attempt (Day 2 progress)
 
 - [x] Create dedicated branch `upgrade/servo-prep`
 - [x] Write concrete first bump plan (`docs/SERVO_BUMP_PLAN.md`)
 - [x] Map high-risk integration surface (`verso.rs`, `compositor.rs`, `window.rs`, etc.)
 - [x] Point crate docs (`src/lib.rs`) to this fork
+- [x] Add `docs/KNOWN_GAPS.md`
 - [ ] Choose a realistic newer Servo target (not jumping straight to latest)
 - [ ] Bump dependencies in Cargo.toml carefully
 - [ ] Fix compilation errors systematically
@@ -68,4 +69,4 @@ Binary `.exe` will only be published when it actually runs. No fake releases.
 
 ---
 
-**Maintainer note:** Day 2 continues. Integration surface mapped; still preparing before any actual Servo rev bump.
+**Maintainer note:** Day 2 documentation and upgrade preparation advanced. Actual Servo `rev` bump still pending a chosen intermediate target.
