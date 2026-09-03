@@ -1,7 +1,7 @@
 # Servo Bump Plan — First Attempt
 
 **Branch:** `upgrade/servo-prep`  
-**Date:** Day 2 (2026-09-03)
+**Updated:** Day 3 (2026-09-03)
 
 ## Current Pin
 
@@ -11,7 +11,7 @@ All Servo crates in root `Cargo.toml` are locked to:
 rev = "5e2d42e"
 ```
 
-This revision is very old compared to current Servo (0.5.x / 0.6.x as of September 2026).
+This revision is very old. Current Servo is in the 0.5.x range (nightlies as of early September 2026).
 
 ## Integration Surface (High-Risk Files)
 
@@ -35,23 +35,40 @@ Key Servo crates used directly:
 - `fonts`, `net`, `profile`, `devtools`, `webgpu`, ...
 - `stylo` + `webrender` (separate pins)
 
-## Strategy for First Bump
+## Strategy for First Bump (concrete)
 
 We will **not** jump to latest `main`.
 
-1. Keep work on this branch (`upgrade/servo-prep`)
-2. Choose an **intermediate** Servo revision (newer than `5e2d42e`, older than current tip)
-3. Change **all** `rev = "..."` lines together
-4. Expect large compile breakage
-5. Fix in layers: compile → startup → basic navigation
-6. Windows remains the primary target
+### Recommended approach
+
+1. Stay on this branch (`upgrade/servo-prep`).
+2. First target: an **intermediate** revision that is newer than `5e2d42e` but not the absolute tip.
+   - Prefer a known release-ish point or a commit that still has relatively stable embedder APIs.
+   - Practical first experiment: pick a commit from the Servo history that is several months newer, run `cargo check`, and record breakage.
+3. Change **all** Servo `rev = "..."` lines in root `Cargo.toml` to the **same** new revision in one commit.
+4. Also review `stylo` / `webrender` pins — they may need coordinated updates.
+5. Expect large compile breakage. Fix in layers:
+   - Layer 1: make the tree compile
+   - Layer 2: binary starts / window opens
+   - Layer 3: basic navigation works
+6. Primary validation target remains Windows (also keep Linux CI green if possible).
+
+### Expected error categories (from experience with deep Servo embeds)
+
+- Missing or renamed items in `embedder_traits` / constellation messages
+- Compositor / Webrender API drift (`compositing_traits`, display lists, pipeline IDs)
+- Pref / config key changes in `servo_config`
+- Script / WebView embedding surface changes
+- Feature-flag or Cargo feature mismatches after the bump
+
+Record every category in this file or in a follow-up `docs/SERVO_BUMP_LOG.md` once the first compile is attempted.
 
 ## Immediate Next Actions
 
-- [x] Map integration surface (this document)
-- [ ] Pick a concrete intermediate target commit/tag
-- [ ] Prepare Cargo.toml rev bump (all Servo crates at once)
-- [ ] Attempt first compile and record error categories
+- [x] Map integration surface
+- [x] Document concrete intermediate strategy + expected error categories
+- [ ] On a real build machine: pick intermediate rev, bump all Servo `rev` lines, `cargo check` / `cargo build`
+- [ ] Capture first wave of compile errors by file/crate
 - [ ] Keep `main` clean until something actually builds
 
 ## Success Criteria for First Bump
@@ -65,5 +82,5 @@ Only after the above is true do we merge toward `main`.
 
 ## Notes
 
-A full jump to Servo 0.5+ is a multi-week effort by itself.  
-Day 2 work is about preparation and reducing risk, not claiming the upgrade is done.
+A full jump to current Servo tip is a multi-week effort.  
+This branch exists to contain risk. Do not claim the upgrade is done until the success criteria above are met on a real machine.
