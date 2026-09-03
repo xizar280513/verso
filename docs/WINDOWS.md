@@ -5,19 +5,17 @@ The goal is to eventually make pre-built Windows binaries available so most user
 
 Until then, here is the current way to build from source.
 
-## Current Reality (September 2026)
+## Current Reality (September 2026 — Day 3)
 
 - This fork is still based on a very old Servo revision (`5e2d42e`).
-- Modern Servo (0.5+) has advanced significantly. A full upgrade is a major multi-week task.
-- Building currently requires a full development environment. Pre-built `.exe` is **not yet available**.
-- Packaging notes: see [PACKAGING.md](PACKAGING.md) (Windows path still incomplete; existing `package_libs.py` is macOS-oriented).
+- Pre-built GitHub Release `.exe` is **not yet available**.
+- Day 3 focus: Windows packaging path.
+- Practical packaging checklist: [WINDOWS_PACKAGING.md](WINDOWS_PACKAGING.md)
+- Overview: [PACKAGING.md](PACKAGING.md)
 
 ## Prerequisites
 
 ### Option A — Scoop (recommended for simplicity)
-
-1. Install [Scoop](https://scoop.sh/) if you don’t have it.
-2. Open PowerShell and run:
 
 ```powershell
 scoop install git python llvm cmake curl
@@ -34,7 +32,7 @@ pip install mako
 ### Additional requirements
 
 - **Rust** (via rustup): https://rustup.rs/
-- **Visual Studio Build Tools** with the “Desktop development with C++” workload (required by many native dependencies).
+- **Visual Studio Build Tools** with the “Desktop development with C++” workload
 
 ## Build & Run
 
@@ -44,34 +42,44 @@ cd verso
 cargo run
 ```
 
-For a release build:
+Release build:
 
 ```powershell
 cargo build --release
 ```
 
-The binary will appear under `target/release/`.
+Binary should appear under `target/release/` as `versoview.exe` or `verso.exe` (verify locally).
 
-### Optional packager feature
+## Portable staging (Day 3 helper)
+
+After a successful release build:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File etc/package_windows_portable.ps1
+```
+
+This creates `dist/windows-portable/` with:
+
+- the release exe (if found)
+- `resources/` and `icons/` (if present)
+- best-effort `libEGL.dll` / `libGLESv2.dll`
+- `README-WINDOWS.txt`
+
+**Next gate:** run the staged exe. Only if a window opens should we consider zipping for GitHub Releases.
+
+## Optional packager feature
 
 ```powershell
 cargo build --release --features packager
 ```
 
-This enables packager-related code paths, but **does not yet produce a polished Windows installer by itself**. See [PACKAGING.md](PACKAGING.md).
+Note: `etc/package_libs.py` is macOS-oriented. On Windows it only prints guidance and points to the PowerShell script.
 
 ## Known Limitations
 
-- Build times are long.
-- The browser is still experimental.
-- Many modern websites will not render correctly because the Servo revision is outdated.
-- Windows packaging / Releases distribution is planned (Day 3+ focus) but not ready yet.
+- Long build times
+- Experimental browser quality
+- Old Servo revision ⇒ weak modern site compatibility
+- No polished installer yet
 
-## Goal of this Fork
-
-Reduce the friction above. The long-term target is:
-
-1. Users can download a Windows binary from the Releases page.
-2. No need to install Scoop, LLVM, CMake, or compile anything for basic testing.
-
-Progress is tracked in `ROADMAP.md`.
+Progress: [ROADMAP.md](../ROADMAP.md)
