@@ -6,23 +6,25 @@ All notable changes to **Verso Updated** (community fork) will be documented her
 
 ### Added
 - Branch `upgrade/servo-prep` for controlled Servo upgrade work
-- `docs/SERVO_BUMP_PLAN.md` (on upgrade branch) — concrete first bump plan + integration surface map
-- `docs/KNOWN_GAPS.md` — honest list of engine, build, and feature gaps
-- `docs/ARCHITECTURE.md` — high-level component map for upgrade planning
+- `docs/SERVO_BUMP_PLAN.md` — first bump plan + high-risk files
+- `docs/KNOWN_GAPS.md` — engine, build, and feature gaps
+- `docs/ARCHITECTURE.md` — component map
 - `docs/README.md` — documentation index
+- `docs/PACKAGING.md` — packaging / Releases path notes
 
 ### Changed
-- ROADMAP updated for Week 2 / Day 2 progress
-- `src/lib.rs` crate docs now point to this fork
-- `docs/UPGRADE_STRATEGY.md` refreshed with completed prep items
-- Desktop entry renamed/commented as **Verso Updated**
-- Root README links expanded
+- ROADMAP updated (Day 3 focus = Windows/packaging)
+- `src/lib.rs` crate docs point to this fork
+- Desktop entry branded as Verso Updated
+- WINDOWS.md links to packaging notes
+
+### Discoveries
+- `etc/package_libs.py` is **macOS-oriented** (`otool`, GStreamer dylibs); Windows packaging path is still incomplete
 
 ### Notes
 - Still on Servo revision `5e2d42e`
 - No binary release yet
-- Deep Servo internal API usage mapped
-- Focus remains preparation before any actual rev bump
+- No fake `.exe` will be published
 
 ## [0.0.4] - 2026-09-02
 
@@ -37,11 +39,6 @@ All notable changes to **Verso Updated** (community fork) will be documented her
 - Repository metadata now points to this fork
 - Version bumped to 0.0.4
 - README rewritten to clearly state status and goals
-
-### Notes
-- Still based on very old Servo revision (`5e2d42e`)
-- No pre-built Windows binary yet
-- Focus remains on accurate incremental progress
 
 ## Upstream History
 
