@@ -1,5 +1,7 @@
 # Documentation — Verso Updated
 
+**Status:** Day 4 — Servo v0.0.1 on `upgrade/servo-prep`; MozJS bindings blocker.
+
 ## Start here
 
 | Doc | Purpose |
@@ -7,9 +9,10 @@
 | [../ROADMAP.md](../ROADMAP.md) | 1-month plan |
 | [../README.md](../README.md) | Status + quick start |
 | [../CHANGELOG.md](../CHANGELOG.md) | Changes |
-| [BUG_ANALYSIS.md](BUG_ANALYSIS.md) | Day 3 deep bug/risk analysis |
+| [KNOWN_GAPS.md](KNOWN_GAPS.md) | Engine / compile / feature gaps |
+| [BUG_ANALYSIS.md](BUG_ANALYSIS.md) | Risk analysis |
 
-## Build & packaging (multi-platform)
+## Build & packaging
 
 | Doc | Purpose |
 |-----|---------|
@@ -22,10 +25,10 @@
 
 | Doc | Purpose |
 |-----|---------|
-| [UPGRADE_STRATEGY.md](UPGRADE_STRATEGY.md) | Servo upgrade philosophy |
-| [SERVO_BUMP_PLAN.md](SERVO_BUMP_PLAN.md) | First bump plan |
+| [UPGRADE_STRATEGY.md](UPGRADE_STRATEGY.md) | Philosophy |
+| [SERVO_BUMP_PLAN.md](SERVO_BUMP_PLAN.md) | Bump plan (Day 4) |
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Component map |
-| [KNOWN_GAPS.md](KNOWN_GAPS.md) | Gaps list |
+| `SERVO_BUMP_LOG.md` | Detailed log (**on `upgrade/servo-prep`**) |
 
 ## Contributing
 
