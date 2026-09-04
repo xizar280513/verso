@@ -10,23 +10,25 @@
 
 ---
 
-## Current Status (September 2026 — Day 3)
+## Current Status (September 2026 — Day 4)
 
 | Item | Status |
 |------|--------|
 | Fork + community identity | Done |
 | Core docs / ROADMAP | Done |
-| Servo upgrade prep branch | Done (`upgrade/servo-prep`) |
+| Servo upgrade branch | Active (`upgrade/servo-prep`) |
+| Servo pin (upgrade branch) | **v0.0.1** (`721214f`) — `compositing_traits` resolves |
+| Host `cargo check` | Past dependency resolution; **blocked** on MozJS / `script_bindings` API mismatch |
+| Windows GNU check (v0.0.1) | Not run yet (host blocker first) |
 | Windows packaging checklist | Done (`docs/WINDOWS_PACKAGING.md`) |
 | Windows portable staging script | Done (`etc/package_windows_portable.ps1`) |
-| Servo dependency | Still pinned to `5e2d42e` |
-| GitHub Release `.exe` | **Not yet** (only after local launch works) |
+| GitHub Release `.exe` / `.dmg` / Flatpak | **Not yet** |
 
-**Day 3 focus:** Windows / packaging path.
+**Day 4 focus:** Servo intermediate retarget landed; next is aligning MozJS / generated bindings so `cargo check` can go green.
 
 ### Key Documents
 - [ROADMAP.md](ROADMAP.md)
-- [docs/README.md](docs/README.md)
+- [docs/SERVO_BUMP_LOG.md](docs/SERVO_BUMP_LOG.md) (on `upgrade/servo-prep`)
 - [docs/WINDOWS.md](docs/WINDOWS.md)
 - [docs/WINDOWS_PACKAGING.md](docs/WINDOWS_PACKAGING.md)
 - [docs/PACKAGING.md](docs/PACKAGING.md)
@@ -55,6 +57,17 @@ powershell -ExecutionPolicy Bypass -File etc/package_windows_portable.ps1
 Staged output (if build exists): `dist/windows-portable/`
 
 A proper pre-built `.exe` in GitHub Releases is a stated goal, but it does **not** exist yet.
+
+---
+
+## Platform packaging (planned — not ready)
+
+| Target | Path (later) | Notes |
+|--------|----------------|-------|
+| Windows `.exe` / portable | Native MSVC or CI `windows-latest` + packaging script | Product priority |
+| Linux Flatpak | Existing `org.versotile.verso.yml` + CI | After host build works |
+| macOS `.dmg` | CI `macos-latest` or Mac hardware | Needs Apple toolchain |
+| ChromeOS / BSD | Not in near-term scope | Too much for month 1 |
 
 ---
 
