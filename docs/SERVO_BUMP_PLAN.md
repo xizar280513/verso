@@ -1,56 +1,54 @@
-# Servo Bump Plan — First Attempt
+# Servo Bump Plan
 
 **Active work branch:** `upgrade/servo-prep`  
-**Updated:** Day 3 (2026-09-03)
+**Updated:** Day 4 (2026-09-04)
 
-## Current Pin
+## Pin status
 
-All Servo crates in root `Cargo.toml` are locked to:
+| Stage | Servo rev | Result |
+|-------|-----------|--------|
+| Historical / `main` | `5e2d42e` era | Baseline |
+| Attempt v0.4.0 | `e8dbc1d…` | Fail — no `compositing_traits` |
+| Attempt v0.2.0 | `6a0f9e4…` | Fail — same; partial paint mapping only |
+| **Current (prep)** | **v0.0.1 `721214f…`** | **Resolution OK**; compile blocked on MozJS bindings |
 
-```toml
-rev = "5e2d42e"
-```
-
-Modern Servo is far ahead (0.5.x territory as of September 2026).
-
-## Integration Surface (High-Risk Files)
+## Integration surface (high-risk)
 
 | File | Role | Risk |
 |------|------|------|
-| `src/verso.rs` | Main browser struct, constellation + embedder setup | **Critical** |
-| `src/compositor.rs` | Webrender / compositor integration | **Critical** |
-| `src/window.rs` | Window + tab + embedder message handling | **Critical** |
-| `src/webview/webview.rs` | WebView logic, navigation, scripts | High |
-| `src/rendering.rs` | GL / rendering context | High |
-| `src/config.rs` | Prefs / opts from servo_config | Medium |
+| `src/verso.rs` | Constellation + embedder setup | Critical |
+| `src/compositor.rs` | Compositor / WebRender | Critical |
+| `src/window.rs` | Window + embedder messages | Critical |
+| `src/webview/webview.rs` | Navigation / scripts | High |
+| `src/rendering.rs` | GL context | High |
+| `src/config.rs` | Prefs | Medium |
 
-## Strategy (concrete)
+On v0.0.1, compositor **symbols still exist** — no paint_api rewrite required yet.
 
-1. Work on `upgrade/servo-prep` first — keep `main` clean
-2. Choose an **intermediate** Servo revision (newer than `5e2d42e`, not the absolute tip)
-3. Change **all** Servo `rev` lines together in one commit
-4. Expect large compile breakage; fix in layers (compile → window opens → navigation)
-5. Primary validation target: Windows
-6. Only merge to `main` when something actually builds
+## Strategy (updated)
 
-### Expected error categories
+1. Stay on `upgrade/servo-prep`; keep `main` for docs until build works
+2. Intermediate pin = **Servo v0.0.1** (not tip)
+3. Next: align **MozJS + script_bindings generator** to v0.0.1 pair
+4. Then host `cargo check` → Windows check → only then consider merge
+5. Primary product validation: Windows
 
-- `embedder_traits` / constellation message changes
-- Compositor / Webrender API drift
-- Pref / config key changes
-- Script / WebView embedding surface changes
-- Feature-flag mismatches
-
-## Status
+## Status checklist
 
 - [x] Map integration surface
 - [x] Create upgrade branch
-- [x] Document intermediate strategy + expected error categories
-- [ ] On a real build machine: first `rev` bump + `cargo check`
-- [ ] Record compile error categories
+- [x] Intermediate strategy documented
+- [x] Retarget to Servo v0.0.1
+- [x] `compositing_traits` resolves
+- [x] Stylo / WebRender / Rust 1.88 aligned for resolution
+- [ ] MozJS / generated bindings aligned
+- [ ] Host `cargo check` green
+- [ ] Windows target check
+- [ ] Record remaining compile categories
 
-## Related docs
+## Related
 
 - [UPGRADE_STRATEGY.md](UPGRADE_STRATEGY.md)
 - [ARCHITECTURE.md](ARCHITECTURE.md)
 - [KNOWN_GAPS.md](KNOWN_GAPS.md)
+- Full log: `docs/SERVO_BUMP_LOG.md` on `upgrade/servo-prep`
