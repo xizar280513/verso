@@ -1,24 +1,24 @@
 # Verso Updated — 1-Month Roadmap
 
-**Goal:** Community continuation of archived Verso with modernization, **multi-platform** support (Windows, macOS, Linux/NixOS), and eventual real Release artifacts.
+**Goal:** Community continuation of archived Verso with modernization, **Windows-first** product focus, multi-platform builds where feasible, and eventual honest Release artifacts.
 
-**Time box:** 1 month.
+**Time box:** 1 month (Day 4 of ~30).
 
 ---
 
-## Platforms (follow upstream Verso)
+## Platforms (priority order)
 
-- Windows — build + NSIS/portable
-- macOS — build + DMG / dylib packaging
-- Linux — build + Flatpak
-- NixOS — Linux via `shell.nix`
+1. **Windows** — build + portable/NSIS (product priority)
+2. **Linux** — build + Flatpak
+3. **macOS** — build + DMG via CI/Mac hardware
+4. ChromeOS / BSD — **out of scope** for month 1
 
 ---
 
 ## Honest Scope
 
 Full mature browser in 30 days is not realistic.  
-No fake Release binaries.
+No fake Release binaries. No claim of Chrome parity.
 
 ---
 
@@ -26,34 +26,52 @@ No fake Release binaries.
 
 - [x] Fork + docs foundation
 
-## Week 2 — Upgrade prep (Done / ongoing)
+## Week 2 — Upgrade prep
 
-- [x] `upgrade/servo-prep`
-- [x] Integration mapping
-- [ ] Servo rev bump still pending (requires real compile)
+- [x] Branch `upgrade/servo-prep`
+- [x] Integration mapping / bump plan
+- [x] Attempt Servo v0.4.0 → failed (`compositing_traits` missing)
+- [x] Attempt Servo v0.2.0 → failed (same; Option A mapping incomplete)
+- [x] **Retarget Servo v0.0.1 (`721214f`)** — dependency resolution **passes**; `compositing_traits` present
+- [ ] Host `cargo check` green (blocked on MozJS / `script_bindings` API mismatch)
+- [ ] Windows GNU / MSVC check after host is green
 
-## Day 3 — Packaging + bug analysis (mostly done)
+## Day 3 — Packaging + analysis (Done)
 
 - [x] Windows packaging checklist + portable script
-- [x] Deep bug/risk analysis (`docs/BUG_ANALYSIS.md`)
-- [x] Multi-platform build doc (`docs/BUILD_PLATFORMS.md`)
-- [x] CI: fix Scoop step typo; gate CrabNebula on `CN_API_KEY`
-- [x] macOS `package_libs.py` accepts `verso` **or** `versoview`
-- [x] Fork metadata (CODEOWNERS / FUNDING) cleaned
-- [x] **Stop ignoring `Cargo.lock`**
-- [ ] Verify CI builds on all three OS jobs
-- [ ] Real artifacts only after launch verification
+- [x] Bug/risk analysis, multi-platform build docs
+- [x] CI / fork metadata cleanups; track `Cargo.lock`
+
+## Day 4 — Servo intermediate (in progress)
+
+- [x] Retarget all Servo pins to **v0.0.1**
+- [x] Align Stylo (`2025-10-01`), WebRender (`0.68`), Rust **1.88.0**
+- [x] Confirm compositor symbols still available (no paint rewrite)
+- [ ] Fix MozJS / generated `script_bindings` incompatibility
+- [ ] Re-run host `cargo check` to green
+- [ ] Then Windows target check
 
 ## Week 3 — Core stability
 
-- [ ] First Servo intermediate bump on `upgrade/servo-prep`
-- [ ] Navigation / crashes / logging
+- [ ] Green `cargo check` / `cargo build` on at least one platform
+- [ ] GitHub Actions: ubuntu + windows check jobs
+- [ ] Navigation / crash triage only after build works
 
 ## Week 4 — Artifacts
 
-- [ ] Portable/NSIS/Flatpak/DMG as far as builds allow
-- [ ] GitHub Release with honest limitations (after launch verified)
+- [ ] Windows portable or setup artifact (experimental)
+- [ ] Flatpak if Linux build allows
+- [ ] macOS only via `macos-latest` if capacity remains
+- [ ] GitHub Release only with honest limitations
 
 ---
 
-**Maintainer note:** Day 3 corrected over-focus on Windows-only, fixed several fork/CI packaging bugs, and made `Cargo.lock` tracked. Remaining hard work is compile + real machine verification.
+## Current blocker (Day 4)
+
+Generated `script_bindings` pass `*mut RawJSContext` / old signatures; resolved MozJS expects `&mut JSContext`, safe traits, and `&CStr` error APIs. **Do not hand-edit thousands of generated binding lines.** Align MozJS + binding generator to the pair used by Servo v0.0.1 (or its documented pins), then re-check.
+
+Details: `docs/SERVO_BUMP_LOG.md` on branch `upgrade/servo-prep`.
+
+---
+
+**Maintainer note:** Day 4 is real progress — past the compositor package wall. Next work is dependency/version alignment for MozJS, not feature coding.
