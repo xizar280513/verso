@@ -1,38 +1,47 @@
 # Known Gaps — Verso Updated
 
-This document records important gaps between the current tree and a modern, usable browser experience.
+Important gaps between the current tree and a modern, usable browser. Updated **Day 4**.
 
 ## Engine Gap
 
-- **Pinned Servo revision:** `5e2d42e` (very old)
-- **Modern Servo:** 0.5.x / 0.6.x era (September 2026)
-- Impact:
-  - Many modern websites will not render correctly
-  - Missing web platform features
-  - Security and performance fixes from newer Servo are absent
+| Branch | Servo pin | Notes |
+|--------|-----------|--------|
+| `main` | Historical (pre-upgrade) | Stable docs branch |
+| `upgrade/servo-prep` | **v0.0.1** (`721214f`) | Intermediate retarget **done** |
+
+- `compositing_traits` **resolves** on v0.0.1 (blocker of v0.2.0 / v0.4.0 cleared)
+- Host `cargo check` still **fails** on MozJS / generated `script_bindings` API mismatch
+- Modern Servo (0.5+ / tip) remains far ahead — not the current target
+
+## Compile Gap (Day 4)
+
+- Generated bindings use `*mut RawJSContext` / older signatures
+- Resolved MozJS expects `&mut JSContext`, updated `to_jsval`/`from_jsval`, `&CStr` errors
+- **Fix path:** align MozJS + binding generator pins to Servo v0.0.1 — do **not** hand-edit generated files
 
 ## Build / Distribution Gap
 
-- Users still need a full Rust + C++ toolchain to try the browser
-- No official pre-built Windows `.exe` in Releases yet
-- Packaging path exists (`cargo-packager` metadata) but is not production-ready for this fork
+- Users still need a full Rust + native toolchain
+- No official pre-built Windows `.exe` / macOS `.dmg` / Flatpak from this fork yet
+- Packaging scripts exist; artifacts only after a real successful build
 
-## Feature / Stability Gap
+## Feature / Stability Gap (from upstream Future Work)
 
-From the current architecture:
+- Multi-window support — not done
+- Multiprocess mode — not done
+- Sandbox on all platforms — not done
+- GStreamer feature — not done
+- Navigation / chrome UX still experimental
 
-- Deep dependency on old internal Servo crates (`constellation`, `embedder_traits`, `layout_thread_2020`, etc.)
-- Multi-window and multiprocess support were already listed as future work upstream
-- Navigation / chrome UX is still experimental
+## What This Fork Is Doing
 
-## What This Fork Is Doing About It
-
-1. **Documentation first** — clear status, no false claims
-2. **Controlled Servo upgrade** on branch `upgrade/servo-prep`
-3. **Windows-first** focus for build and later packaging
-4. Only publish binaries when they actually run
+1. Honest documentation — no false claims
+2. Controlled Servo upgrade on `upgrade/servo-prep`
+3. Windows-first product priority; Linux Flatpak next; macOS via CI later
+4. Publish binaries only when they actually run
 
 See also:
 - [ROADMAP.md](../ROADMAP.md)
-- [docs/UPGRADE_STRATEGY.md](UPGRADE_STRATEGY.md)
-- [docs/SERVO_BUMP_PLAN.md](SERVO_BUMP_PLAN.md) (on `upgrade/servo-prep` branch)
+- [UPGRADE_STRATEGY.md](UPGRADE_STRATEGY.md)
+- [SERVO_BUMP_PLAN.md](SERVO_BUMP_PLAN.md)
+- `docs/SERVO_BUMP_LOG.md` on branch `upgrade/servo-prep`
