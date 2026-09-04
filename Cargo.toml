@@ -140,9 +140,9 @@ servo-media = { git = "https://github.com/servo/media" }
 servo-media-dummy = { git = "https://github.com/servo/media" }
 stylo = { git = "https://github.com/servo/stylo", branch = "2025-10-01" }
 stylo_traits = { git = "https://github.com/servo/stylo", branch = "2025-10-01" }
-webrender = { git = "https://github.com/servo/webrender", branch = "0.66", features = ["capture"] }
-webrender_api = { git = "https://github.com/servo/webrender", branch = "0.66" }
-wr_malloc_size_of = { git = "https://github.com/servo/webrender", branch = "0.66" }
+webrender = { git = "https://github.com/servo/webrender", branch = "0.68", features = ["capture"] }
+webrender_api = { git = "https://github.com/servo/webrender", branch = "0.68" }
+wr_malloc_size_of = { git = "https://github.com/servo/webrender", branch = "0.68" }
 # Packager feature
 cargo-packager-resource-resolver = { version = "0.1.1", features = [
   "auto-detect-format",

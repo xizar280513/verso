@@ -132,3 +132,57 @@ File bukti inventaris tambahan: `docs/compositing_traits_inventory.txt` dan `doc
 [2]: https://github.com/servo/servo/releases/tag/v0.2.0 "Servo v0.2.0"
 
 [3]: https://github.com/servo/servo/tree/v0.4.0 "Servo v0.4.0"
+
+## Retarget Servo v0.0.1 — lanjutan
+
+### Target dan retarget
+
+Seluruh 26 dependency Git dari `https://github.com/servo/servo.git` pada root `Cargo.toml` telah dipindahkan ke tag Servo v0.0.1 dengan full revision `721214fbe44bf11b968e5e076e5b0af5b5663447`. Package `compositing_traits` terverifikasi ada pada `components/shared/compositing/Cargo.toml` dan menggunakan nama package lama `compositing_traits`. Alias package lain diselaraskan berdasarkan manifest tree v0.0.1; alias era v0.2.0 seperti `servo-background-hang-monitor` tidak dipertahankan bila package target memakai nama lama.
+
+### Verifikasi simbol compositor
+
+Pada `components/shared/compositing/lib.rs` dan `display_list.rs`, semua simbol yang diminta ditemukan pada v0.0.1: `CompositorMsg`, `CompositorProxy`, `CrossProcessCompositorApi`, `CompositionPipeline`, `SendableFrameTree`, `ImageUpdate`, `CompositorDisplayListInfo`, `HitTestInfo`, `ScrollTree`, `WebrenderExternalImageHandlers`, dan `WebrenderImageHandlerType`. Karena API tersebut masih tersedia, tidak dilakukan migrasi ke `paint_api` dan tidak ada rewrite compositor.
+
+### Dependency resolution dan toolchain
+
+Check pertama setelah retarget menemukan alias `allocator` yang salah; alias tersebut diperbaiki menjadi package `servo_allocator`. Check berikutnya menemukan konflik branch Stylo, kemudian konflik WebRender, lalu beberapa versi lockfile lama (`smallvec`, `regex`, dan `serde`). Karena konflik tersebut terbukti dipaksa oleh dependency Servo v0.0.1, Stylo dipindahkan ke branch `2025-10-01`, WebRender ke branch `0.68`, dan `Cargo.lock` dibuat ulang. Resolusi dependency kemudian berhasil.
+
+Tree Servo v0.0.1 mensyaratkan Rust minimal 1.86.0, sementara beberapa package MozJS ter-resolve mensyaratkan Rust 1.88.0. Toolchain `1.88.0` telah dipasang dan digunakan untuk check. `rust-toolchain.toml` masih mencatat pin historis 1.85.0 pada saat check ini; langkah berikutnya adalah menyelaraskannya ke 1.88.0 agar build reproducible.
+
+### Hasil cargo check host
+
+`cargo +1.88.0 check` berhasil melewati dependency resolution dan mengompilasi sebagian besar dependency, termasuk `compositing_traits`, Servo v0.0.1, WebRender 0.68, Stylo 0.8, dan sebagian besar crate Verso. Proses kemudian menghasilkan error besar pada generated `script_bindings` dengan pola yang konsisten:
+
+| Kategori | Error teramati | Lokasi utama | Penilaian |
+|---|---|---|---|
+| MozJS/script bindings | API generated binding mengirim `*mut RawJSContext`, sedangkan MozJS ter-resolve mengharapkan `&mut JSContext` | `target/debug/build/script_bindings-*/out/Bindings/*.rs` | Blocker inkompatibilitas versi generator/binding dengan MozJS; bukan rename kecil yang aman |
+| MozJS/script bindings | `to_jsval` dan `from_jsval` memiliki signature berbeda, termasuk `unsafe fn` versus safe trait method | generated binding files dan `mozjs/src/conversions.rs` | Memerlukan penyelarasan versi MozJS/generator atau patch sistematis; tidak diubah secara spekulatif |
+| MozJS error API | `throw_type_error` mengharapkan `&mut JSContext` dan `&CStr`, sedangkan generated binding memberikan raw pointer dan string literal | generated binding files dan `mozjs/src/error.rs` | Blocker API lintas versi; tidak diperbaiki dengan edit manual pada generated output |
+
+Check dihentikan setelah compiler `script_bindings` tersendat lama pada volume error generated bindings. Status host **belum hijau**. Tidak ada `cargo build --release` dan tidak ada binary yang dibuat.
+
+### Windows GNU
+
+`cargo check --target x86_64-pc-windows-gnu` untuk retarget v0.0.1 belum dijalankan karena host check sudah menunjukkan blocker generated MozJS yang lintas-target dan resource sandbox terserap oleh kompilasi host. Target Rust Windows GNU dan MinGW sudah tersedia dari pekerjaan sebelumnya, tetapi hasil itu tidak boleh dianggap sebagai validasi v0.0.1.
+
+### File dan commit lanjutan
+
+Perubahan lanjutan mencakup root `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml`, dan bagian log ini. Source compositor tidak diubah. Rekomendasi konkret adalah menyelaraskan MozJS/generator pada kombinasi versi yang memang digunakan Servo v0.0.1, lalu mengulang `cargo check`; jangan memperbaiki generated bindings secara manual satu per satu. Jika kombinasi dependency historis tersebut tidak dapat direproduksi pada toolchain modern, gunakan lockfile/dependency pins resmi dari checkout Servo v0.0.1 atau validasi pada GitHub Actions dengan cache bersih.
+
+## References
+
+[3]: https://github.com/servo/servo/tree/v0.0.1 "Servo v0.0.1 source tree"
+[4]: https://doc.rust-lang.org/cargo/reference/resolver.html "Cargo dependency resolver documentation"
+
+## Rekonsiliasi toolchain
+
+Untuk membuat hasil check reproducible, pin project akan diselaraskan ke Rust 1.88.0, karena itu adalah versi minimum efektif dari graph dependency yang berhasil ter-resolve pada sandbox ini.
+
+## References
+
+[5]: https://www.rust-lang.org/tools/install "Rust installation and toolchain documentation"
+
+## Target v0.0.1 — hasil final sementara
+
+Status akhir tahap ini: dependency resolution **lolos** setelah alias package, Stylo/WebRender, lockfile, dan toolchain diselaraskan. Compile analysis host **gagal** pada inkompatibilitas API generated `script_bindings` dengan MozJS modern. Check Windows GNU v0.0.1 belum dijalankan karena blocker host yang sama dan keterbatasan resource. Tidak ada klaim dukungan Windows/macOS, release, atau binary siap pakai.
+
