@@ -186,3 +186,42 @@ Untuk membuat hasil check reproducible, pin project akan diselaraskan ke Rust 1.
 
 Status akhir tahap ini: dependency resolution **lolos** setelah alias package, Stylo/WebRender, lockfile, dan toolchain diselaraskan. Compile analysis host **gagal** pada inkompatibilitas API generated `script_bindings` dengan MozJS modern. Check Windows GNU v0.0.1 belum dijalankan karena blocker host yang sama dan keterbatasan resource. Tidak ada klaim dukungan Windows/macOS, release, atau binary siap pakai.
 
+
+## MozJS + script_bindings alignment
+
+### Pin yang dipakai Servo v0.0.1
+
+Cargo.lock resmi pada tag Servo v0.0.1 mengunci package MozJS sebagai berikut:
+
+| Package | Version | Source/revision |
+|---|---:|---|
+| `mozjs` | `0.14.1` | `https://github.com/servo/mozjs#bbbbf315e89cf91428f3b652ac68146687737259` |
+| `mozjs_sys` | `0.140.0-6` | package workspace dari source MozJS yang sama |
+| `bindgen` | `0.71.1` | dependency workspace MozJS pada commit tersebut |
+| `script_bindings` | `0.0.1` | `Servo v0.0.1`, revision `721214fbe44bf11b968e5e076e5b0af5b5663447` |
+
+Perbandingan source membuktikan bahwa commit MozJS `bbbbf315` masih memiliki API `unsafe fn to_jsval(&self, cx: *mut JSContext, ...)`, `unsafe fn from_jsval(cx: *mut JSContext, ...)`, dan `unsafe fn throw_type_error(cx: *mut JSContext, error: &str)`, yang cocok dengan generated bindings Servo v0.0.1. Commit modern yang sebelumnya ter-resolve (`4240999`) memakai `&mut JSContext`, safe trait methods, dan `&CStr`, sehingga tidak kompatibel.
+
+### Perubahan dependency
+
+Verso sekarang menggunakan Cargo.lock resmi Servo v0.0.1 sebagai basis resolusi dan tidak lagi menambahkan dependency MozJS langsung atau patch source ganda. Dependency langsung tambahan tersebut sempat menyebabkan dua package `mozjs_sys` dengan `links = "mozjs"`; pendekatan itu dibatalkan. Root manifest tetap mempertahankan dependency Servo v0.0.1, sementara lockfile mengunci graph MozJS ke `bbbbf315`.
+
+Tidak ada file di `target/debug/build/.../out/Bindings/*.rs` yang diedit.
+
+### Hasil `cargo +1.88.0 check`
+
+Setelah cleanup inode dan penggunaan lockfile resmi, `cargo +1.88.0 check` berhasil:
+
+1. meresolve graph tanpa konflik native `mozjs`;
+2. mengompilasi `mozjs_sys v0.140.0-6` dari `bbbbf315`;
+3. mengompilasi `mozjs v0.14.1` dari `bbbbf315`;
+4. mengompilasi `script_bindings v0.0.1` tanpa error mismatch `*mut RawJSContext` versus `&mut JSContext` yang menjadi blocker sebelumnya.
+
+Check kemudian gagal pada crate Servo `canvas`, bukan pada MozJS atau script bindings. Error yang tersisa adalah 15 error `E0004` non-exhaustive match pada `components/canvas/canvas_paint_thread.rs`, sekitar baris 515, 534, 559, 568, 577, 586, dan 595. Semua error menyatakan `&mut Canvas` tidak tercakup oleh match; compiler menyarankan wildcard arm. Ini adalah blocker source pada Servo canvas dan berada di luar tugas penyelarasan MozJS. Tidak ada wildcard spekulatif yang ditambahkan.
+
+Status akhir `cargo check` **belum hijau**, tetapi blocker yang ditargetkan—API MozJS generated bindings—sudah terlewati. Tidak ada `cargo build --release`, binary, atau release dibuat.
+
+### References
+
+[6]: https://raw.githubusercontent.com/servo/servo/v0.0.1/Cargo.lock "Official Servo v0.0.1 Cargo.lock"
+[7]: https://github.com/servo/mozjs/tree/bbbbf315e89cf91428f3b652ac68146687737259 "MozJS commit used by Servo v0.0.1"
