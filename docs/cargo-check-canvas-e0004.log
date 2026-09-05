@@ -1,0 +1,1632 @@
+[1m[32m    Updating[0m crates.io index
+[1m[32m    Updating[0m git repository `https://github.com/linebender/vello`
+From https://github.com/linebender/vello
+ * [new ref]           fdf025a88dd00c546c8fc534697cbf21dac7e12d -> refs/commit/fdf025a88dd00c546c8fc534697cbf21dac7e12d
+[1m[32m    Updating[0m git repository `https://github.com/linebender/fearless_simd`
+From https://github.com/linebender/fearless_simd
+ * [new ref]         f25206a4fe58a8f6daae157d63b1abdafb3a1be2 -> refs/commit/f25206a4fe58a8f6daae157d63b1abdafb3a1be2
+[1m[32m     Locking[0m 6 packages to latest Rust 1.88.0 compatible versions
+[1m[36m      Adding[0m color v0.3.2 [1m[33m(available: v0.3.3)[0m
+[1m[36m      Adding[0m fearless_simd v0.2.0 (https://github.com/linebender/fearless_simd?rev=f25206a#f25206a4)
+[1m[36m      Adding[0m linebender_resource_handle v0.1.1
+[1m[36m      Adding[0m peniko v0.4.1
+[1m[36m      Adding[0m vello_common v0.0.1 (https://github.com/linebender/vello?rev=fdf025a88dd00c546c8fc534697cbf21dac7e12d#fdf025a8)
+[1m[36m      Adding[0m vello_cpu v0.0.1 (https://github.com/linebender/vello?rev=fdf025a88dd00c546c8fc534697cbf21dac7e12d#fdf025a8)
+[1m[32m Downloading[0m crates ...
+[1m[32m  Downloaded[0m linebender_resource_handle v0.1.1
+[1m[32m  Downloaded[0m color v0.3.2
+[1m[32m  Downloaded[0m peniko v0.4.1
+[1m[32m    Checking[0m script_traits v0.0.1 (https://github.com/servo/servo.git?rev=721214fbe44bf11b968e5e076e5b0af5b5663447#721214fb)
+[1m[32m    Checking[0m color v0.3.2
+[1m[32m    Checking[0m linebender_resource_handle v0.1.1
+[1m[32m    Checking[0m fearless_simd v0.2.0 (https://github.com/linebender/fearless_simd?rev=f25206a#f25206a4)
+[1m[32m    Checking[0m mozangle v0.5.3
+[1m[32m   Compiling[0m versoview v0.0.4 (/home/ubuntu/verso)
+[1m[32m    Checking[0m devtools v0.0.1 (https://github.com/servo/servo.git?rev=721214fbe44bf11b968e5e076e5b0af5b5663447#721214fb)
+[1m[32m    Checking[0m peniko v0.4.1
+[1m[32m    Checking[0m layout_api v0.0.1 (https://github.com/servo/servo.git?rev=721214fbe44bf11b968e5e076e5b0af5b5663447#721214fb)
+[1m[32m    Checking[0m metrics v0.0.1 (https://github.com/servo/servo.git?rev=721214fbe44bf11b968e5e076e5b0af5b5663447#721214fb)
+[1m[32m    Checking[0m script v0.0.1 (https://github.com/servo/servo.git?rev=721214fbe44bf11b968e5e076e5b0af5b5663447#721214fb)
+[1m[32m    Checking[0m vello_common v0.0.1 (https://github.com/linebender/vello?rev=fdf025a88dd00c546c8fc534697cbf21dac7e12d#fdf025a8)
+[1m[32m    Checking[0m vello_cpu v0.0.1 (https://github.com/linebender/vello?rev=fdf025a88dd00c546c8fc534697cbf21dac7e12d#fdf025a8)
+[1m[32m    Checking[0m canvas v0.0.1 (https://github.com/servo/servo.git?rev=721214fbe44bf11b968e5e076e5b0af5b5663447#721214fb)
+[1m[32m    Checking[0m constellation v0.0.1 (https://github.com/servo/servo.git?rev=721214fbe44bf11b968e5e076e5b0af5b5663447#721214fb)
+[1m[32m    Checking[0m layout v0.0.1 (https://github.com/servo/servo.git?rev=721214fbe44bf11b968e5e076e5b0af5b5663447#721214fb)
+[0m[1m[38;5;9merror[E0432][0m[0m[1m: unresolved import `compositing_traits::display_list::HitTestInfo`[0m
+[0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:10:67[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m10[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse compositing_traits::display_list::{CompositorDisplayListInfo, HitTestInfo, ScrollTree};[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m                                                                   [0m[0m[1m[38;5;9m^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mno `HitTestInfo` in `display_list`[0m
+
+[0m[1m[38;5;9merror[E0432][0m[0m[1m: unresolved imports `constellation_traits::AnimationTickType`, `constellation_traits::ScrollState`[0m
+[0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:15:5[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m15[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    AnimationTickType, EmbedderToConstellationMessage, PaintMetricEvent, ScrollState,[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mno `AnimationTickType` in the root[0m[0m                 [0m[0m[1m[38;5;9m^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mno `ScrollState` in the root[0m
+
+[0m[1m[38;5;9merror[E0432][0m[0m[1m: unresolved import `webrender_api::HitTestFlags`[0m
+[0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:43:5[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m43[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    HitTestFlags, PipelineId as WebRenderPipelineId, PropertyBinding, ReferenceFrameKind,[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;9m^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mno `HitTestFlags` in the root[0m
+
+[0m[1m[38;5;9merror[E0432][0m[0m[1m: unresolved import `servo_config::opts::set_options`[0m
+[0m  [0m[0m[1m[38;5;12m--> [0m[0msrc/config.rs:17:33[0m
+[0m   [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m17[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    opts::{Opts, OutputOptions, set_options},[0m
+[0m   [0m[0m[1m[38;5;12m|[0m[0m                                 [0m[0m[1m[38;5;9m^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mno `set_options` in `opts`[0m
+
+[0m[1m[38;5;9merror[E0432][0m[0m[1m: unresolved import `embedder_traits::TouchEventResult`[0m
+[0m [0m[0m[1m[38;5;12m--> [0m[0msrc/touch.rs:1:5[0m
+[0m  [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse embedder_traits::TouchEventResult;[0m
+[0m  [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^[0m[0m[1m[38;5;12m----------------[0m
+[0m  [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;9m|[0m[0m                [0m[0m[1m[38;5;12m|[0m
+[0m  [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;9m|[0m[0m                [0m[0m[1m[38;5;12mhelp: a similar name exists in the module: `InputEventResult`[0m
+[0m  [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;9mno `TouchEventResult` in the root[0m
+
+[0m[1m[38;5;9merror[E0432][0m[0m[1m: unresolved import `embedder_traits::WebDriverJSValue`[0m
+[0m [0m[0m[1m[38;5;12m--> [0m[0msrc/window.rs:9:38[0m
+[0m  [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m9[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    TouchEventType, ViewportDetails, WebDriverJSValue, WebResourceResponseMsg, WheelMode,[0m
+[0m  [0m[0m[1m[38;5;12m|[0m[0m                                      [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^[0m
+[0m  [0m[0m[1m[38;5;12m|[0m[0m                                      [0m[0m[1m[38;5;9m|[0m
+[0m  [0m[0m[1m[38;5;12m|[0m[0m                                      [0m[0m[1m[38;5;9mno `WebDriverJSValue` in the root[0m
+[0m  [0m[0m[1m[38;5;12m|[0m[0m                                      [0m[0m[1m[38;5;9mhelp: a similar name exists in the module: `WebDriverJSResult`[0m
+
+[0m[1m[38;5;9merror[E0050][0m[0m[1m: method `new_frame_ready` has 5 parameters but the declaration in trait `new_frame_ready` has 4[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/verso.rs:1115:9[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1115[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m/[0m[0m [0m[0m        &self,[0m
+[0m[1m[38;5;12m1116[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m [0m[0m        document_id: DocumentId,[0m
+[0m[1m[38;5;12m1117[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m [0m[0m        _scrolled: bool,[0m
+[0m[1m[38;5;12m1118[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m [0m[0m        composite_needed: bool,[0m
+[0m[1m[38;5;12m1119[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m [0m[0m        _frame_publish_id: FramePublishId,[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|_________________________________________^[0m[0m [0m[0m[1m[38;5;9mexpected 4 parameters, found 5[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m     [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `new_frame_ready` from trait: `[0m[0m[1m[35mfn(&Self, webrender_api::DocumentId, webrender_api::FramePublishId, &FrameReadyParams)[0m[0m`[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no method named `set_offset` found for mutable reference `&mut ScrollTreeNode` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:326:46[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m326[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                    Some(new_offset) => node.set_offset(*new_offset),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                              [0m[0m[1m[38;5;9m^^^^^^^^^^[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;14mhelp[0m[0m: there is a method `offset` with a similar name, but with different arguments[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/compositing/display_list.rs:334:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m334[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn offset(&self) -> Option<LayoutVector2D> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;14m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+
+[0m[1m[38;5;9merror[E0609][0m[0m[1m: no field `cursor` on type `&CompositorHitTestResult`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:394:35[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m394[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        let cursor = match result.cursor {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                   [0m[0m[1m[38;5;9m^^^^^^[0m[0m [0m[0m[1m[38;5;9munknown field[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: available fields are: `pipeline_id`, `point_in_viewport`, `external_scroll_id`[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `SetCursor` found for enum `EmbedderToConstellationMessage` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:412:51[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m412[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        let msg = EmbedderToConstellationMessage::SetCursor(webview_id, cursor);[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                   [0m[0m[1m[38;5;9m^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `EmbedderToConstellationMessage`[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:449:55[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m449[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                .send(profile_time::ProfilerMsg::Exit(sender));[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                       [0m[0m[1m[38;5;12m-------------------------------[0m[0m [0m[0m[1m[38;5;9m^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `IpcSender<()>`, found `IpcSender<_>`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                       [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                       [0m[0m[1m[38;5;12marguments to this enum variant are incorrect[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;10mnote[0m[0m: two different versions of crate `ipc_channel` are being used; two types coming from two different versions of the same crate are different types even if they look the same[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ipc-channel-0.20.2/src/ipc.rs:330:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m330[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct IpcSender<T> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;10mthis is the expected type `servo_media::servo_media_player::ipc_channel::ipc::IpcSender`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m   [0m[0m[1m[38;5;12m::: [0m[0m/home/ubuntu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ipc-channel-0.19.0/src/ipc.rs:333:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m333[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct IpcSender<T> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;10mthis is the found type `ipc_channel::ipc::IpcSender`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m   [0m[0m[1m[38;5;12m::: [0m[0msrc/compositor.rs:7:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m7[0m[0m   [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse base::cross_process_instant::CrossProcessInstant;[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;12m----[0m[0m [0m[0m[1m[38;5;12mone version of crate `ipc_channel` used here, as a dependency of crate `base`[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m27[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse ipc_channel::ipc::{self, IpcSharedMemory};[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;12m-----------[0m[0m [0m[0m[1m[38;5;12mone version of crate `ipc_channel` used here, as a direct dependency of the current crate[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mhelp[0m[0m: you can use `cargo tree` to explore your dependency tree[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/profile/time.rs:55:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m55[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    Exit(IpcSender<()>),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;10m^^^^[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `TouchEventProcessed` found for enum `CompositorMsg` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:514:28[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m514[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            CompositorMsg::TouchEventProcessed(_webview_id, result) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                            [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `CompositorMsg`[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `CreatePng` found for enum `CompositorMsg` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:518:28[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m518[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            CompositorMsg::CreatePng(_webview_id, _page_rect, reply) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                            [0m[0m[1m[38;5;9m^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `CompositorMsg`[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `IsReadyToSaveImageReply` found for enum `CompositorMsg` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:525:28[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m525[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            CompositorMsg::IsReadyToSaveImageReply(is_ready) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                            [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `CompositorMsg`[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `LoadComplete` found for enum `CompositorMsg` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:563:28[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m563[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            CompositorMsg::LoadComplete(_) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                            [0m[0m[1m[38;5;9m^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `CompositorMsg`[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `WebDriverMouseButtonEvent` found for enum `CompositorMsg` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:570:28[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m570[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            CompositorMsg::WebDriverMouseButtonEvent(webview_id, action, button, x, y) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                            [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `CompositorMsg`[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `WebDriverMouseMoveEvent` found for enum `CompositorMsg` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:583:28[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m583[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            CompositorMsg::WebDriverMouseMoveEvent(webview_id, x, y) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                            [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `CompositorMsg`[0m
+
+[0m[1m[38;5;9merror[E0023][0m[0m[1m: this pattern has 1 field, but the corresponding tuple variant has 2 fields[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:592:51[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m592[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            CompositorMsg::SendInitialTransaction(pipeline) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                   [0m[0m[1m[38;5;9m^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected 2 fields, found 1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m   [0m[0m[1m[38;5;12m::: [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/compositing/lib.rs:100:28[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m100[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    SendInitialTransaction(WebViewId, WebRenderPipelineId),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                            [0m[0m[1m[38;5;12m---------[0m[0m  [0m[0m[1m[38;5;12m-------------------[0m[0m [0m[0m[1m[38;5;12mtuple variant has 2 fields[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;14mhelp[0m[0m: use `_` to explicitly ignore each field[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m592[0m[0m [0m[0m[1m[38;5;12m| [0m[0m            CompositorMsg::SendInitialTransaction(pipeline[0m[0m[38;5;10m, _[0m[0m) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                           [0m[0m[38;5;10m+++[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `HitTest` found for enum `CompositorMsg` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:715:28[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m715[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            CompositorMsg::HitTest(pipeline, point, flags, sender) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                            [0m[0m[1m[38;5;9m^^^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `CompositorMsg`[0m
+
+[0m[1m[38;5;9merror[E0023][0m[0m[1m: this pattern has 4 fields, but the corresponding tuple variant has 5 fields[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:764:44[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m764[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            CompositorMsg::AddFontInstance(font_instance_key, font_key, size, flags) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                            [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^[0m[0m  [0m[0m[1m[38;5;9m^^^^^^^^[0m[0m  [0m[0m[1m[38;5;9m^^^^[0m[0m  [0m[0m[1m[38;5;9m^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected 5 fields, found 4[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m   [0m[0m[1m[38;5;12m::: [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/compositing/lib.rs:156:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m156[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    AddFontInstance([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;12m---------------[0m[0m [0m[0m[1m[38;5;12mtuple variant defined here[0m
+[0m[1m[38;5;12m157[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        FontInstanceKey,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m---------------[0m
+[0m[1m[38;5;12m158[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        FontKey,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m-------[0m
+[0m[1m[38;5;12m159[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        f32,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m---[0m
+[0m[1m[38;5;12m160[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        FontInstanceFlags,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m-----------------[0m
+[0m[1m[38;5;12m161[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        Vec<FontVariation>,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m------------------[0m[0m [0m[0m[1m[38;5;12mtuple variant has 5 fields[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;14mhelp[0m[0m: use `_` to explicitly ignore each field[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m764[0m[0m [0m[0m[1m[38;5;12m| [0m[0m            CompositorMsg::AddFontInstance(font_instance_key, font_key, size, flags[0m[0m[38;5;10m, _[0m[0m) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                                                    [0m[0m[38;5;10m+++[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `AddImage` found for enum `CompositorMsg` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:782:28[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m782[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            CompositorMsg::AddImage(key, desc, data) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                            [0m[0m[1m[38;5;9m^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `CompositorMsg`[0m
+
+[0m[1m[38;5;9merror[E0023][0m[0m[1m: this pattern has 3 fields, but the corresponding tuple variant has 4 fields[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:790:17[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m789[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            CompositorMsg::GenerateFontKeys([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m             [0m[0m[1m[38;5;12m-------------------------------[0m
+[0m[1m[38;5;12m790[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                number_of_font_keys,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                 [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m791[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                number_of_font_instance_keys,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                 [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m792[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                result_sender,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                 [0m[0m[1m[38;5;9m^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected 4 fields, found 3[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m   [0m[0m[1m[38;5;12m::: [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/compositing/lib.rs:145:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m145[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    GenerateFontKeys([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;12m----------------[0m[0m [0m[0m[1m[38;5;12mtuple variant defined here[0m
+[0m[1m[38;5;12m146[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        usize,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m-----[0m
+[0m[1m[38;5;12m147[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        usize,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m-----[0m
+[0m[1m[38;5;12m148[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        GenericSender<(Vec<FontKey>, Vec<FontInstanceKey>)>,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m---------------------------------------------------[0m
+[0m[1m[38;5;12m149[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        RenderingGroupId,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m----------------[0m[0m [0m[0m[1m[38;5;12mtuple variant has 4 fields[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;14mhelp[0m[0m: use `_` to explicitly ignore each field[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m793[0m[0m [0m[0m[1m[38;5;12m| [0m[0m            [0m[0m[38;5;10m, _[0m[0m) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m             [0m[0m[38;5;10m+++[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `GetClientWindowRect` found for enum `CompositorMsg` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:803:28[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m803[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            CompositorMsg::GetClientWindowRect(_webview_id, response_sender) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                            [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `CompositorMsg`[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `GetScreenSize` found for enum `CompositorMsg` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:812:28[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m812[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            CompositorMsg::GetScreenSize(_webview_id, response_sender) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                            [0m[0m[1m[38;5;9m^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `CompositorMsg`[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `GetAvailableScreenSize` found for enum `CompositorMsg` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:821:28[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m821[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            CompositorMsg::GetAvailableScreenSize(_webview_id, response_sender) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                            [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `CompositorMsg`[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no method named `send` found for struct `PipelineExitSource` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:546:32[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m546[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                let _ = sender.send(());[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                [0m[0m[1m[38;5;9m^^^^[0m[0m [0m[0m[1m[38;5;9mmethod not found in `PipelineExitSource`[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no method named `set_scroll_offsets_for_node_with_external_scroll_id` found for struct `ScrollTree` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:610:22[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m608[0m[0m [0m[0m[1m[38;5;12m|[0m[0m   [0m[0m                if !pipeline_details[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m _____________________-[0m
+[0m[1m[38;5;12m609[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                    .scroll_tree[0m
+[0m[1m[38;5;12m610[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                    .set_scroll_offsets_for_node_with_external_scroll_id([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|_____________________-[0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;14mhelp[0m[0m: there is a method `set_scroll_offset_for_node_with_external_scroll_id` with a similar name, but with different arguments[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/compositing/display_list.rs:536:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m536[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;14m/[0m[0m [0m[0m    pub fn set_scroll_offset_for_node_with_external_scroll_id([0m
+[0m[1m[38;5;12m537[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;14m|[0m[0m [0m[0m        &mut self,[0m
+[0m[1m[38;5;12m538[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;14m|[0m[0m [0m[0m        external_scroll_id: ExternalScrollId,[0m
+[0m[1m[38;5;12m539[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;14m|[0m[0m [0m[0m        offset: LayoutVector2D,[0m
+[0m[1m[38;5;12m540[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;14m|[0m[0m [0m[0m        context: ScrollType,[0m
+[0m[1m[38;5;12m541[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;14m|[0m[0m [0m[0m    ) -> Option<LayoutVector2D> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;14m|_______________________________^[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:690:63[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m690[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                details.most_recent_display_list_epoch = Some(display_list_info.epoch);[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                          [0m[0m[1m[38;5;12m----[0m[0m [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `webrender_api::Epoch`, found `base::Epoch`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                          [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                          [0m[0m[1m[38;5;12marguments to this enum variant are incorrect[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `base::Epoch` and `webrender_api::Epoch` have similar names, but are actually distinct types[0m
+[0m[1m[38;5;10mnote[0m[0m: `base::Epoch` is defined in crate `base`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/base/lib.rs:88:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m88[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct Epoch(pub u32);[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;10mnote[0m[0m: `webrender_api::Epoch` is defined in crate `webrender_api`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/webrender-a8b399ecb6c2da85/6cafc60/webrender_api/src/lib.rs:107:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m107[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct Epoch(pub u32);[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;14mhelp[0m[0m: the type constructed contains `base::Epoch` due to the type of the argument passed[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:690:58[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m690[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                details.most_recent_display_list_epoch = Some(display_list_info.epoch);[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                          [0m[0m[1m[38;5;14m^^^^^[0m[0m[1m[38;5;12m-----------------------[0m[0m[1m[38;5;14m^[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                               [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                               [0m[0m[1m[38;5;12mthis argument influences the type of `Some`[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/option.rs:597:5[0m
+[0m[1m[38;5;14mhelp[0m[0m: call `Into::into` on this expression to convert `base::Epoch` into `webrender_api::Epoch`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m690[0m[0m [0m[0m[1m[38;5;12m| [0m[0m                details.most_recent_display_list_epoch = Some(display_list_info.epoch[0m[0m[38;5;10m.into()[0m[0m);[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                                                      [0m[0m[38;5;10m+++++++[0m
+
+[0m[1m[38;5;9merror[E0609][0m[0m[1m: no field `hit_test_info` on type `CompositorDisplayListInfo`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:691:60[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m691[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                details.hit_test_items = display_list_info.hit_test_info;[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                            [0m[0m[1m[38;5;9m^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9munknown field[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: available fields are: `pipeline_id`, `viewport_details`, `content_size`, `epoch`, `scroll_tree` ... and 4 others[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:697:73[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m697[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                    details.first_paint_metric = PaintMetricState::Seen(epoch, first_reflow);[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                  [0m[0m[1m[38;5;12m----------------------[0m[0m [0m[0m[1m[38;5;9m^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `webrender_api::Epoch`, found `base::Epoch`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                  [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                  [0m[0m[1m[38;5;12marguments to this enum variant are incorrect[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `base::Epoch` and `webrender_api::Epoch` have similar names, but are actually distinct types[0m
+[0m[1m[38;5;10mnote[0m[0m: `base::Epoch` is defined in crate `base`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/base/lib.rs:88:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m88[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct Epoch(pub u32);[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;10mnote[0m[0m: `webrender_api::Epoch` is defined in crate `webrender_api`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/webrender-a8b399ecb6c2da85/6cafc60/webrender_api/src/lib.rs:107:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m107[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct Epoch(pub u32);[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:255:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m255[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    Seen(WebRenderEpoch, bool /* first_reflow */),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;10m^^^^[0m
+[0m[1m[38;5;14mhelp[0m[0m: call `Into::into` on this expression to convert `base::Epoch` into `webrender_api::Epoch`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m697[0m[0m [0m[0m[1m[38;5;12m| [0m[0m                    details.first_paint_metric = PaintMetricState::Seen(epoch[0m[0m[38;5;10m.into()[0m[0m, first_reflow);[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                                              [0m[0m[38;5;10m+++++++[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:703:48[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m703[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                        PaintMetricState::Seen(epoch, first_reflow);[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                         [0m[0m[1m[38;5;12m----------------------[0m[0m [0m[0m[1m[38;5;9m^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `webrender_api::Epoch`, found `base::Epoch`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                         [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                         [0m[0m[1m[38;5;12marguments to this enum variant are incorrect[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `base::Epoch` and `webrender_api::Epoch` have similar names, but are actually distinct types[0m
+[0m[1m[38;5;10mnote[0m[0m: `base::Epoch` is defined in crate `base`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/base/lib.rs:88:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m88[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct Epoch(pub u32);[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;10mnote[0m[0m: `webrender_api::Epoch` is defined in crate `webrender_api`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/webrender-a8b399ecb6c2da85/6cafc60/webrender_api/src/lib.rs:107:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m107[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct Epoch(pub u32);[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:255:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m255[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    Seen(WebRenderEpoch, bool /* first_reflow */),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;10m^^^^[0m
+[0m[1m[38;5;14mhelp[0m[0m: call `Into::into` on this expression to convert `base::Epoch` into `webrender_api::Epoch`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m703[0m[0m [0m[0m[1m[38;5;12m| [0m[0m                        PaintMetricState::Seen(epoch[0m[0m[38;5;10m.into()[0m[0m, first_reflow);[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                     [0m[0m[38;5;10m+++++++[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:708:39[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m708[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                    .set_display_list(display_list_info.epoch, (pipeline_id, built_display_list));[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                      [0m[0m[1m[38;5;12m----------------[0m[0m [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `webrender_api::Epoch`, found `base::Epoch`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                      [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                      [0m[0m[1m[38;5;12marguments to this method are incorrect[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `base::Epoch` and `webrender_api::Epoch` have similar names, but are actually distinct types[0m
+[0m[1m[38;5;10mnote[0m[0m: `base::Epoch` is defined in crate `base`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/base/lib.rs:88:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m88[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct Epoch(pub u32);[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;10mnote[0m[0m: `webrender_api::Epoch` is defined in crate `webrender_api`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/webrender-a8b399ecb6c2da85/6cafc60/webrender_api/src/lib.rs:107:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m107[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct Epoch(pub u32);[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;10mnote[0m[0m: method defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/webrender-a8b399ecb6c2da85/6cafc60/webrender/src/render_api.rs:310:12[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m310[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn set_display_list([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;14mhelp[0m[0m: call `Into::into` on this expression to convert `base::Epoch` into `webrender_api::Epoch`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m708[0m[0m [0m[0m[1m[38;5;12m| [0m[0m                    .set_display_list(display_list_info.epoch[0m[0m[38;5;10m.into()[0m[0m, (pipeline_id, built_display_list));[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                              [0m[0m[38;5;10m+++++++[0m
+
+[0m[1m[38;5;9merror[E0023][0m[0m[1m: this pattern has 3 fields, but the corresponding tuple variant has 4 fields[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:744:50[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m744[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                        ImageUpdate::UpdateImage(key, desc, data) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                  [0m[0m[1m[38;5;9m^^^[0m[0m  [0m[0m[1m[38;5;9m^^^^[0m[0m  [0m[0m[1m[38;5;9m^^^^[0m[0m [0m[0m[1m[38;5;9mexpected 4 fields, found 3[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m   [0m[0m[1m[38;5;12m::: [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/compositing/lib.rs:587:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m587[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    UpdateImage([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;12m-----------[0m[0m [0m[0m[1m[38;5;12mtuple variant defined here[0m
+[0m[1m[38;5;12m588[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        ImageKey,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m--------[0m
+[0m[1m[38;5;12m589[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        ImageDescriptor,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m---------------[0m
+[0m[1m[38;5;12m590[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        SerializableImageData,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m---------------------[0m
+[0m[1m[38;5;12m591[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        Option<Epoch>,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m-------------[0m[0m [0m[0m[1m[38;5;12mtuple variant has 4 fields[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;14mhelp[0m[0m: use `_` to explicitly ignore each field[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m744[0m[0m [0m[0m[1m[38;5;12m| [0m[0m                        ImageUpdate::UpdateImage(key, desc, data[0m[0m[38;5;10m, _[0m[0m) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                                 [0m[0m[38;5;10m+++[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:754:48[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m754[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                self.add_font(font_key, index, data);[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                      [0m[0m[1m[38;5;12m--------[0m[0m                  [0m[0m[1m[38;5;9m^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `ipc_channel::ipc::IpcSharedMemory`, found `IpcSharedMemory`[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                      [0m[0m[1m[38;5;12m|[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                      [0m[0m[1m[38;5;12marguments to this method are incorrect[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;10mnote[0m[0m: two different versions of crate `ipc_channel` are being used; two types coming from two different versions of the same crate are different types even if they look the same[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ipc-channel-0.20.2/src/ipc.rs:531:1[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m531[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct IpcSharedMemory {[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;10mthis is the found type `servo_media::servo_media_player::ipc_channel::ipc::IpcSharedMemory`[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m::: [0m[0m/home/ubuntu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ipc-channel-0.19.0/src/ipc.rs:530:1[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m530[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct IpcSharedMemory {[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;10mthis is the expected type `ipc_channel::ipc::IpcSharedMemory`[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m::: [0m[0msrc/compositor.rs:7:5[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m7[0m[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse base::cross_process_instant::CrossProcessInstant;[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;12m----[0m[0m [0m[0m[1m[38;5;12mone version of crate `ipc_channel` used here, as a dependency of crate `base`[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m27[0m[0m   [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse ipc_channel::ipc::{self, IpcSharedMemory};[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;12m-----------[0m[0m [0m[0m[1m[38;5;12mone version of crate `ipc_channel` used here, as a direct dependency of the current crate[0m
+[0m     [0m[0m[1m[38;5;12m= [0m[0m[1mhelp[0m[0m: you can use `cargo tree` to explore your dependency tree[0m
+[0m[1m[38;5;10mnote[0m[0m: method defined here[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:2104:8[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m2104[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    fn add_font(&mut self, font_key: FontKey, index: u32, data: Arc<IpcSharedMemory>) {[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m        [0m[0m[1m[38;5;10m^^^^^^^^[0m[0m                                           [0m[0m[1m[38;5;12m--------------------------[0m
+
+[0m[1m[38;5;9merror[E0023][0m[0m[1m: this pattern has 3 fields, but the corresponding tuple variant has 4 fields[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:854:17[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m853[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            CompositorMsg::GenerateFontKeys([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m             [0m[0m[1m[38;5;12m-------------------------------[0m
+[0m[1m[38;5;12m854[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                number_of_font_keys,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                 [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m855[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                number_of_font_instance_keys,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                 [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m856[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                result_sender,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                 [0m[0m[1m[38;5;9m^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected 4 fields, found 3[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m   [0m[0m[1m[38;5;12m::: [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/compositing/lib.rs:145:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m145[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    GenerateFontKeys([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;12m----------------[0m[0m [0m[0m[1m[38;5;12mtuple variant defined here[0m
+[0m[1m[38;5;12m146[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        usize,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m-----[0m
+[0m[1m[38;5;12m147[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        usize,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m-----[0m
+[0m[1m[38;5;12m148[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        GenericSender<(Vec<FontKey>, Vec<FontInstanceKey>)>,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m---------------------------------------------------[0m
+[0m[1m[38;5;12m149[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        RenderingGroupId,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m----------------[0m[0m [0m[0m[1m[38;5;12mtuple variant has 4 fields[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;14mhelp[0m[0m: use `_` to explicitly ignore each field[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m857[0m[0m [0m[0m[1m[38;5;12m| [0m[0m            [0m[0m[38;5;10m, _[0m[0m) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m             [0m[0m[38;5;10m+++[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `GetClientWindowRect` found for enum `CompositorMsg` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:866:28[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m866[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            CompositorMsg::GetClientWindowRect(_, response_sender) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                            [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `CompositorMsg`[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `GetScreenSize` found for enum `CompositorMsg` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:871:28[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m871[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            CompositorMsg::GetScreenSize(_, response_sender) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                            [0m[0m[1m[38;5;9m^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `CompositorMsg`[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `GetAvailableScreenSize` found for enum `CompositorMsg` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:876:28[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m876[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            CompositorMsg::GetAvailableScreenSize(_, response_sender) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                            [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `CompositorMsg`[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no method named `send` found for struct `PipelineExitSource` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:848:32[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m848[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                let _ = sender.send(());[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                [0m[0m[1m[38;5;9m^^^^[0m[0m [0m[0m[1m[38;5;9mmethod not found in `PipelineExitSource`[0m
+
+[0m[1m[38;5;9merror[E0061][0m[0m[1m: this method takes 4 arguments but 3 arguments were supplied[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:895:21[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m895[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        transaction.generate_frame(0, true /* present */, reason);[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                     [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^[0m[0m                        [0m[0m[1m[38;5;12m------[0m[0m [0m[0m[1m[38;5;12margument #3 of type `bool` is missing[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;10mnote[0m[0m: method defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/webrender-a8b399ecb6c2da85/6cafc60/webrender/src/render_api.rs:391:12[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m391[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn generate_frame(&mut self, id: u64, present: bool, tracked: bool, reasons: RenderReasons) {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;14mhelp[0m[0m: provide the argument[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m895[0m[0m [0m[0m[38;5;9m- [0m[0m        transaction.generate_frame[0m[0m[38;5;9m(0, true /* present */, reason)[0m[0m;[0m
+[0m[1m[38;5;12m895[0m[0m [0m[0m[38;5;10m+ [0m[0m        transaction.generate_frame[0m[0m[38;5;10m(0, true, /* bool */, reason)[0m[0m;[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no method named `set_offset` found for mutable reference `&mut ScrollTreeNode` in the current scope[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:1187:26[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1187[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                    node.set_offset(LayoutVector2D::zero());[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                          [0m[0m[1m[38;5;9m^^^^^^^^^^[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;14mhelp[0m[0m: there is a method `offset` with a similar name, but with different arguments[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/compositing/display_list.rs:334:5[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m334[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn offset(&self) -> Option<LayoutVector2D> {[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;14m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:1331:21[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1329[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                .send(EmbedderToConstellationMessage::ForwardInputEvent([0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                       [0m[0m[1m[38;5;12m-------------------------------------------------[0m[0m [0m[0m[1m[38;5;12marguments to this enum variant are incorrect[0m
+[0m[1m[38;5;12m1330[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                    webview_id,[0m
+[0m[1m[38;5;12m1331[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                    event.clone(),[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                     [0m[0m[1m[38;5;9m^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `InputEventAndId`, found `InputEvent`[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/constellation/lib.rs:81:5[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m81[0m[0m   [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    ForwardInputEvent(WebViewId, InputEventAndId, Option<CompositorHitTestResult>),[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;14mhelp[0m[0m: call `Into::into` on this expression to convert `embedder_traits::InputEvent` into `InputEventAndId`[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1331[0m[0m [0m[0m[1m[38;5;12m| [0m[0m                    event.clone()[0m[0m[38;5;10m.into()[0m[0m,[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                                  [0m[0m[38;5;10m+++++++[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `Click` found for enum `MouseButtonAction` in the current scope[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:1341:51[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1341[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            if event.action == MouseButtonAction::Click {[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                                                   [0m[0m[1m[38;5;9m^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `MouseButtonAction`[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `Click` found for enum `MouseButtonAction` in the current scope[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:1358:44[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1358[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                        MouseButtonAction::Click => {}[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                                            [0m[0m[1m[38;5;9m^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `MouseButtonAction`[0m
+
+[0m[1m[38;5;9merror[E0061][0m[0m[1m: this method takes 2 arguments but 4 arguments were supplied[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:1408:18[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1408[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                .hit_test(self.webrender_document, pipeline_id, world_point, flags);[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                  [0m[0m[1m[38;5;9m^^^^^^^^[0m[0m                          [0m[0m[1m[38;5;12m-----------[0m[0m               [0m[0m[1m[38;5;12m-----[0m[0m [0m[0m[1m[38;5;12munexpected argument #4[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                                                    [0m[0m[1m[38;5;12m|[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                                                    [0m[0m[1m[38;5;12munexpected argument #2 of type `std::option::Option<PipelineId>`[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;10mnote[0m[0m: method defined here[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/webrender-a8b399ecb6c2da85/6cafc60/webrender/src/render_api.rs:1358:12[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1358[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn hit_test(&self,[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;10m^^^^^^^^[0m
+[0m[1m[38;5;14mhelp[0m[0m: remove the extra arguments[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1408[0m[0m [0m[0m[38;5;9m- [0m[0m                .hit_test(self.webrender_document[0m[0m[38;5;9m, pipeline_id[0m[0m, world_point[0m[0m[38;5;9m, flags[0m[0m);[0m
+[0m[1m[38;5;12m1408[0m[0m [0m[0m[38;5;10m+ [0m[0m                .hit_test(self.webrender_document, world_point);[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:1431:40[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1431[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                    point_in_viewport: item.point_in_viewport.to_untyped(),[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                                        [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `Point2D<f32, CSSPixel>`, found `Point2D<f32, UnknownUnit>`[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m     [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: expected struct `Point2D<_, [0m[0m[1m[35mCSSPixel[0m[0m>`[0m
+[0m                found struct `Point2D<_, [0m[0m[1m[35mUnknownUnit[0m[0m>`[0m
+
+[0m[1m[38;5;9merror[E0560][0m[0m[1m: struct `CompositorHitTestResult` has no field named `point_relative_to_item`[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:1432:21[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1432[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                    point_relative_to_item: item.point_relative_to_item.to_untyped(),[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                     [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9m`CompositorHitTestResult` does not have this field[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m     [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: available fields are: `external_scroll_id`[0m
+
+[0m[1m[38;5;9merror[E0609][0m[0m[1m: no field `point_relative_to_item` on type `&HitTestResultItem`[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:1432:50[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1432[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                    point_relative_to_item: item.point_relative_to_item.to_untyped(),[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                                                  [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9munknown field[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m     [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: available fields are: `pipeline`, `tag`, `animation_id`, `point_in_viewport`[0m
+
+[0m[1m[38;5;9merror[E0560][0m[0m[1m: struct `CompositorHitTestResult` has no field named `node`[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:1433:21[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1433[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                    node: UntrustedNodeAddress(info.node as *const c_void),[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                     [0m[0m[1m[38;5;9m^^^^[0m[0m [0m[0m[1m[38;5;9m`CompositorHitTestResult` does not have this field[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m     [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: available fields are: `external_scroll_id`[0m
+
+[0m[1m[38;5;9merror[E0560][0m[0m[1m: struct `CompositorHitTestResult` has no field named `cursor`[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:1434:21[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1434[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                    cursor: info.cursor,[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                     [0m[0m[1m[38;5;9m^^^^^^[0m[0m [0m[0m[1m[38;5;9m`CompositorHitTestResult` does not have this field[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m     [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: available fields are: `external_scroll_id`[0m
+
+[0m[1m[38;5;9merror[E0560][0m[0m[1m: struct `CompositorHitTestResult` has no field named `scroll_tree_node`[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:1435:21[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1435[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                    scroll_tree_node: info.scroll_tree_node,[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                     [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9m`CompositorHitTestResult` does not have this field[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m     [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: available fields are: `external_scroll_id`[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:1451:21[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1449[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                .send(EmbedderToConstellationMessage::ForwardInputEvent([0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                       [0m[0m[1m[38;5;12m-------------------------------------------------[0m[0m [0m[0m[1m[38;5;12marguments to this enum variant are incorrect[0m
+[0m[1m[38;5;12m1450[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                    webview_id,[0m
+[0m[1m[38;5;12m1451[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                    event,[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                     [0m[0m[1m[38;5;9m^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `InputEventAndId`, found `InputEvent`[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/constellation/lib.rs:81:5[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m81[0m[0m   [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    ForwardInputEvent(WebViewId, InputEventAndId, Option<CompositorHitTestResult>),[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;14mhelp[0m[0m: call `Into::into` on this expression to convert `embedder_traits::InputEvent` into `InputEventAndId`[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1451[0m[0m [0m[0m[1m[38;5;12m| [0m[0m                    event[0m[0m[38;5;10m.into()[0m[0m,[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                          [0m[0m[38;5;10m+++++++[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `Click` found for enum `MouseButtonAction` in the current scope[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:1544:44[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1544[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                action: MouseButtonAction::Click,[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                                            [0m[0m[1m[38;5;9m^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `MouseButtonAction`[0m
+
+[0m[1m[38;5;9merror[E0026][0m[0m[1m: struct `CompositorHitTestResult` does not have a field named `scroll_tree_node`[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:1687:13[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1687[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            scroll_tree_node,[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m             [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mstruct `CompositorHitTestResult` does not have this field[0m
+
+[0m[1m[38;5;9merror[E0061][0m[0m[1m: this enum variant takes 1 argument but 2 arguments were supplied[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:1749:19[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1749[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        let msg = EmbedderToConstellationMessage::TickAnimation(pipeline_id, tick_type);[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                   [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m              [0m[0m[1m[38;5;12m---------[0m[0m [0m[0m[1m[38;5;12munexpected argument #2[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;10mnote[0m[0m: expected `Vec<WebViewId>`, found `NamespaceIndex<PipelineIndex>`[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:1749:65[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1749[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        let msg = EmbedderToConstellationMessage::TickAnimation(pipeline_id, tick_type);[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                                                                 [0m[0m[1m[38;5;10m^^^^^^^^^^^[0m
+[0m     [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: expected struct `[0m[0m[1m[35mVec<WebViewId>[0m[0m`[0m
+[0m                found struct `[0m[0m[1m[35mNamespaceIndex<PipelineIndex>[0m[0m`[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/constellation/lib.rs:58:5[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m58[0m[0m   [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    TickAnimation(Vec<WebViewId>),[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;10m^^^^^^^^^^^^^[0m
+[0m[1m[38;5;14mhelp[0m[0m: remove the extra argument[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1749[0m[0m [0m[0m[38;5;9m- [0m[0m        let msg = EmbedderToConstellationMessage::TickAnimation([0m[0m[38;5;9mpipeline_id, tick_type[0m[0m);[0m
+[0m[1m[38;5;12m1749[0m[0m [0m[0m[38;5;10m+ [0m[0m        let msg = EmbedderToConstellationMessage::TickAnimation([0m[0m[38;5;10m/* Vec<WebViewId> */[0m[0m);[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `IsReadyToSaveImage` found for enum `EmbedderToConstellationMessage` in the current scope[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/compositor.rs:1879:59[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1879[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                let msg = EmbedderToConstellationMessage::IsReadyToSaveImage(pipeline_epochs);[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                                                           [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `EmbedderToConstellationMessage`[0m
+
+[0m[1m[38;5;9merror[E0560][0m[0m[1m: struct `Preferences` has no field named `dom_svg_enabled`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/config.rs:420:13[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m420[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            dom_svg_enabled: true, // Some pages fail to render if this is disabled[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m             [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9munknown field[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;14mhelp[0m[0m: a field with a similar name exists[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m420[0m[0m [0m[0m[38;5;9m- [0m[0m            [0m[0m[38;5;9mdom_svg_enabled[0m[0m: true, // Some pages fail to render if this is disabled[0m
+[0m[1m[38;5;12m420[0m[0m [0m[0m[38;5;10m+ [0m[0m            [0m[0m[38;5;10mdom_webgpu_enabled[0m[0m: true, // Some pages fail to render if this is disabled[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+
+[0m[1m[38;5;9merror[E0609][0m[0m[1m: no field `webrender_stats` on type `DebugOptions`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/verso.rs:189:66[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m189[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            debug_flags.set(DebugFlags::PROFILER_DBG, opts.debug.webrender_stats);[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                                  [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9munknown field[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: available fields are: `help`, `dump_style_tree`, `dump_rule_tree`, `dump_flow_tree`, `dump_stacking_context_tree` ... and 7 others[0m
+
+[0m[1m[38;5;9merror[E0277][0m[0m[1m: the trait bound `ipc_channel::ipc::IpcSender<BluetoothRequest>: BluetoothThreadFactory` is not satisfied[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/verso.rs:263:13[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m263[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            BluetoothThreadFactory::new(embedder_proxy.clone());[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m             [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mthe trait `BluetoothThreadFactory` is not implemented for `ipc_channel::ipc::IpcSender<BluetoothRequest>`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mhelp[0m[0m: the trait `BluetoothThreadFactory` [0m[0m[1m[35mis[0m[0m implemented for `[0m[0m[1m[35mservo_media::servo_media_player::ipc_channel::ipc::IpcSender<BluetoothRequest>[0m[0m`[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/verso.rs:266:13[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m266[0m[0m [0m[0m[1m[38;5;12m|[0m[0m   [0m[0m        let (public_resource_threads, private_resource_threads) =[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m               [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected a tuple with 3 elements, found one with 2 elements[0m
+[0m[1m[38;5;12m267[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m/[0m[0m [0m[0m            resource_thread::new_resource_threads([0m
+[0m[1m[38;5;12m268[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                devtools_sender.clone(),[0m
+[0m[1m[38;5;12m269[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                time_profiler_sender.clone(),[0m
+[0m[1m[38;5;12m270[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                mem_profiler_sender.clone(),[0m
+[0m[1m[38;5;12m...[0m[0m   [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m275[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                Arc::new(protocols),[0m
+[0m[1m[38;5;12m276[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            );[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|_____________-[0m[0m [0m[0m[1m[38;5;12mthis expression has type `(ResourceThreads, ResourceThreads, std::boxed::Box<dyn AsyncRuntime>)`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: expected tuple `[0m[0m[1m[35m(ResourceThreads, ResourceThreads, std::boxed::Box<dyn AsyncRuntime>)[0m[0m`[0m
+[0m               found tuple `[0m[0m[1m[35m(_, _)[0m[0m`[0m
+
+[0m[1m[38;5;9merror[E0061][0m[0m[1m: this function takes 2 arguments but 1 argument was supplied[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/verso.rs:280:13[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m280[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            SystemFontService::spawn(compositor_proxy.cross_process_compositor_api.clone())[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m             [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m[1m[38;5;12m-------------------------------------------------------[0m[0m [0m[0m[1m[38;5;12margument #2 of type `profile_traits::mem::ProfilerChan` is missing[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;10mnote[0m[0m: associated function defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/fonts/system_font_service.rs:82:12[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m82[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn spawn([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;10m^^^^^[0m
+[0m[1m[38;5;14mhelp[0m[0m: provide the argument[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m280[0m[0m [0m[0m[1m[38;5;12m| [0m[0m            SystemFontService::spawn(compositor_proxy.cross_process_compositor_api.clone()[0m[0m[38;5;10m, /* profile_traits::mem::ProfilerChan */[0m[0m)[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                                                           [0m[0m[38;5;10m+++++++++++++++++++++++++++++++++++++++++[0m
+
+[0m[1m[38;5;9merror[E0061][0m[0m[1m: this function takes 1 argument but 3 arguments were supplied[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/verso.rs:285:57[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m285[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        let (canvas_create_sender, canvas_ipc_sender) = CanvasPaintThread::start([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                         [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m286[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            compositor_proxy.cross_process_compositor_api.clone(),[0m
+[0m[1m[38;5;12m287[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            system_font_service.clone(),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m             [0m[0m[1m[38;5;12m---------------------------[0m[0m [0m[0m[1m[38;5;12munexpected argument #2 of type `std::sync::Arc<SystemFontServiceProxy>`[0m
+[0m[1m[38;5;12m288[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            public_resource_threads.clone(),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m             [0m[0m[1m[38;5;12m-------------------------------[0m[0m [0m[0m[1m[38;5;12munexpected argument #3[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;10mnote[0m[0m: associated function defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/canvas/canvas_paint_thread.rs:39:12[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m39[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn start([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;10m^^^^^[0m
+[0m[1m[38;5;14mhelp[0m[0m: remove the extra arguments[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m286[0m[0m [0m[0m[38;5;9m- [0m[0m            compositor_proxy.cross_proc[0m[0m[38;5;9me[0m[0mss_compositor_api.clone()[0m[0m[38;5;9m,[0m
+[0m[1m[38;5;12m287[0m[0m [0m[0m[38;5;9m-             system_font_service.clone(),[0m
+[0m[1m[38;5;12m286[0m[0m [0m[0m[38;5;10m+ [0m[0m            compositor_proxy.cross_process_compositor_api.clone(),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/verso.rs:302:13[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m302[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            bluetooth_thread,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m             [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `IpcSender<BluetoothRequest>`, found a different `IpcSender<BluetoothRequest>`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;10mnote[0m[0m: two different versions of crate `ipc_channel` are being used; two types coming from two different versions of the same crate are different types even if they look the same[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ipc-channel-0.20.2/src/ipc.rs:330:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m330[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct IpcSender<T> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;10mthis is the expected type `servo_media::servo_media_player::ipc_channel::ipc::IpcSender`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m   [0m[0m[1m[38;5;12m::: [0m[0m/home/ubuntu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ipc-channel-0.19.0/src/ipc.rs:333:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m333[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct IpcSender<T> {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;10mthis is the found type `ipc_channel::ipc::IpcSender`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m   [0m[0m[1m[38;5;12m::: [0m[0msrc/compositor.rs:7:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m7[0m[0m   [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse base::cross_process_instant::CrossProcessInstant;[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;12m----[0m[0m [0m[0m[1m[38;5;12mone version of crate `ipc_channel` used here, as a dependency of crate `base`[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m27[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse ipc_channel::ipc::{self, IpcSharedMemory};[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;12m-----------[0m[0m [0m[0m[1m[38;5;12mone version of crate `ipc_channel` used here, as a direct dependency of the current crate[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mhelp[0m[0m: you can use `cargo tree` to explore your dependency tree[0m
+
+[0m[1m[38;5;9merror[E0063][0m[0m[1m: missing fields `async_runtime`, `private_storage_threads`, `privileged_urls` and 1 other field in initializer of `InitialConstellationState`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/verso.rs:298:29[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m298[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        let initial_state = InitialConstellationState {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                             [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mmissing `async_runtime`, `private_storage_threads`, `privileged_urls` and 1 other field[0m
+
+[0m[1m[38;5;9merror[E0061][0m[0m[1m: this function takes 5 arguments but 7 arguments were supplied[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/verso.rs:318:13[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m318[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            Constellation::<script::ScriptThread, script::ServiceWorkerManager>::start([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m             [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m324[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                canvas_create_sender,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                 [0m[0m[1m[38;5;12m--------------------[0m[0m [0m[0m[1m[38;5;12munexpected argument #6 of type `crossbeam_channel::Sender<canvas_traits::ConstellationCanvasMsg>`[0m
+[0m[1m[38;5;12m325[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                canvas_ipc_sender,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                 [0m[0m[1m[38;5;12m-----------------[0m[0m [0m[0m[1m[38;5;12munexpected argument #7 of type `GenericSender<canvas_traits::canvas::CanvasMsg>`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;10mnote[0m[0m: associated function defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/constellation/constellation.rs:620:12[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m620[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn start([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;10m^^^^^[0m
+[0m[1m[38;5;14mhelp[0m[0m: remove the extra arguments[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m323[0m[0m [0m[0m[38;5;9m- [0m[0m                opts.hard_fail[0m[0m[38;5;9m,[0m
+[0m[1m[38;5;12m324[0m[0m [0m[0m[38;5;9m-                 canvas_create_sender[0m[0m,[0m
+[0m[1m[38;5;12m323[0m[0m [0m[0m[38;5;10m+ [0m[0m                opts.hard_fail,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+
+[0m[1m[38;5;9merror[E0609][0m[0m[1m: no field `webdriver_port` on type `&Opts`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/verso.rs:329:34[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m329[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        if let Some(port) = opts.webdriver_port {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                  [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9munknown field[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: available fields are: `time_profiling`, `time_profiler_trace_path`, `nonincremental_layout`, `user_stylesheets`, `hard_fail` ... and 15 others[0m
+
+[0m[1m[38;5;9merror[E0061][0m[0m[1m: this function takes 3 arguments but 2 arguments were supplied[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/verso.rs:330:13[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m330[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            webdriver_server::start_server(port, constellation_sender.clone());[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m             [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m[1m[38;5;12m------------------------------------[0m[0m [0m[0m[1m[38;5;12margument #3 of type `std::boxed::Box<(dyn EventLoopWaker + 'static)>` is missing[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;10mnote[0m[0m: expected `Sender<WebDriverCommandMsg>`, found `Sender<EmbedderToConstellationMessage>`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/verso.rs:330:50[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m330[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            webdriver_server::start_server(port, constellation_sender.clone());[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                  [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: expected struct `crossbeam_channel::Sender<[0m[0m[1m[35mWebDriverCommandMsg[0m[0m>`[0m
+[0m               found struct `crossbeam_channel::Sender<[0m[0m[1m[35mEmbedderToConstellationMessage[0m[0m>`[0m
+[0m[1m[38;5;10mnote[0m[0m: function defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/webdriver_server/lib.rs:116:8[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m116[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub fn start_server([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m        [0m[0m[1m[38;5;10m^^^^^^^^^^^^[0m
+[0m[1m[38;5;14mhelp[0m[0m: provide the argument[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m330[0m[0m [0m[0m[38;5;9m- [0m[0m            webdriver_server::start_server[0m[0m[38;5;9m(port, constellation_sender.clone())[0m[0m;[0m
+[0m[1m[38;5;12m330[0m[0m [0m[0m[38;5;10m+ [0m[0m            webdriver_server::start_server[0m[0m[38;5;10m(port, /* crossbeam_channel::Sender<WebDriverCommandMsg> */, /* std::boxed::Box<(dyn EventLoopWaker + 'static)> */)[0m[0m;[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+
+[0m[1m[38;5;9merror[E0609][0m[0m[1m: no field `wait_for_stable_image` on type `&Opts`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/verso.rs:351:18[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m351[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            opts.wait_for_stable_image,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                  [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9munknown field[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: available fields are: `time_profiling`, `time_profiler_trace_path`, `nonincremental_layout`, `user_stylesheets`, `hard_fail` ... and 15 others[0m
+
+[0m[1m[38;5;9merror[E0609][0m[0m[1m: no field `convert_mouse_to_touch` on type `DebugOptions`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/verso.rs:352:24[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m352[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            opts.debug.convert_mouse_to_touch,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                        [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9munknown field[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: available fields are: `help`, `dump_style_tree`, `dump_rule_tree`, `dump_flow_tree`, `dump_stacking_context_tree` ... and 7 others[0m
+
+[0m[1m[38;5;9merror[E0023][0m[0m[1m: this pattern has 1 field, but the corresponding tuple variant has 2 fields[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/verso.rs:694:41[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m694[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            EmbedderMsg::WebViewFocused(webview_id) => Some(webview_id),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                         [0m[0m[1m[38;5;9m^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected 2 fields, found 1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m   [0m[0m[1m[38;5;12m::: [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/embedder/lib.rs:440:20[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m440[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    WebViewFocused(WebViewId, bool),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                    [0m[0m[1m[38;5;12m---------[0m[0m  [0m[0m[1m[38;5;12m----[0m[0m [0m[0m[1m[38;5;12mtuple variant has 2 fields[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;14mhelp[0m[0m: use `_` to explicitly ignore each field[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m694[0m[0m [0m[0m[1m[38;5;12m| [0m[0m            EmbedderMsg::WebViewFocused(webview_id[0m[0m[38;5;10m, _[0m[0m) => Some(webview_id),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                   [0m[0m[38;5;10m+++[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `Keyboard` found for enum `EmbedderMsg` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/verso.rs:697:26[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m697[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            EmbedderMsg::Keyboard(webview_id, _) => Some(webview_id),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                          [0m[0m[1m[38;5;9m^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `EmbedderMsg`[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `ShowSelectElementMenu` found for enum `EmbedderMsg` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/verso.rs:720:26[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m720[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            EmbedderMsg::ShowSelectElementMenu(webview_id, _, _, _, _) => Some(webview_id),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                          [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `EmbedderMsg`[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/verso.rs:709:67[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m709[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            EmbedderMsg::SelectFiles(webview_id, _, _, _) => Some(webview_id),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                              [0m[0m[1m[38;5;12m----[0m[0m [0m[0m[1m[38;5;9m^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `&WebViewId`, found `&EmbedderControlId`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                              [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                              [0m[0m[1m[38;5;12marguments to this enum variant are incorrect[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: expected reference `&[0m[0m[1m[35mWebViewId[0m[0m`[0m
+[0m               found reference `&[0m[0m[1m[35mEmbedderControlId[0m[0m`[0m
+[0m[1m[38;5;14mhelp[0m[0m: the type constructed contains `&EmbedderControlId` due to the type of the argument passed[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/verso.rs:709:62[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m709[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            EmbedderMsg::SelectFiles(webview_id, _, _, _) => Some(webview_id),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                              [0m[0m[1m[38;5;14m^^^^^[0m[0m[1m[38;5;12m----------[0m[0m[1m[38;5;14m^[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                                   [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                                   [0m[0m[1m[38;5;12mthis argument influences the type of `Some`[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/rustc/6b00bc3880198600130e1cf62b8f8a93494488cc/library/core/src/option.rs:597:5[0m
+
+[0m[1m[38;5;9merror[E0423][0m[0m[1m: cannot initialize a tuple struct which contains private fields[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/verso.rs:1184:40[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1184[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    let cross_process_compositor_api = CrossProcessCompositorApi(compositor_ipc_sender);[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                                        [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;10mnote[0m[0m: constructor is not visible here due to private fields[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/compositing/lib.rs:197:38[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m197[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct CrossProcessCompositorApi(GenericCallback<CompositorMsg>);[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                                      [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;10mprivate field[0m
+[0m[1m[38;5;14mhelp[0m[0m: you might have meant to use an associated function to build this type[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1184[0m[0m [0m[0m[38;5;9m- [0m[0m    let cross_process_compositor_api = CrossProcessCompositorApi[0m[0m[38;5;9m(compositor_ipc_sender)[0m[0m;[0m
+[0m[1m[38;5;12m1184[0m[0m [0m[0m[38;5;10m+ [0m[0m    let cross_process_compositor_api = CrossProcessCompositorApi[0m[0m[38;5;10m::new(_)[0m[0m;[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1184[0m[0m [0m[0m[38;5;9m- [0m[0m    let cross_process_compositor_api = CrossProcessCompositorApi[0m[0m[38;5;9m(compositor_ipc_sender)[0m[0m;[0m
+[0m[1m[38;5;12m1184[0m[0m [0m[0m[38;5;10m+ [0m[0m    let cross_process_compositor_api = CrossProcessCompositorApi[0m[0m[38;5;10m::dummy()[0m[0m;[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/verso.rs:1199:24[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1199[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    (compositor_proxy, receiver)[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                        [0m[0m[1m[38;5;9m^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `Receiver<CompositorMsg>`, found `Receiver<Result<CompositorMsg, ...>>`[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m     [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: expected struct `crossbeam_channel::Receiver<CompositorMsg>`[0m
+[0m                found struct `crossbeam_channel::Receiver<[0m[0m[1m[35mstd::result::Result<[0m[0mCompositorMsg, [0m[0m[1m[35mstd::boxed::Box<bincode::ErrorKind>>[0m[0m>`[0m
+
+[0m[1m[38;5;9merror[E0023][0m[0m[1m: this pattern has 1 field, but the corresponding tuple variant has 2 fields[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/webview.rs:100:41[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m100[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            EmbedderMsg::WebViewFocused(w) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                         [0m[0m[1m[38;5;9m^[0m[0m [0m[0m[1m[38;5;9mexpected 2 fields, found 1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m   [0m[0m[1m[38;5;12m::: [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/embedder/lib.rs:440:20[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m440[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    WebViewFocused(WebViewId, bool),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                    [0m[0m[1m[38;5;12m---------[0m[0m  [0m[0m[1m[38;5;12m----[0m[0m [0m[0m[1m[38;5;12mtuple variant has 2 fields[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;14mhelp[0m[0m: use `_` to explicitly ignore each field[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m100[0m[0m [0m[0m[1m[38;5;12m| [0m[0m            EmbedderMsg::WebViewFocused(w[0m[0m[38;5;10m, _[0m[0m) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                          [0m[0m[38;5;10m+++[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/webview.rs:209:70[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m209[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                   request_map.insert(id, (request.url, sender));[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                            [0m[0m[1m[38;5;9m^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `IpcSender<WebResourceResponseMsg>`, found `GenericSender<WebResourceResponseMsg>`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: expected struct `[0m[0m[1m[35mipc_channel::ipc::IpcSender<WebResourceResponseMsg>[0m[0m`[0m
+[0m               found struct `[0m[0m[1m[35mGenericSender<WebResourceResponseMsg>[0m[0m`[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/webview.rs:282:70[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m282[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                        Some(Box::new(self.show_context_menu(sender, servo_sender)));[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                            [0m[0m[1m[38;5;12m-----------------[0m[0m         [0m[0m[1m[38;5;9m^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `IpcSender<ContextMenuResult>`, found `GenericSender<ContextMenuResult>`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                            [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                            [0m[0m[1m[38;5;12marguments to this method are incorrect[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: expected struct `[0m[0m[1m[35mipc_channel::ipc::IpcSender<ContextMenuResult>[0m[0m`[0m
+[0m               found struct `[0m[0m[1m[35mGenericSender<ContextMenuResult>[0m[0m`[0m
+[0m[1m[38;5;10mnote[0m[0m: method defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/context_menu.rs:263:19[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m263[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub(crate) fn show_context_menu([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                   [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m266[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        servo_sender: IpcSender<ContextMenuResult>,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m------------------------------------------[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/webview.rs:309:33[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m304[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                   prompt.alert([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                              [0m[0m[1m[38;5;12m-----[0m[0m [0m[0m[1m[38;5;12marguments to this method are incorrect[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m309[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       response_sender,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                           [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `IpcSender<AlertResponse>`, found `GenericSender<AlertResponse>`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: expected struct `[0m[0m[1m[35mipc_channel::ipc::IpcSender<AlertResponse>[0m[0m`[0m
+[0m               found struct `[0m[0m[1m[35mGenericSender<AlertResponse>[0m[0m`[0m
+[0m[1m[38;5;10mnote[0m[0m: method defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/prompt.rs:141:12[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m141[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn alert([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;10m^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m147[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        prompt_sender: IpcSender<AlertResponse>,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m---------------------------------------[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/webview.rs:321:33[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m316[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                   prompt.ok_cancel([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                              [0m[0m[1m[38;5;12m---------[0m[0m [0m[0m[1m[38;5;12marguments to this method are incorrect[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m321[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       response_sender,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                           [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `IpcSender<ConfirmResponse>`, found `GenericSender<ConfirmResponse>`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: expected struct `[0m[0m[1m[35mipc_channel::ipc::IpcSender<ConfirmResponse>[0m[0m`[0m
+[0m               found struct `[0m[0m[1m[35mGenericSender<ConfirmResponse>[0m[0m`[0m
+[0m[1m[38;5;10mnote[0m[0m: method defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/prompt.rs:165:12[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m165[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn ok_cancel([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;10m^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m171[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        prompt_sender: IpcSender<ConfirmResponse>,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m-----------------------------------------[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/webview.rs:332:37[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m330[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                   self.handle_verso_internal_messages_with_webview([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                            [0m[0m[1m[38;5;12m-------------------------------------------[0m[0m [0m[0m[1m[38;5;12marguments to this method are incorrect[0m
+[0m[1m[38;5;12m331[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       message.strip_prefix("VERSO::").unwrap(),[0m
+[0m[1m[38;5;12m332[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       response_sender,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                           [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `IpcSender<PromptResponse>`, found `GenericSender<PromptResponse>`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: expected struct `[0m[0m[1m[35mipc_channel::ipc::IpcSender<PromptResponse>[0m[0m`[0m
+[0m               found struct `[0m[0m[1m[35mGenericSender<PromptResponse>[0m[0m`[0m
+[0m[1m[38;5;10mnote[0m[0m: method defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/webview.rs:951:12[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m951[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn handle_verso_internal_messages_with_webview([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m954[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        response_sender: IpcSender<PromptResponse>,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m------------------------------------------[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/webview.rs:345:33[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m339[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                   prompt.input([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                              [0m[0m[1m[38;5;12m-----[0m[0m [0m[0m[1m[38;5;12marguments to this method are incorrect[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m345[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       response_sender,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                           [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `IpcSender<PromptResponse>`, found `GenericSender<PromptResponse>`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: expected struct `[0m[0m[1m[35mipc_channel::ipc::IpcSender<PromptResponse>[0m[0m`[0m
+[0m               found struct `[0m[0m[1m[35mGenericSender<PromptResponse>[0m[0m`[0m
+[0m[1m[38;5;10mnote[0m[0m: method defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/prompt.rs:215:12[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m215[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn input([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;10m^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m222[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        prompt_sender: IpcSender<PromptResponse>,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m----------------------------------------[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/webview.rs:370:55[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m370[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                        PromptSender::AllowDenySender(prompt_sender),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                         [0m[0m[1m[38;5;12m-----------------------------[0m[0m [0m[0m[1m[38;5;9m^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `IpcSender<AllowOrDeny>`, found `GenericSender<AllowOrDeny>`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                         [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                         [0m[0m[1m[38;5;12marguments to this enum variant are incorrect[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: expected struct `[0m[0m[1m[35mipc_channel::ipc::IpcSender<AllowOrDeny>[0m[0m`[0m
+[0m               found struct `[0m[0m[1m[35mGenericSender<AllowOrDeny>[0m[0m`[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/prompt.rs:51:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m51[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    AllowDenySender(IpcSender<AllowOrDeny>),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/webview.rs:385:25[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m381[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                    prompt.http_basic_auth([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                            [0m[0m[1m[38;5;12m---------------[0m[0m [0m[0m[1m[38;5;12marguments to this method are incorrect[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m385[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                        response_sender,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                         [0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `IpcSender<Option<...>>`, found `GenericSender<Option<...>>`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: expected struct `[0m[0m[1m[35mipc_channel::ipc::IpcSender<std::option::Option<AuthenticationResponse>>[0m[0m`[0m
+[0m               found struct `[0m[0m[1m[35mGenericSender<std::option::Option<AuthenticationResponse>>[0m[0m`[0m
+[0m[1m[38;5;10mnote[0m[0m: method defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/prompt.rs:248:12[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m248[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub fn http_basic_auth([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m            [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m253[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        prompt_sender: IpcSender<Option<AuthenticationResponse>>,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m--------------------------------------------------------[0m
+
+[0m[1m[38;5;9merror[E0023][0m[0m[1m: this pattern has 1 field, but the corresponding tuple variant has 2 fields[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/webview.rs:468:41[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m468[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            EmbedderMsg::WebViewFocused(webview_id) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                         [0m[0m[1m[38;5;9m^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected 2 fields, found 1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m   [0m[0m[1m[38;5;12m::: [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/embedder/lib.rs:440:20[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m440[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    WebViewFocused(WebViewId, bool),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                    [0m[0m[1m[38;5;12m---------[0m[0m  [0m[0m[1m[38;5;12m----[0m[0m [0m[0m[1m[38;5;12mtuple variant has 2 fields[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;14mhelp[0m[0m: use `_` to explicitly ignore each field[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m468[0m[0m [0m[0m[1m[38;5;12m| [0m[0m            EmbedderMsg::WebViewFocused(webview_id[0m[0m[38;5;10m, _[0m[0m) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                   [0m[0m[38;5;10m+++[0m
+
+[0m[1m[38;5;9merror[E0061][0m[0m[1m: this enum variant takes 3 arguments but 2 arguments were supplied[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/webview.rs:702:45[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m702[0m[0m [0m[0m[1m[38;5;12m|[0m[0m   [0m[0m[1m[38;5;12m...[0m[0m                   EmbedderToConstellationMessage::TraverseHistory([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m _______________________[0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m[1m[38;5;12m-[0m
+[0m[1m[38;5;12m703[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       id,[0m
+[0m[1m[38;5;12m704[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       TraversalDirection::Back(1),[0m
+[0m[1m[38;5;12m705[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                   ),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|_______________________-[0m[0m [0m[0m[1m[38;5;12margument #3 of type `TraversalId` is missing[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/constellation/lib.rs:51:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m51[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    TraverseHistory(WebViewId, TraversalDirection, TraversalId),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;14mhelp[0m[0m: provide the argument[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m702[0m[0m [0m[0m[38;5;9m- [0m[0m                                            EmbedderToConstellationMessage::TraverseHistory[0m[0m[38;5;9m([0m
+[0m[1m[38;5;12m703[0m[0m [0m[0m[38;5;9m-                                                 id,[0m
+[0m[1m[38;5;12m704[0m[0m [0m[0m[38;5;9m-                                                 TraversalDirection::Back(1),[0m
+[0m[1m[38;5;12m705[0m[0m [0m[0m[38;5;9m-                                             )[0m[0m,[0m
+[0m[1m[38;5;12m702[0m[0m [0m[0m[38;5;10m+ [0m[0m                                            EmbedderToConstellationMessage::TraverseHistory[0m[0m[38;5;10m(id, TraversalDirection::Back(1), /* TraversalId */)[0m[0m,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+
+[0m[1m[38;5;9merror[E0061][0m[0m[1m: this enum variant takes 3 arguments but 2 arguments were supplied[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/webview.rs:712:45[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m712[0m[0m [0m[0m[1m[38;5;12m|[0m[0m   [0m[0m[1m[38;5;12m...[0m[0m                   EmbedderToConstellationMessage::TraverseHistory([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m _______________________[0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m[1m[38;5;12m-[0m
+[0m[1m[38;5;12m713[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       id,[0m
+[0m[1m[38;5;12m714[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       TraversalDirection::Forward(1),[0m
+[0m[1m[38;5;12m715[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                   ),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|_______________________-[0m[0m [0m[0m[1m[38;5;12margument #3 of type `TraversalId` is missing[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/constellation/lib.rs:51:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m51[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    TraverseHistory(WebViewId, TraversalDirection, TraversalId),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;14mhelp[0m[0m: provide the argument[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m712[0m[0m [0m[0m[38;5;9m- [0m[0m                                            EmbedderToConstellationMessage::TraverseHistory[0m[0m[38;5;9m([0m
+[0m[1m[38;5;12m713[0m[0m [0m[0m[38;5;9m-                                                 id,[0m
+[0m[1m[38;5;12m714[0m[0m [0m[0m[38;5;9m-                                                 TraversalDirection::Forward(1),[0m
+[0m[1m[38;5;12m715[0m[0m [0m[0m[38;5;9m-                                             )[0m[0m,[0m
+[0m[1m[38;5;12m712[0m[0m [0m[0m[38;5;10m+ [0m[0m                                            EmbedderToConstellationMessage::TraverseHistory[0m[0m[38;5;10m(id, TraversalDirection::Forward(1), /* TraversalId */)[0m[0m,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/webview.rs:759:71[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m759[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                        Some(Box::new(self.show_context_menu(&sender, servo_sender)));[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                            [0m[0m[1m[38;5;12m-----------------[0m[0m          [0m[0m[1m[38;5;9m^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `IpcSender<ContextMenuResult>`, found `GenericSender<ContextMenuResult>`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                            [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                            [0m[0m[1m[38;5;12marguments to this method are incorrect[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: expected struct `[0m[0m[1m[35mipc_channel::ipc::IpcSender<ContextMenuResult>[0m[0m`[0m
+[0m               found struct `[0m[0m[1m[35mGenericSender<ContextMenuResult>[0m[0m`[0m
+[0m[1m[38;5;10mnote[0m[0m: method defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/context_menu.rs:263:19[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m263[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub(crate) fn show_context_menu([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                   [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m266[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        servo_sender: IpcSender<ContextMenuResult>,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m------------------------------------------[0m
+
+[0m[1m[38;5;9merror[E0023][0m[0m[1m: this pattern has 1 field, but the corresponding tuple variant has 2 fields[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/webview.rs:793:41[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m793[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            EmbedderMsg::WebViewFocused(webview_id) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                         [0m[0m[1m[38;5;9m^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected 2 fields, found 1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m   [0m[0m[1m[38;5;12m::: [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/embedder/lib.rs:440:20[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m440[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    WebViewFocused(WebViewId, bool),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                    [0m[0m[1m[38;5;12m---------[0m[0m  [0m[0m[1m[38;5;12m----[0m[0m [0m[0m[1m[38;5;12mtuple variant has 2 fields[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;14mhelp[0m[0m: use `_` to explicitly ignore each field[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m793[0m[0m [0m[0m[1m[38;5;12m| [0m[0m            EmbedderMsg::WebViewFocused(webview_id[0m[0m[38;5;10m, _[0m[0m) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                   [0m[0m[38;5;10m+++[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/webview.rs:826:70[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m826[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                        Some(Box::new(self.show_context_menu(sender, servo_sender)));[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                            [0m[0m[1m[38;5;12m-----------------[0m[0m         [0m[0m[1m[38;5;9m^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `IpcSender<ContextMenuResult>`, found `GenericSender<ContextMenuResult>`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                            [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                            [0m[0m[1m[38;5;12marguments to this method are incorrect[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: expected struct `[0m[0m[1m[35mipc_channel::ipc::IpcSender<ContextMenuResult>[0m[0m`[0m
+[0m               found struct `[0m[0m[1m[35mGenericSender<ContextMenuResult>[0m[0m`[0m
+[0m[1m[38;5;10mnote[0m[0m: method defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/context_menu.rs:263:19[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m263[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    pub(crate) fn show_context_menu([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                   [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m266[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        servo_sender: IpcSender<ContextMenuResult>,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m         [0m[0m[1m[38;5;12m------------------------------------------[0m
+
+[0m[1m[38;5;9merror[E0023][0m[0m[1m: this pattern has 1 field, but the corresponding tuple variant has 2 fields[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/webview.rs:852:41[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m852[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            EmbedderMsg::WebViewFocused(webview_id) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                         [0m[0m[1m[38;5;9m^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected 2 fields, found 1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m   [0m[0m[1m[38;5;12m::: [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/embedder/lib.rs:440:20[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m440[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    WebViewFocused(WebViewId, bool),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                    [0m[0m[1m[38;5;12m---------[0m[0m  [0m[0m[1m[38;5;12m----[0m[0m [0m[0m[1m[38;5;12mtuple variant has 2 fields[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;14mhelp[0m[0m: use `_` to explicitly ignore each field[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m852[0m[0m [0m[0m[1m[38;5;12m| [0m[0m            EmbedderMsg::WebViewFocused(webview_id[0m[0m[38;5;10m, _[0m[0m) => {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                   [0m[0m[38;5;10m+++[0m
+
+[0m[1m[38;5;9merror[E0616][0m[0m[1m: field `0` of struct `WebViewId` is private[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/webview.rs:1040:21[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1040[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            webview.0,[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                     [0m[0m[1m[38;5;9m^[0m[0m [0m[0m[1m[38;5;9mprivate field[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/webview.rs:1041:67[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1041[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m            WebDriverScriptCommand::ExecuteScript(js.to_string(), result_sender),[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m             [0m[0m[1m[38;5;12m-------------------------------------[0m[0m                 [0m[0m[1m[38;5;9m^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `IpcSender<Result<JSValue, ...>>`, found a different `IpcSender<Result<JSValue, ...>>`[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m             [0m[0m[1m[38;5;12m|[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m             [0m[0m[1m[38;5;12marguments to this enum variant are incorrect[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;10mnote[0m[0m: two different versions of crate `ipc_channel` are being used; two types coming from two different versions of the same crate are different types even if they look the same[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ipc-channel-0.20.2/src/ipc.rs:330:1[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m330[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct IpcSender<T> {[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;10mthis is the expected type `servo_media::servo_media_player::ipc_channel::ipc::IpcSender`[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m::: [0m[0m/home/ubuntu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ipc-channel-0.19.0/src/ipc.rs:333:1[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m333[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct IpcSender<T> {[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^[0m[0m [0m[0m[1m[38;5;10mthis is the found type `ipc_channel::ipc::IpcSender`[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m::: [0m[0msrc/compositor.rs:7:5[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m7[0m[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse base::cross_process_instant::CrossProcessInstant;[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;12m----[0m[0m [0m[0m[1m[38;5;12mone version of crate `ipc_channel` used here, as a dependency of crate `base`[0m
+[0m[1m[38;5;12m...[0m
+[0m[1m[38;5;12m27[0m[0m   [0m[0m[1m[38;5;12m|[0m[0m [0m[0muse ipc_channel::ipc::{self, IpcSharedMemory};[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;12m-----------[0m[0m [0m[0m[1m[38;5;12mone version of crate `ipc_channel` used here, as a direct dependency of the current crate[0m
+[0m     [0m[0m[1m[38;5;12m= [0m[0m[1mhelp[0m[0m: you can use `cargo tree` to explore your dependency tree[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/embedder/webdriver.rs:151:5[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m151[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    ExecuteScript(String, IpcSender<WebDriverJSResult>),[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;10m^^^^^^^^^^^^^[0m
+
+[0m[1m[38;5;9merror[E0061][0m[0m[1m: this enum variant takes 3 arguments but 2 arguments were supplied[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/context_menu.rs:345:29[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m345[0m[0m [0m[0m[1m[38;5;12m|[0m[0m   [0m[0m[1m[38;5;12m...[0m[0m                   EmbedderToConstellationMessage::TraverseHistory([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m _______________________[0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m[1m[38;5;12m-[0m
+[0m[1m[38;5;12m346[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       tab_id,[0m
+[0m[1m[38;5;12m347[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       TraversalDirection::Back(1),[0m
+[0m[1m[38;5;12m348[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                   ),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|_______________________-[0m[0m [0m[0m[1m[38;5;12margument #3 of type `TraversalId` is missing[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/constellation/lib.rs:51:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m51[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    TraverseHistory(WebViewId, TraversalDirection, TraversalId),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;14mhelp[0m[0m: provide the argument[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m345[0m[0m [0m[0m[38;5;9m- [0m[0m                            EmbedderToConstellationMessage::TraverseHistory[0m[0m[38;5;9m([0m
+[0m[1m[38;5;12m346[0m[0m [0m[0m[38;5;9m-                                 tab_id,[0m
+[0m[1m[38;5;12m347[0m[0m [0m[0m[38;5;9m-                                 TraversalDirection::Back(1),[0m
+[0m[1m[38;5;12m348[0m[0m [0m[0m[38;5;9m-                             )[0m[0m,[0m
+[0m[1m[38;5;12m345[0m[0m [0m[0m[38;5;10m+ [0m[0m                            EmbedderToConstellationMessage::TraverseHistory[0m[0m[38;5;10m(tab_id, TraversalDirection::Back(1), /* TraversalId */)[0m[0m,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+
+[0m[1m[38;5;9merror[E0061][0m[0m[1m: this enum variant takes 3 arguments but 2 arguments were supplied[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/context_menu.rs:354:29[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m354[0m[0m [0m[0m[1m[38;5;12m|[0m[0m   [0m[0m[1m[38;5;12m...[0m[0m                   EmbedderToConstellationMessage::TraverseHistory([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m _______________________[0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m[1m[38;5;12m-[0m
+[0m[1m[38;5;12m355[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       tab_id,[0m
+[0m[1m[38;5;12m356[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       TraversalDirection::Forward(1),[0m
+[0m[1m[38;5;12m357[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                   ),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|_______________________-[0m[0m [0m[0m[1m[38;5;12margument #3 of type `TraversalId` is missing[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/constellation/lib.rs:51:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m51[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    TraverseHistory(WebViewId, TraversalDirection, TraversalId),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;14mhelp[0m[0m: provide the argument[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m354[0m[0m [0m[0m[38;5;9m- [0m[0m                            EmbedderToConstellationMessage::TraverseHistory[0m[0m[38;5;9m([0m
+[0m[1m[38;5;12m355[0m[0m [0m[0m[38;5;9m-                                 tab_id,[0m
+[0m[1m[38;5;12m356[0m[0m [0m[0m[38;5;9m-                                 TraversalDirection::Forward(1),[0m
+[0m[1m[38;5;12m357[0m[0m [0m[0m[38;5;9m-                             )[0m[0m,[0m
+[0m[1m[38;5;12m354[0m[0m [0m[0m[38;5;10m+ [0m[0m                            EmbedderToConstellationMessage::TraverseHistory[0m[0m[38;5;10m(tab_id, TraversalDirection::Forward(1), /* TraversalId */)[0m[0m,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+
+[0m[1m[38;5;9merror[E0061][0m[0m[1m: this enum variant takes 3 arguments but 2 arguments were supplied[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/history_menu.rs:202:29[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m202[0m[0m [0m[0m[1m[38;5;12m|[0m[0m   [0m[0m[1m[38;5;12m...[0m[0m                   EmbedderToConstellationMessage::TraverseHistory([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m _______________________[0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m[1m[38;5;12m-[0m
+[0m[1m[38;5;12m203[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       tab_id,[0m
+[0m[1m[38;5;12m204[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       TraversalDirection::Back(index + 1),[0m
+[0m[1m[38;5;12m205[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                   ),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|_______________________-[0m[0m [0m[0m[1m[38;5;12margument #3 of type `TraversalId` is missing[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/constellation/lib.rs:51:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m51[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    TraverseHistory(WebViewId, TraversalDirection, TraversalId),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;14mhelp[0m[0m: provide the argument[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m202[0m[0m [0m[0m[38;5;9m- [0m[0m                            EmbedderToConstellationMessage::TraverseHistory[0m[0m[38;5;9m([0m
+[0m[1m[38;5;12m203[0m[0m [0m[0m[38;5;9m-                                 tab_id,[0m
+[0m[1m[38;5;12m204[0m[0m [0m[0m[38;5;9m-                                 TraversalDirection::Back(index + 1),[0m
+[0m[1m[38;5;12m205[0m[0m [0m[0m[38;5;9m-                             )[0m[0m,[0m
+[0m[1m[38;5;12m202[0m[0m [0m[0m[38;5;10m+ [0m[0m                            EmbedderToConstellationMessage::TraverseHistory[0m[0m[38;5;10m(tab_id, TraversalDirection::Back(index + 1), /* TraversalId */)[0m[0m,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+
+[0m[1m[38;5;9merror[E0061][0m[0m[1m: this enum variant takes 3 arguments but 2 arguments were supplied[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/webview/history_menu.rs:211:29[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m211[0m[0m [0m[0m[1m[38;5;12m|[0m[0m   [0m[0m[1m[38;5;12m...[0m[0m                   EmbedderToConstellationMessage::TraverseHistory([0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m _______________________[0m[0m[1m[38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m[1m[38;5;12m-[0m
+[0m[1m[38;5;12m212[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       tab_id,[0m
+[0m[1m[38;5;12m213[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       TraversalDirection::Forward(index + 1),[0m
+[0m[1m[38;5;12m214[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                   ),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;12m|_______________________-[0m[0m [0m[0m[1m[38;5;12margument #3 of type `TraversalId` is missing[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/constellation/lib.rs:51:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m51[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    TraverseHistory(WebViewId, TraversalDirection, TraversalId),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;14mhelp[0m[0m: provide the argument[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m211[0m[0m [0m[0m[38;5;9m- [0m[0m                            EmbedderToConstellationMessage::TraverseHistory[0m[0m[38;5;9m([0m
+[0m[1m[38;5;12m212[0m[0m [0m[0m[38;5;9m-                                 tab_id,[0m
+[0m[1m[38;5;12m213[0m[0m [0m[0m[38;5;9m-                                 TraversalDirection::Forward(index + 1),[0m
+[0m[1m[38;5;12m214[0m[0m [0m[0m[38;5;9m-                             )[0m[0m,[0m
+[0m[1m[38;5;12m211[0m[0m [0m[0m[38;5;10m+ [0m[0m                            EmbedderToConstellationMessage::TraverseHistory[0m[0m[38;5;10m(tab_id, TraversalDirection::Forward(index + 1), /* TraversalId */)[0m[0m,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no variant or associated item named `Click` found for enum `MouseButtonAction` in the current scope[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/window.rs:538:52[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m538[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                        action: MouseButtonAction::Click,[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                    [0m[0m[1m[38;5;9m^^^^^[0m[0m [0m[0m[1m[38;5;9mvariant or associated item not found in `MouseButtonAction`[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/window.rs:619:67[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m619[0m[0m [0m[0m[1m[38;5;12m|[0m[0m   [0m[0m[1m[38;5;12m...[0m[0m                   InputEvent::Ime(ImeEvent::Composition(CompositionEvent {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m _______________________________________[0m[0m[1m[38;5;12m---------------------[0m[0m[1m[38;5;9m_^[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m                                       [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m                                       [0m[0m[1m[38;5;12marguments to this enum variant are incorrect[0m
+[0m[1m[38;5;12m620[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       state: CompositionState::End,[0m
+[0m[1m[38;5;12m621[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       data: text,[0m
+[0m[1m[38;5;12m622[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                   })),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|_______________________^[0m[0m [0m[0m[1m[38;5;9mexpected `CompositionEvent`, found a different `CompositionEvent`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `CompositionEvent` and `CompositionEvent` have similar names, but are actually distinct types[0m
+[0m[1m[38;5;10mnote[0m[0m: `CompositionEvent` is defined in crate `keyboard_types`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/lib.rs:96:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m96[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct CompositionEvent {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;10mnote[0m[0m: `CompositionEvent` is defined in crate `keyboard_types`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.8.3/src/composition.rs:60:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m60[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct CompositionEvent {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/embedder/input_events.rs:306:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m306[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    Composition(CompositionEvent),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;10m^^^^^^^^^^^[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/window.rs:630:67[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m630[0m[0m [0m[0m[1m[38;5;12m|[0m[0m   [0m[0m[1m[38;5;12m...[0m[0m                   InputEvent::Ime(ImeEvent::Composition(CompositionEvent {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m _______________________________________[0m[0m[1m[38;5;12m---------------------[0m[0m[1m[38;5;9m_^[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m                                       [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m                                       [0m[0m[1m[38;5;12marguments to this enum variant are incorrect[0m
+[0m[1m[38;5;12m631[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       state: CompositionState::Start,[0m
+[0m[1m[38;5;12m632[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       data: String::new(),[0m
+[0m[1m[38;5;12m633[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                   })),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|_______________________^[0m[0m [0m[0m[1m[38;5;9mexpected `CompositionEvent`, found a different `CompositionEvent`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `CompositionEvent` and `CompositionEvent` have similar names, but are actually distinct types[0m
+[0m[1m[38;5;10mnote[0m[0m: `CompositionEvent` is defined in crate `keyboard_types`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/lib.rs:96:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m96[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct CompositionEvent {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;10mnote[0m[0m: `CompositionEvent` is defined in crate `keyboard_types`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.8.3/src/composition.rs:60:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m60[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct CompositionEvent {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/embedder/input_events.rs:306:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m306[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    Composition(CompositionEvent),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;10m^^^^^^^^^^^[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/window.rs:641:67[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m641[0m[0m [0m[0m[1m[38;5;12m|[0m[0m   [0m[0m[1m[38;5;12m...[0m[0m                   InputEvent::Ime(ImeEvent::Composition(CompositionEvent {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m _______________________________________[0m[0m[1m[38;5;12m---------------------[0m[0m[1m[38;5;9m_^[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m                                       [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m                                       [0m[0m[1m[38;5;12marguments to this enum variant are incorrect[0m
+[0m[1m[38;5;12m642[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       state: CompositionState::Update,[0m
+[0m[1m[38;5;12m643[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       data: text.to_string(),[0m
+[0m[1m[38;5;12m644[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                   })),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|_______________________^[0m[0m [0m[0m[1m[38;5;9mexpected `CompositionEvent`, found a different `CompositionEvent`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `CompositionEvent` and `CompositionEvent` have similar names, but are actually distinct types[0m
+[0m[1m[38;5;10mnote[0m[0m: `CompositionEvent` is defined in crate `keyboard_types`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/lib.rs:96:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m96[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct CompositionEvent {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;10mnote[0m[0m: `CompositionEvent` is defined in crate `keyboard_types`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.8.3/src/composition.rs:60:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m60[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct CompositionEvent {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/embedder/input_events.rs:306:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m306[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    Composition(CompositionEvent),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;10m^^^^^^^^^^^[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/window.rs:652:67[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m652[0m[0m [0m[0m[1m[38;5;12m|[0m[0m   [0m[0m[1m[38;5;12m...[0m[0m                   InputEvent::Ime(ImeEvent::Composition(CompositionEvent {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m _______________________________________[0m[0m[1m[38;5;12m---------------------[0m[0m[1m[38;5;9m_^[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m                                       [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m                                       [0m[0m[1m[38;5;12marguments to this enum variant are incorrect[0m
+[0m[1m[38;5;12m653[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       state: CompositionState::End,[0m
+[0m[1m[38;5;12m654[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                       data: String::new(),[0m
+[0m[1m[38;5;12m655[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|[0m[0m [0m[0m[1m[38;5;12m...[0m[0m                   })),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;9m|_______________________^[0m[0m [0m[0m[1m[38;5;9mexpected `CompositionEvent`, found a different `CompositionEvent`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `CompositionEvent` and `CompositionEvent` have similar names, but are actually distinct types[0m
+[0m[1m[38;5;10mnote[0m[0m: `CompositionEvent` is defined in crate `keyboard_types`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/lib.rs:96:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m96[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct CompositionEvent {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;10mnote[0m[0m: `CompositionEvent` is defined in crate `keyboard_types`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.8.3/src/composition.rs:60:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m60[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct CompositionEvent {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/embedder/input_events.rs:306:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m306[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    Composition(CompositionEvent),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;10m^^^^^^^^^^^[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0msrc/window.rs:682:90[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m682[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                forward_input_event(compositor, webview_id, sender, InputEvent::Keyboard(event));[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                                     [0m[0m[1m[38;5;12m--------------------[0m[0m [0m[0m[1m[38;5;9m^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `embedder_traits::KeyboardEvent`, found `keyboard_types::KeyboardEvent`[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                                     [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m                                                                     [0m[0m[1m[38;5;12marguments to this enum variant are incorrect[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m    [0m[0m[1m[38;5;12m= [0m[0m[1mnote[0m[0m: `keyboard_types::KeyboardEvent` and `embedder_traits::KeyboardEvent` have similar names, but are actually distinct types[0m
+[0m[1m[38;5;10mnote[0m[0m: `keyboard_types::KeyboardEvent` is defined in crate `keyboard_types`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/keyboard-types-0.7.0/src/lib.rs:43:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m43[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct KeyboardEvent {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;10mnote[0m[0m: `embedder_traits::KeyboardEvent` is defined in crate `embedder_traits`[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/embedder/input_events.rs:95:1[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m95[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0mpub struct KeyboardEvent {[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m   [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/embedder/input_events.rs:45:5[0m
+[0m    [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m45[0m[0m  [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    Keyboard(KeyboardEvent),[0m
+[0m    [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;10m^^^^^^^^[0m
+
+[0m[1m[38;5;9merror[E0609][0m[0m[1m: no field `width` on type `&std::sync::Arc<pixels::RasterImage>`[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/window.rs:1010:39[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1010[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                Image::from_rgba(icon.width as i32, icon.height as i32, icon.bytes().to_vec()).ok()[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                                       [0m[0m[1m[38;5;9m^^^^^[0m[0m [0m[0m[1m[38;5;9munknown field[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;14mhelp[0m[0m: one of the expressions' fields has a field of the same name[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1010[0m[0m [0m[0m[1m[38;5;12m| [0m[0m                Image::from_rgba(icon.[0m[0m[38;5;10mmetadata.[0m[0mwidth as i32, icon.height as i32, icon.bytes().to_vec()).ok()[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                                       [0m[0m[38;5;10m+++++++++[0m
+
+[0m[1m[38;5;9merror[E0609][0m[0m[1m: no field `height` on type `&std::sync::Arc<pixels::RasterImage>`[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/window.rs:1010:58[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1010[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                Image::from_rgba(icon.width as i32, icon.height as i32, icon.bytes().to_vec()).ok()[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                                                          [0m[0m[1m[38;5;9m^^^^^^[0m[0m [0m[0m[1m[38;5;9munknown field[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;14mhelp[0m[0m: one of the expressions' fields has a field of the same name[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1010[0m[0m [0m[0m[1m[38;5;12m| [0m[0m                Image::from_rgba(icon.width as i32, icon.[0m[0m[38;5;10mmetadata.[0m[0mheight as i32, icon.bytes().to_vec()).ok()[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                                                          [0m[0m[38;5;10m+++++++++[0m
+
+[0m[1m[38;5;9merror[E0599][0m[0m[1m: no method named `bytes` found for reference `&std::sync::Arc<pixels::RasterImage>` in the current scope[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/window.rs:1010:78[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1010[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m                Image::from_rgba(icon.width as i32, icon.height as i32, icon.bytes().to_vec()).ok()[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                                                                              [0m[0m[1m[38;5;9m^^^^^[0m[0m[1m[38;5;12m--[0m[0m [0m[0m[1m[38;5;12mhelp: remove the arguments[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                                                                              [0m[0m[1m[38;5;9m|[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                                                                              [0m[0m[1m[38;5;9mfield, not a method[0m
+
+[0m[1m[38;5;9merror[E0308][0m[0m[1m: mismatched types[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0msrc/window.rs:1200:21[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1199[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    let _ = constellation_proxy.send(EmbedderToConstellationMessage::ForwardInputEvent([0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                                      [0m[0m[1m[38;5;12m-------------------------------------------------[0m[0m [0m[0m[1m[38;5;12marguments to this enum variant are incorrect[0m
+[0m[1m[38;5;12m1200[0m[0m [0m[0m[1m[38;5;12m|[0m[0m [0m[0m        webview_id, event, None, /* hit_test */[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                     [0m[0m[1m[38;5;9m^^^^^[0m[0m [0m[0m[1m[38;5;9mexpected `InputEventAndId`, found `InputEvent`[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;10mnote[0m[0m: tuple variant defined here[0m
+[0m    [0m[0m[1m[38;5;12m--> [0m[0m/home/ubuntu/.cargo/git/checkouts/servo-e53a6e7b994a25fe/721214f/components/shared/constellation/lib.rs:81:5[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m81[0m[0m   [0m[0m[1m[38;5;12m|[0m[0m [0m[0m    ForwardInputEvent(WebViewId, InputEventAndId, Option<CompositorHitTestResult>),[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m     [0m[0m[1m[38;5;10m^^^^^^^^^^^^^^^^^[0m
+[0m[1m[38;5;14mhelp[0m[0m: call `Into::into` on this expression to convert `embedder_traits::InputEvent` into `InputEventAndId`[0m
+[0m     [0m[0m[1m[38;5;12m|[0m
+[0m[1m[38;5;12m1200[0m[0m [0m[0m[1m[38;5;12m| [0m[0m        webview_id, event[0m[0m[38;5;10m.into()[0m[0m, None, /* hit_test */[0m
+[0m     [0m[0m[1m[38;5;12m|[0m[0m                          [0m[0m[38;5;10m+++++++[0m
+
+[0m[1mSome errors have detailed explanations: E0023, E0026, E0050, E0061, E0063, E0277, E0308, E0423, E0432...[0m
+[0m[1mFor more information about an error, try `rustc --explain E0023`.[0m
+[1m[31merror[0m[1m:[0m could not compile `versoview` (lib) due to 107 previous errors
+
+CARGO_CHECK_CANVAS_E0004_EXIT=

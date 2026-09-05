@@ -225,3 +225,60 @@ Status akhir `cargo check` **belum hijau**, tetapi blocker yang ditargetkan—AP
 
 [6]: https://raw.githubusercontent.com/servo/servo/v0.0.1/Cargo.lock "Official Servo v0.0.1 Cargo.lock"
 [7]: https://github.com/servo/mozjs/tree/bbbbf315e89cf91428f3b652ac68146687737259 "MozJS commit used by Servo v0.0.1"
+
+## Canvas E0004 — rustc 1.88
+
+### Root cause
+
+Pada Servo v0.0.1, `components/canvas/canvas_paint_thread.rs` mendefinisikan enum `Canvas` dengan dua varian yang masing-masing gated:
+
+```rust
+#[cfg(feature = "vello")]
+Vello(VelloRenderingContext),
+#[cfg(feature = "vello_cpu")]
+VelloCPU(VelloCpuRenderingContext),
+```
+
+Semua method pada `Canvas` melakukan `match self` dengan arm yang juga gated oleh feature yang sama. Dalam graph Verso sebelumnya, crate `constellation` dipakai tanpa feature `vello` atau `vello_cpu`, sehingga kedua varian enum terhapus oleh conditional compilation. Enum menjadi empty pada konfigurasi tersebut, tetapi `&mut Canvas` tetap merupakan reference yang inhabited. Karena itu rustc 1.88 dengan tepat tidak menerima `match self` tanpa arm: setiap match memiliki zero arms setelah cfg expansion, menghasilkan 15 error `E0004` pada method-method canvas.
+
+Ini bukan regresi yang aman untuk ditutup dengan `allow`, dan wildcard `todo!()` massal akan menyembunyikan konfigurasi runtime yang salah. Servo sendiri mengaktifkan backend CPU melalui default feature `vello_cpu` pada crate Servo, dan constellation meneruskan feature tersebut ke `canvas/vello_cpu`.
+
+### Patch minimal dan reproducible
+
+Verso sekarang mengaktifkan backend yang sama pada dependency git Servo:
+
+```toml
+constellation = {
+    package = "constellation",
+    git = "https://github.com/servo/servo.git",
+    rev = "721214fbe44bf11b968e5e076e5b0af5b5663447",
+    features = ["vello_cpu"],
+}
+```
+
+Patch diterapkan pada root `Cargo.toml`, sehingga dapat direproduksi oleh Cargo dan tidak bergantung pada edit manual di `~/.cargo/git`. Tidak ada edit pada checkout Servo, generated `out/Bindings/*.rs`, atau compositor Verso.
+
+### Hasil check
+
+Perintah yang dijalankan:
+
+```text
+cargo +1.88.0 check 2>&1 | tee docs/cargo-check-canvas-e0004.log
+```
+
+Hasilnya: **Canvas E0004 hilang seluruhnya** (`grep` terhadap `error[E0004]` menghasilkan 0). Crate `canvas` berhasil melewati tahap kompilasi dan error bergeser ke `versoview` dengan 107 error, terutama karena API Servo v0.0.1 pada compositor/embedder/constellation belum sepenuhnya cocok dengan source Verso:
+
+| Kategori | Pola error | Contoh lokasi |
+|---|---|---|
+| Compositor API | Variant `CompositorMsg` hilang atau jumlah field berubah | `src/compositor.rs` |
+| Constellation API | `TraverseHistory` kini memerlukan `TraversalId`; `ForwardInputEvent` memerlukan `InputEventAndId` | `src/webview/history_menu.rs`, `src/window.rs` |
+| Input/embedder | `MouseButtonAction::Click` tidak tersedia; dua versi `keyboard_types::CompositionEvent` tercampur | `src/window.rs` |
+| Pixels/image API | `RasterImage` tidak lagi memiliki field/method yang dipanggil langsung | `src/window.rs` |
+| API/type lain | Error `E0023`, `E0026`, `E0050`, `E0061`, `E0063`, `E0277`, `E0308`, `E0423`, `E0432`, `E0599`, dan `E0609` | `src/compositor.rs`, `src/verso.rs`, `src/window.rs`, `src/webview/*` |
+
+Check host **belum hijau** karena 107 error Verso tersisa, tetapi blocker khusus Canvas E0004 sudah terselesaikan. Tidak ada `cargo build --release`, binary, release, merge, atau klaim dukungan Windows/macOS.
+
+### References
+
+[8]: https://github.com/servo/servo/blob/v0.0.1/components/canvas/canvas_paint_thread.rs "Servo v0.0.1 Canvas paint thread"
+[9]: https://github.com/servo/servo/blob/v0.0.1/components/constellation/Cargo.toml "Servo v0.0.1 constellation feature forwarding"
